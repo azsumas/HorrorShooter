@@ -25,17 +25,17 @@ Windows PC.
   - Héctor Bonada Moreno.
     - Game Design.
     - Character Modeling.
-   - Coding.
- - Laura Cruz Heredia.
-   - Concept Art.
-   - 3D Texturing.
-   - Coding.
-   - Sound Effects.
- - Albert Rodriguez Espada.
-   - 3D Rigging and 3D Animation.
-   - Coding.
- - Ivan González Escario.
-   - Assets Modeling.
-   - Coding.
+    - Coding.
+  - Laura Cruz Heredia.
+    - Concept Art.
+    - 3D Texturing.
+    - Coding.
+    - Sound Effects.
+  - Albert Rodriguez Espada.
+    - 3D Rigging and 3D Animation.
+    - Coding.
+  - Ivan González Escario.
+    - Assets Modeling.
+    - Coding.
 
 
