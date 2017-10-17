@@ -19,7 +19,7 @@ Windows PC.
 
 ### Extent of the Project.
 - Time scale of the project.
-  - The economic cost is € 0.
+  - The economic cost is 0€.
   - The time to do it is between 7 to 8 months.
 - Size of the team.
   - Héctor Bonada Moreno.
@@ -37,5 +37,19 @@ Windows PC.
   - Ivan González Escario.
     - Assets Modeling.
     - Coding.
+### Influences. 
+- Silent Hill
+		31-1-1999, PSX.
+- System Shock
+		26-4-1994, DOS/Macintosh. 
+- Amnesia
+		08/09/2010, Windows, OS X, Linux, PS4 (2016).
+- Cry of Fear
+		25/04/2013, Windows PC.
+
+
+    
+    
+  
 
 
