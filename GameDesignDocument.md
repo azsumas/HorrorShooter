@@ -14,4 +14,29 @@ Is set in a future where the technology has become a danger.
 - Regenerate energy (HP and Stamina)
 - Illuminate the scenario. 
 
+### Launc Platform. 
+Windows PC.
+
+### Extent of the Project.
+- Time scale of the project.
+ - The economic cost is € 0.
+ - The time to do it is between 7 to 8 months.
+- Size of the team.
+ - Base equipment.
+  - Héctor Bonada Moreno.
+   - Game Design.
+   - Character Modeling.
+   - Coding.
+  - Laura Cruz Heredia.
+   - Concept Art.
+   - 3D Texturing.
+   - Coding.
+   - Sound Effects.
+  - Albert Rodriguez Espada.
+   - 3D Rigging and 3D Animation.
+   - Coding.
+ - Ivan González Escario.
+   - Assets Modeling.
+   - Coding.
+
 
