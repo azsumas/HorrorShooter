@@ -66,7 +66,7 @@ Risk vs Rewards. The player can find optional paths and rooms where he can find 
 - Action and fear alike.
 - Integrated HUD in the world.
 
-### Core Gameplay Mechanics 
+### Core Gameplay Mechanics.
 The main objective of the game is to go from the point A to the point B without dying. To make that possible is necessary to be able to administrate the resources to survive. 
 All the resources all focus on the energy and the ammo.  
 
@@ -77,3 +77,11 @@ Shooting with the weapon consume ammo. If the ammo goes out the player won’t b
 Punishments and feedbacks:
 - Punishment: When you receive damage from a monster, you will see an immediate reaction on the HUD. If you go out of energy and you receive a hit, you will die and you will have to restart the game.  
 - Feedbacks: Being safe from an enemy that you have killed, or being safe on a safe zone. Obtaining energy or ammo exploring the map.  
+
+### Enemies.
+- Standard Enemy: Standard enemy of the game, neither too fast nor too slow, with melee attacks. It doesn’t die with one hit but it’s not a tank. It detects the player with his vision. He can be on a lay off mode  where he won’t attack anyone but he can reactivate in any time. 
+
+- Distance Enemy: Distance enemy of the game. It uses his eye to shoot a kind of ray.  It is small with crabs paws, he runs if it feels danger looking for help. It is weak to damage so it’s easy to kill. It detects the light, so is a good idea to try to kill it with the torch off. 
+
+- Dog enemy: Agile enemy of the game. He runs to the player when he detects him. He attacks jumping towards the player and biting. He is fast, so it’s difficult to shoot him but he dies easily. He detects the player for the sound, so it’s a good idea trying to get close slowly.
+
