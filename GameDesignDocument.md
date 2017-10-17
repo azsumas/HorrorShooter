@@ -85,3 +85,23 @@ Punishments and feedbacks:
 
 - Dog enemy: Agile enemy of the game. He runs to the player when he detects him. He attacks jumping towards the player and biting. He is fast, so it’s difficult to shoot him but he dies easily. He detects the player for the sound, so it’s a good idea trying to get close slowly.
 
+## Assets Needed.
+### 2D 
+- Concept Art of the Enemies.
+- Concept Art of the Boss.
+- Concept Art of the Assets and environment.
+- Mock Up.
+- Interface.
+- Concept Art of the Weapon.
+- Textures of the Models.
+
+### 3D
+- Standard Enemy Model.
+- Dog Enemy Model.
+- Distance Enemy Model.
+- Weapon Model.
+- Boss Model.
+- Armor Model.
+- Models of the Assets.
+- Models of the Environment.
+
