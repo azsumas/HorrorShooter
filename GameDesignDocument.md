@@ -38,14 +38,14 @@ Windows PC.
     - Assets Modeling.
     - Coding.
 ### Influences. 
-- Silent Hill
-		31-1-1999, PSX.
-- System Shock
-		26-4-1994, DOS/Macintosh. 
-- Amnesia
-		08/09/2010, Windows, OS X, Linux, PS4 (2016).
-- Cry of Fear
-		25/04/2013, Windows PC.
+- Silent Hill, 31-1-1999, PSX.
+- System Shock, 26-4-1994, DOS/Macintosh. 
+- Amnesia, 08/09/2010, Windows, OS X, Linux, PS4 (2016).
+- Cry of Fear, 25/04/2013, Windows PC.
+
+### Elevator Pitch.
+First person shooter survival horror full of dark path and squeaky noises, a few bullets, a battered armor and robotic monsters waiting in the darkness.
+
 
 
     
