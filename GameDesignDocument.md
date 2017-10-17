@@ -65,3 +65,15 @@ Risk vs Rewards. The player can find optional paths and rooms where he can find 
 - Half organic enemies half robots.
 - Action and fear alike.
 - Integrated HUD in the world.
+
+### Core Gameplay Mechanics 
+The main objective of the game is to go from the point A to the point B without dying. To make that possible is necessary to be able to administrate the resources to survive. 
+All the resources all focus on the energy and the ammo.  
+
+The energy works as a battery and as an HP bar. Using the torch of the armor will consume energy. Receiving damage from the enemies will consume energy.  If the energy goes to 0, the player will die on the next hit and won't be able to use the armor functions (Torch, HUD, AI…)
+
+Shooting with the weapon consume ammo. If the ammo goes out the player won’t be able to shoot. The ammo can be regenerated with ammo packages located around the map. The energy can also be regenerated with energy packages located around the map. 
+
+Punishments and feedbacks:
+- Punishment: When you receive damage from a monster, you will see an immediate reaction on the HUD. If you go out of energy and you receive a hit, you will die and you will have to restart the game.  
+- Feedbacks: Being safe from an enemy that you have killed, or being safe on a safe zone. Obtaining energy or ammo exploring the map.  
