@@ -105,3 +105,34 @@ Punishments and feedbacks:
 - Models of the Assets.
 - Models of the Environment.
 
+### Sound
+- List of Ambient Sounds:
+- List of Player Sounds:
+  - Player Movement.
+    - Steps of the player.
+  - Collision sounds.
+    - Collision with walls.
+    - Collision with doors.
+  - Sounds of the player injured / dead.
+    - Sound of receiving damage.
+    - Sound of armor breaking.
+    - Sound of Death.
+ - Standard Enemy Sounds List:
+   - Steps.
+   - Attack.
+   - Death.
+ - List of Sounds of Dog Enemy.
+   - Steps.
+  - Attack.
+  - Death.
+  - Bark.
+- List of Distance Enemy Sounds.
+  - Steps.
+  - Attack.
+  - Death.
+  - Load attack.
+
+- Boss Sounds List:
+
+
+
