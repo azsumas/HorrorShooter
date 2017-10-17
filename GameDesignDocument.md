@@ -37,7 +37,7 @@ Windows PC.
   - Ivan González Escario.
     - Assets Modeling.
     - Coding.
-### Influences. 
+### Influences.
 - Silent Hill, 31-1-1999, PSX.
 - System Shock, 26-4-1994, DOS/Macintosh. 
 - Amnesia, 08/09/2010, Windows, OS X, Linux, PS4 (2016).
@@ -60,3 +60,8 @@ There aren’t social decisions.
 There are exchanges of resources, energy for light and survival capacity. 
 Risk vs Rewards. The player can find optional paths and rooms where he can find enemies, resources or nothing. The decision is based on taking the risk of getting new resources but having to fight or even die, or simply keep moving alone. 
 
+### What makes our game unique? 
+- Futuristic and dark ambience.
+- Half organic enemies half robots.
+- Action and fear alike.
+- Integrated HUD in the world.
