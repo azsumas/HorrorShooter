@@ -14,7 +14,7 @@ Is set in a future where the technology has become a danger.
 - Regenerate energy (HP and Stamina)
 - Illuminate the scenario. 
 
-### Launc Platform. 
+### Launch Platform. 
 Windows PC.
 
 ### Extent of the Project.
