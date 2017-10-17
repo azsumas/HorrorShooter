@@ -1,5 +1,5 @@
 # System Hazard
-![Image of Logo](https://github.com/azsumas/HorrorShooter/blob/master/Logo_02.png) 
+![Image of Logo](https://github.com/azsumas/HorrorShooter/blob/master/Docs/Logo_02.png) 
 ## Genereal Overview
 ### Theme/Localization/Genre.
 
