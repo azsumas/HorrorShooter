@@ -52,7 +52,4 @@ You are a soldier and you team has been send to a robotic laboratory to stop a r
 Throw the path you will find some of the rebel robots and they will try to kill you, so you must be cautious and think very well which path will you take. 
 
 ### Gameplay commentary based on the AGE framework.
-
-
-
-
+The main emotion that the player will feel is the fear, that causes a survival instinct. The player could feel tempted to explore, but  the more he explores more dangerous can be the path, and higher can be the reward.
