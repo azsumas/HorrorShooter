@@ -53,3 +53,10 @@ Throw the path you will find some of the rebel robots and they will try to kill 
 
 ### Gameplay commentary based on the AGE framework.
 The main emotion that the player will feel is the fear, that causes a survival instinct. The player could feel tempted to explore, but  the more he explores more dangerous can be the path, and higher can be the reward.
+
+### Types of decisions. 
+The player has total freedom of move, although the global path is linear. 
+There aren’t social decisions. 
+There are exchanges of resources, energy for light and survival capacity. 
+Risk vs Rewards. The player can find optional paths and rooms where he can find enemies, resources or nothing. The decision is based on taking the risk of getting new resources but having to fight or even die, or simply keep moving alone. 
+
