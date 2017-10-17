@@ -117,21 +117,21 @@ Punishments and feedbacks:
     - Sound of receiving damage.
     - Sound of armor breaking.
     - Sound of Death.
- - Standard Enemy Sounds List:
-   - Steps.
-   - Attack.
-   - Death.
- - List of Sounds of Dog Enemy.
-   - Steps.
-  - Attack.
-  - Death.
-  - Bark.
-- List of Distance Enemy Sounds.
-  - Steps.
-  - Attack.
-  - Death.
-  - Load attack.
-
+- List of Enemies Sounds:
+  - Standard Enemy Sounds List:
+    - Steps.
+    - Attack.
+    - Death.
+  - List of Sounds of Dog Enemy.
+    - Steps.
+    - Attack.
+    - Death.
+    - Bark.
+  - List of Distance Enemy Sounds.
+    - Steps.
+    - Attack.
+    - Death.
+    - Load attack.
 - Boss Sounds List:
 
 
