@@ -155,6 +155,17 @@ Punishments and feedbacks:
   - Walk: Walks like a humanoid robot, slower than an average human. https://www.youtube.com/watch?v=c-bgLsvw848
   - Attack: It performs a blow with the claws by raising the arm and lowering it in a diagonal movement. https://youtu.be/2w4Jzf2lrR4?t=2m24s  
   - Idle: Stays with his legs slightly bent, slightly balancing shoulders.
+- Distance Enemy Animations:
+  - Walk: Walk like a spider or a crab, moving all its paws at once. https://youtu.be/tDkcHhUuENQ?t=41s
+  - Shoot: Shifts its upper body slightly to charge the shot. Once charged, lean its body quickly forward releasing the shot. https://youtu.be/4Cxevs-gkh0?t=17m19s
+  - Run: Walk but faster, tilt its head back for speed.
+  - Idle: Turn its head slightly from side to side and slightly move one leg.
+- Dog Enemy Animations: 
+  - Walk: It moves like a dog, with the back movement somewhat limited by being a robot. https://www.youtube.com/watch?v=xygRJxMuJhg
+  - Run: A more agile and accelerated version of the walk. https://youtu.be/QB0tSva4WTU?t=15s
+  - Jump: It rests on its hind legs and contracts to gain momentum. After pushing himself, he stretches his whole body and lands on his front legs. https://www.youtube.com/watch?v=ebMzy8Y1pFU
+  - Attack: During the jump, he leans on his enemy and bites him on the head / neck.
+- Boss Animations: 
   
 
 
