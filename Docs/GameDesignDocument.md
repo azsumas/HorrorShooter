@@ -134,5 +134,24 @@ Punishments and feedbacks:
     - Load attack.
 - Boss Sounds List:
 
+### Coding 
+- Player Logic.
+- Standard Enemy Logic.
+- Enemy Distance Logic.
+- Enemy Dog Logic.
+- Camera Logic.
+- Boss Logic.
+- Weapon Logic.
+- Lights Logic.
+- Doors Logic. 
+
+### Animation
+- Stage animations:
+  - Doors. 
+- Player Animations: 
+  - Shoot.
+  - Reload. 
+- Standard Enemy Animations: 
+  - Walk: Walks like a humanoid robot, slower than an average human.
 
 
