@@ -152,6 +152,9 @@ Punishments and feedbacks:
   - Shoot.
   - Reload. 
 - Standard Enemy Animations: 
-  - Walk: Walks like a humanoid robot, slower than an average human.
+  - Walk: Walks like a humanoid robot, slower than an average human. https://www.youtube.com/watch?v=c-bgLsvw848
+  - Attack: It performs a blow with the claws by raising the arm and lowering it in a diagonal movement. https://youtu.be/2w4Jzf2lrR4?t=2m24s  
+  - Idle: Stays with his legs slightly bent, slightly balancing shoulders.
+  
 
 
