@@ -12,14 +12,17 @@ public class EnergyBar : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+
         energy = maxEnergy;
 	}
 	
 	// Update is called once per frame
 	public void RecivedDamage(float damage)
     {
+        
         energy -= damage;
-	}
+        UpdateEnergyUI();
+    }
 
     private void UpdateEnergyUI()
     {

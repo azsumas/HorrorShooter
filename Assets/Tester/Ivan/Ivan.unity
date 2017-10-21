@@ -712,6 +712,11 @@ Prefab:
       propertyPath: hit
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114749850322063348, guid: ba9285bde752b554694f4500fdc919d0,
+        type: 2}
+      propertyPath: lifeBar
+      value: 
+      objectReference: {fileID: 1488268202}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba9285bde752b554694f4500fdc919d0, type: 2}
   m_IsPrefabParent: 0
@@ -1023,8 +1028,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1288828393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 351, y: 197.5, z: 0}
+  m_LocalScale: {x: 0.365625, y: 0.365625, z: 0.365625}
   m_Children:
   - {fileID: 1531260449}
   - {fileID: 1206803130}
@@ -1203,7 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1211,7 +1216,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 10774bed1e86d814fb6b8fb3b4f4c6dd, type: 3}
   m_Type: 3
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
   m_FillAmount: 1
