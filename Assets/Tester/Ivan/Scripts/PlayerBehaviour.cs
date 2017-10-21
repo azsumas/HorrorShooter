@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
     {
     private CharacterController controller;
+    public EnergyBar lifeBar;
 	[Header("Direction")]
     public Vector3 moveDirection;
 	[Header("Speed")]
@@ -20,6 +21,7 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Stats")]
     public bool jump;
     public bool isGrounded;
+    public float hit;
 
     // Use this for initialization
     void Start ()
@@ -30,6 +32,10 @@ public class PlayerBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            SetDamage();
+        }
         //Reset states
         if (!controller.isGrounded) isGrounded = false;
 
@@ -91,5 +97,10 @@ public class PlayerBehaviour : MonoBehaviour
     public void Walk()
     {
         speed -= run;
+    }
+
+    public void SetDamage()
+    {
+        lifeBar.RecivedDamage(hit);
     }
 }
