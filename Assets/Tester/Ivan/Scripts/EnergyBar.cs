@@ -6,26 +6,23 @@ using UnityEngine.UI;
 public class EnergyBar : MonoBehaviour
 {
     public Image energyBarImage;
-    public float maxEnergy;
-    public float energy;
+    public PlayerBehaviour player;
 
 	// Use this for initialization
 	void Start ()
     {
-
-        energy = maxEnergy;
+        player.energy = player.maxEnergy;
 	}
 	
 	// Update is called once per frame
-	public void RecivedDamage(float damage)
-    {
-        
-        energy -= damage;
+	public void ReceivedDamage(float damage)
+    {        
+        player.energy -= damage;
         UpdateEnergyUI();
     }
 
     private void UpdateEnergyUI()
     {
-        energyBarImage.fillAmount = (1 / maxEnergy) * energy;
+        energyBarImage.fillAmount = (1 / player.maxEnergy) * player.energy;
     }
 }

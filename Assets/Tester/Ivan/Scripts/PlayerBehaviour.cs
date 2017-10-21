@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
-    {
+{
     private CharacterController controller;
     public EnergyBar lifeBar;
 	[Header("Direction")]
     public Vector3 moveDirection;
 	[Header("Speed")]
-    public float speed;
+    float speed;
 	public float run;
+    public float walk;
     public float slowStep;
     public Vector2 axis;
 	Vector3 desiredDirection;
@@ -21,21 +22,25 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Stats")]
     public bool jump;
     public bool isGrounded;
-    public float hit;
+    public float hitYourself;
+    [Header("Stats Player")]
+    [SerializeField]
+    private bool death;
+    [Header("Energy Player")]
+    public float maxEnergy;
+    public float energy;
 
     // Use this for initialization
     void Start ()
     {
         controller = GetComponent<CharacterController>();
+        speed = walk;
+        death = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            SetDamage();
-        }
         //Reset states
         if (!controller.isGrounded) isGrounded = false;
 
@@ -55,7 +60,14 @@ public class PlayerBehaviour : MonoBehaviour
         moveDirection.z = desiredDirection.z * speed;
 
         controller.Move(moveDirection * Time.deltaTime);
-	}
+
+        if (energy <= 0)
+        {
+            energy = 0;
+            death = true;
+            Debug.Log("NO ENERGY...YOU WILL DIE");
+        }
+    }
 
     public void SetHorizontalAxis(float x)
     {
@@ -96,11 +108,17 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Walk()
     {
-        speed -= run;
+        speed = walk;
     }
 
-    public void SetDamage()
+    public void SlowStep()
     {
-        lifeBar.RecivedDamage(hit);
+        speed = walk - 1;
+    }
+
+    public void ReceivedDamage()
+    {
+        lifeBar.ReceivedDamage(hitYourself);
+        Debug.Log("OUCH!");
     }
 }
