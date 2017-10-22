@@ -9,7 +9,9 @@ public class Gun : MonoBehaviour {
     public Camera fpsCam;
     public ParticleSystem flash;
     public GameObject impactEffect;
-    
+   // public ParticleSystem laserEffect;
+
+
 	// Update is called once per frame
 	void Update () {
 
@@ -24,7 +26,7 @@ public class Gun : MonoBehaviour {
     void Shoot()
     {
         flash.Play();
-
+        
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -38,6 +40,8 @@ public class Gun : MonoBehaviour {
 
             GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGo, 0.05f);
+            //ParticleSystem laserGo = Instantiate(laserEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            //Destroy(laserGo, 0.05f);
         }
     }
 
