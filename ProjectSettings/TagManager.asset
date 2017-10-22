@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Enemy
+  - lantern
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Ground
   - 
   - 
   - 

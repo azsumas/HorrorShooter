@@ -34,22 +34,24 @@ public class inputManeger : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            player.stamina = true;
             player.Run();
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
         {
+            player.stamina = false;
             player.Walk();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            player.speed -= player.slowStep;
+            player.SlowStep();
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
-            player.speed += player.slowStep;
+            player.ReceivedDamage();
         }
 
         //mouse
