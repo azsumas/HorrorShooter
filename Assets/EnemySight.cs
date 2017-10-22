@@ -11,8 +11,8 @@ public class EnemySight : MonoBehaviour {
     private NavMeshAgent nav;
     private SphereCollider col;
     private Animator anim;
-    private LastPlayerSighting last playerSighting;
+    private LastPlayerSighting lastplayerSighting;
     private GameObject player;
-    private PlayerHealth playerHealth;
+   // private PlayerHealth playerHealth;
     private Vector3 previousSighting;
 }
