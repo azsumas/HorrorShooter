@@ -139,7 +139,8 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else timeCounter += Time.deltaTime;
     }
-    void DeadUpdate() {
+    void DeadUpdate()
+    {
         Destroy(this.gameObject, 0.5f);
     }
     #endregion
