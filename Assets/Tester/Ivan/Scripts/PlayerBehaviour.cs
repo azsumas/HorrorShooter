@@ -52,6 +52,7 @@ public class PlayerBehaviour : MonoBehaviour
         speed = walk;
         death = false;
         staminaCount = maxStamina;
+		stamina = false;
 	}
 	
 	// Update is called once per frame
