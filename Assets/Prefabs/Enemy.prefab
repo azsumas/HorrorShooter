@@ -9,19 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1659370638622056}
+  m_RootGameObject: {fileID: 1222077246058084}
   m_IsPrefabParent: 1
---- !u!1 &1659370638622056
+--- !u!1 &1222077246058084
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4744889426171002}
-  - component: {fileID: 195509590886949982}
-  - component: {fileID: 114038244593688294}
-  - component: {fileID: 136581986577817530}
+  - component: {fileID: 4901236417492422}
+  - component: {fileID: 195042228105940322}
+  - component: {fileID: 136112547631227592}
+  - component: {fileID: 114089917800368306}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -29,16 +29,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1723824248748246
+--- !u!1 &1530825453731916
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4948888800485674}
-  - component: {fileID: 33801879545837502}
-  - component: {fileID: 23308655662449522}
+  - component: {fileID: 4345311038997516}
+  - component: {fileID: 33888770058896866}
+  - component: {fileID: 23978538441433138}
+  - component: {fileID: 95891249337410802}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -46,39 +47,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4744889426171002
+--- !u!4 &4345311038997516
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659370638622056}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4948888800485674}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4948888800485674
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723824248748246}
+  m_GameObject: {fileID: 1530825453731916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.981, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4744889426171002}
+  m_Father: {fileID: 4901236417492422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23308655662449522
+--- !u!4 &4901236417492422
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222077246058084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.694865, y: 0, z: 12.318718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4345311038997516}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23978538441433138
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723824248748246}
+  m_GameObject: {fileID: 1530825453731916}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,7 +88,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 070cfb5b6917f97479e8712b8a574d91, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,31 +108,50 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33801879545837502
+--- !u!33 &33888770058896866
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723824248748246}
+  m_GameObject: {fileID: 1530825453731916}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114038244593688294
+--- !u!95 &95891249337410802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530825453731916}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114089917800368306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659370638622056}
+  m_GameObject: {fileID: 1222077246058084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f43a5ebff9b96ba4fbb585de12817e74, type: 3}
+  m_Script: {fileID: 11500000, guid: ca47e5bce420c614ca99c2daf87bac3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  anim: {fileID: 0}
+  anim: {fileID: 95891249337410802}
   targetTransform: {fileID: 0}
   points:
   - {fileID: 0}
   - {fileID: 0}
-  chaseRange: 32
+  - {fileID: 0}
+  - {fileID: 0}
+  chaseRange: 10
   attackRange: 5
   idleTime: 1
   stunTime: 1
@@ -139,12 +159,12 @@ MonoBehaviour:
   canAttack: 0
   hitDamage: 3
   life: 30
---- !u!136 &136581986577817530
+--- !u!136 &136112547631227592
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659370638622056}
+  m_GameObject: {fileID: 1222077246058084}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -152,12 +172,12 @@ CapsuleCollider:
   m_Height: 2.45
   m_Direction: 1
   m_Center: {x: 0, y: 1.09, z: 0}
---- !u!195 &195509590886949982
+--- !u!195 &195042228105940322
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659370638622056}
+  m_GameObject: {fileID: 1222077246058084}
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
