@@ -88,6 +88,8 @@ Punishments and feedbacks:
 ### Boss.
 The boss is like a giant robotic bear. 
 - Phase 1: The boss tends to run around the room, after some seconds he attacks charging the player in a tackle. The player can protect himself by putting himself behind a wall, but the wall breaks after the tackle. 
+- Phase 2: The boss detaches his protection from the front arms and begins to attack with his claws (like a bear). When he is attacking with the arms the boss leaves his chest exposed and can be attacked more easily. As he is more aggressive the player must maintain distances and protect himself with the remaining walls.
+- Phase 3: The boss detaches his pectoral protection. He becomes even more aggressive and charges against the player more often. As the boss is in his last phase he combines his charges and his claws. The player will not be able to flee so he must shoot the exposed chest to do the maximum damage possible, stop the boss and gain distance for another charge.
 
 ## Assets Needed.
 ### 2D 
@@ -136,8 +138,13 @@ The boss is like a giant robotic bear.
     - Attack.
     - Death.
     - Load attack.
-- Boss Sounds List:
-
+  - Boss Sounds List:
+    - Roar.
+    - Steps.
+    - Attack Claws.
+    - Death.
+    - Tackle. 
+    
 ### Coding 
 - Player Logic.
 - Standard Enemy Logic.
@@ -170,6 +177,12 @@ The boss is like a giant robotic bear.
   - Jump: It rests on its hind legs and contracts to gain momentum. After pushing himself, he stretches his whole body and lands on his front legs. https://www.youtube.com/watch?v=ebMzy8Y1pFU
   - Attack: During the jump, he leans on his enemy and bites him on the head / neck.
 - Boss Animations: 
+  - Walk: He walks like a bear. https://www.youtube.com/watch?v=x625t7BKylo
+  - Run: He runs like a bear. https://www.youtube.com/watch?v=ZgJ26jnweas
+  - Tackle: He finish the run animation with a frontal hit. https://youtu.be/mOR8kvMVan8?t=1m27s
+  - Attack Claws. He attacks with his claws standing on feed. https://youtu.be/mOR8kvMVan8?t=3m10s
+  - Roar. https://www.youtube.com/watch?v=Q8eM5Ulj3z8
+
   
 
 
