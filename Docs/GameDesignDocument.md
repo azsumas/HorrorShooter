@@ -85,6 +85,10 @@ Punishments and feedbacks:
 
 - Dog enemy: Agile enemy of the game. He runs to the player when he detects him. He attacks jumping towards the player and biting. He is fast, so it’s difficult to shoot him but he dies easily. He detects the player for the sound, so it’s a good idea trying to get close slowly.
 
+### Boss.
+The boss is like a giant robotic bear. 
+- Phase 1: The boss tends to run around the room, after some seconds he attacks charging the player in a tackle. The player can protect himself by putting himself behind a wall, but the wall breaks after the tackle. 
+
 ## Assets Needed.
 ### 2D 
 - Concept Art of the Enemies.
