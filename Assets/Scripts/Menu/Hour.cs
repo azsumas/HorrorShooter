@@ -10,6 +10,6 @@ public class Hour : MonoBehaviour
 
     void FixedUpdate()
     {
-        time.text = System.DateTime.Now.ToString("HH:mm:ss dd/MM/" + "2271");
+        time.text = System.DateTime.Now.ToString("HH:mm:ss     dd/MM/" + "2271");
     }
 }
