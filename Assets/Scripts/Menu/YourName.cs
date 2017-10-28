@@ -10,6 +10,6 @@ public class YourName : MonoBehaviour
 
     public void Welcome()
     {
-        name.text = "Welcome, < " + nameMenu.userName + " >";
+        name.text = "Welcome, " + nameMenu.userName + ".";
     }
 }
