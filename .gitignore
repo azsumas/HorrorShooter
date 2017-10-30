@@ -80,3 +80,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 Mockup/Module01_diffuse.psd
+/UnityPackageManager
