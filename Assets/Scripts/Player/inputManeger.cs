@@ -6,6 +6,7 @@ public class inputManeger : MonoBehaviour
 {
     private Vector2 inputAxis;
     private PlayerBehaviour player;
+	public LanternFunctions lantern;
     private Vector2 mouseAxis;
     public float sensitivity = 3;
     private CameraBehaviour cameraBehaviour;
@@ -51,6 +52,11 @@ public class inputManeger : MonoBehaviour
         {
             player.ReceivedDamage();
         }
+
+		if (Input.GetKeyUp(KeyCode.T))
+		{
+			lantern.SwitchOn ();
+		}
 
         //mouse
         mouseAxis.x = Input.GetAxis("Mouse X") * sensitivity;

@@ -120,6 +120,8 @@ public class PlayerBehaviour : MonoBehaviour
             death = true;
             Debug.Log("NO ENERGY...YOU WILL DIE");
         }
+
+		// CONTROL LANTERN
     }
 
     public void SetHorizontalAxis(float x)
