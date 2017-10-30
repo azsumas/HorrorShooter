@@ -9,4 +9,4 @@ Twitter: https://twitter.com/GameDefendersCo
 Email: gamedefendersco@gmail.com 
 
 ## License: 
-System Hazard uses a MIT license. See more information in [LICENSE] (LICENSE) .
+System Hazard uses a MIT license. See more information in [LICENSE] (LICENSE.md) .
