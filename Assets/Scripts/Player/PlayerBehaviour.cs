@@ -14,6 +14,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Vector3 moveDirection;
 
 	[Header("Speed")]
+	bool moveFast;
     float speed;
 	public float run;
     public float walk;
@@ -42,8 +43,8 @@ public class PlayerBehaviour : MonoBehaviour
     public bool stamina;
     public float maxStamina;
     [SerializeField]
-    private float staminaCount;
-    public float breath;
+    float staminaCount;
+    float breath;
 
     // Use this for initialization
     void Start ()
@@ -80,6 +81,15 @@ public class PlayerBehaviour : MonoBehaviour
 
         // CONTROL ESTAMINA AND FEEDBACK BREATH
         breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (Time.deltaTime + breath));
+
+		if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
+		{
+			if (moveFast) 
+			{
+				stamina = true;
+				Debug.Log ("IS RUNNING");
+			}
+		}
 
         if (stamina == true)
         {
@@ -126,7 +136,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (controller.isGrounded)
         {
-            //sound.Play(0);
             jump = true;
             moveDirection.y = jumpSpeed;
         }
@@ -146,11 +155,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Run()
     {
+		moveFast = true;
+
         if (staminaCount >= 0) speed += run;
     }
 
     public void Walk()
     {
+		moveFast = false;
+		stamina = false;
+
         speed = walk;
     }
 
