@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     private CharacterController controller;
     public EnergyBar lifeBar;
     public Image breathFB;
+    public LanternFunctions lantern;
 
     [Header("Direction")]
     public Vector3 moveDirection;
@@ -31,7 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
     public bool jump;
     public bool isGrounded;
     public float hitDamage;
-
+    
     [Header("Stats Player")]
     [SerializeField]
     private bool death;
@@ -45,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField]
     float staminaCount;
     float breath;
+    float lanternEnergy;
 
     // Use this for initialization
     void Start ()
@@ -121,8 +123,14 @@ public class PlayerBehaviour : MonoBehaviour
             Debug.Log("NO ENERGY...YOU WILL DIE");
         }
 
-		// CONTROL LANTERN
+        // CONTROL LANTERN
+        if(lantern.switchOn)
+        {
+            lanternEnergy += Time.deltaTime/100;
+            Lantern();
+        }
     }
+
 
     public void SetHorizontalAxis(float x)
     {
@@ -179,5 +187,11 @@ public class PlayerBehaviour : MonoBehaviour
     {
         lifeBar.ReceivedDamage(hitDamage);
         Debug.Log("OUCH!");
+    }
+
+    public void Lantern()
+    {
+        lifeBar.ReceivedDamage(lanternEnergy);
+        Debug.Log("LANTERN CONSUME ENERGY!");
     }
 }

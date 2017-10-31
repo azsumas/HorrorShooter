@@ -4,10 +4,31 @@ using UnityEngine;
 
 public class LanternFunctions : MonoBehaviour 
 {
-	
-	public void SwitchOn () 
+    public bool switchOn;
+    public PlayerBehaviour player;
+    public Light lantern;
+
+    void Update()
+    {
+        if (player.energy <= 20)
+        {
+            lantern.intensity -= Time.deltaTime*2;
+            Debug.Log("Low Battery");
+        }
+    }
+
+    public void SwitchOn () 
 	{
-		gameObject.SetActive (true);
-		Debug.Log ("Lantern Switch ON");
-	}
+        switchOn = !switchOn;
+
+        if (switchOn)
+        {
+            gameObject.SetActive(true);
+            Debug.Log("Lantern Switch ON");
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

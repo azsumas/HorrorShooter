@@ -346,6 +346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dd172102aa65a45b2cf3dc8836689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchOn: 0
+  player: {fileID: 1254631179}
+  lantern: {fileID: 941705179}
 --- !u!1 &1254631177 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1774688337308016, guid: 151a51788663cee41999ee8c80d8782f,
@@ -378,12 +381,12 @@ Prefab:
     - target: {fileID: 224981930401603828, guid: 33cd5e6c20de04345895df0f6f5b2130,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 186.5
+      value: 302
       objectReference: {fileID: 0}
     - target: {fileID: 224981930401603828, guid: 33cd5e6c20de04345895df0f6f5b2130,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 105
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 224981930401603828, guid: 33cd5e6c20de04345895df0f6f5b2130,
         type: 2}
@@ -540,6 +543,21 @@ Prefab:
       propertyPath: lantern
       value: 
       objectReference: {fileID: 941705180}
+    - target: {fileID: 114396218616961440, guid: 151a51788663cee41999ee8c80d8782f,
+        type: 2}
+      propertyPath: lantern
+      value: 
+      objectReference: {fileID: 941705180}
+    - target: {fileID: 114396218616961440, guid: 151a51788663cee41999ee8c80d8782f,
+        type: 2}
+      propertyPath: maxEnergy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114396218616961440, guid: 151a51788663cee41999ee8c80d8782f,
+        type: 2}
+      propertyPath: energy
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 151a51788663cee41999ee8c80d8782f, type: 2}
   m_IsPrefabParent: 0
