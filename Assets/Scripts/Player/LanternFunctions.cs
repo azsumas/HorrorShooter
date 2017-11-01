@@ -10,9 +10,9 @@ public class LanternFunctions : MonoBehaviour
 
     void Update()
     {
-        if (player.energy <= 20)
+        if (player.energy <= 50)
         {
-            lantern.intensity -= Time.deltaTime*2;
+            lantern.intensity -= (Time.deltaTime/20);
             Debug.Log("Low Battery");
         }
     }

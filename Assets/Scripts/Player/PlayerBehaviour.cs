@@ -126,7 +126,7 @@ public class PlayerBehaviour : MonoBehaviour
         // CONTROL LANTERN
         if(lantern.switchOn)
         {
-            lanternEnergy += Time.deltaTime/100;
+            lanternEnergy = Time.deltaTime/2;
             Lantern();
         }
     }
