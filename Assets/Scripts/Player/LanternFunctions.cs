@@ -5,7 +5,17 @@ using UnityEngine;
 public class LanternFunctions : MonoBehaviour 
 {
     public bool switchOn;
+    public PlayerBehaviour player;
     public Light lantern;
+
+    void Update()
+    {
+        if (player.energy <= 50)
+        {
+            lantern.intensity -= (Time.deltaTime/20);
+            Debug.Log("Low Battery");
+        }
+    }
 
     public void SwitchOn () 
 	{
@@ -19,7 +29,6 @@ public class LanternFunctions : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            Debug.Log("Lantern Switch OFF");
         }
     }
 }
