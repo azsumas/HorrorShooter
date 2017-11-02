@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
     public EnergyBar lifeBar;
     public Image breathFB;
     public LanternFunctions lantern;
+    public Light lanternLight;
 
     [Header("Direction")]
     public Vector3 moveDirection;
@@ -31,22 +32,21 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Stats")]
     public bool jump;
     public bool isGrounded;
-    public float hitDamage;
     
     [Header("Stats Player")]
     [SerializeField]
-    private bool death;
+    bool death;
 
     [Header("Energy Player")]
+    public float hitYourself;
     public float maxEnergy;
     public float energy;
-    [SerializeField]
-    public bool stamina;
     public float maxStamina;
-    [SerializeField]
+    bool stamina;
     float staminaCount;
     float breath;
     float lanternEnergy;
+    float maxLightIntensity;
 
     // Use this for initialization
     void Start ()
@@ -56,6 +56,7 @@ public class PlayerBehaviour : MonoBehaviour
         death = false;
         staminaCount = maxStamina;
 		stamina = false;
+        maxLightIntensity = lanternLight.intensity;
 	}
 	
 	// Update is called once per frame
@@ -123,11 +124,18 @@ public class PlayerBehaviour : MonoBehaviour
             Debug.Log("NO ENERGY...YOU WILL DIE");
         }
 
-        // CONTROL LANTERN
-        if(lantern.switchOn)
+        // CONTROL LANTERN AND ENERGY
+        if (lantern.switchOn)
         {
             lanternEnergy = Time.deltaTime/2;
             Lantern();
+
+            if (energy <= 25)
+            {
+                lanternLight.intensity = energy / 5;
+                Debug.Log("Low Battery");
+            }
+            else lanternLight.intensity = maxLightIntensity;
         }
     }
 
@@ -183,15 +191,24 @@ public class PlayerBehaviour : MonoBehaviour
         speed = walk - 1;
     }
 
-    public void ReceivedDamage()
-    {
-        lifeBar.ReceivedDamage(hitDamage);
-        Debug.Log("OUCH!");
-    }
-
     public void Lantern()
     {
         lifeBar.ReceivedDamage(lanternEnergy);
         Debug.Log("LANTERN CONSUME ENERGY!");
+    }
+
+    public void ReceivedDamage()
+    {
+        lifeBar.ReceivedDamage(hitYourself);
+        Debug.Log("OUCH!");
+    }
+
+    public void RecoveryEnergy(int recoveryEnergy)
+    {
+        if (energy < maxEnergy)
+        {
+            energy += recoveryEnergy;
+        }
+        if (energy >= maxEnergy) energy = maxEnergy;
     }
 }
