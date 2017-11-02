@@ -1435,7 +1435,7 @@ Prefab:
     - target: {fileID: 114464421902976784, guid: cb0fde1aa95f63f43aae71a2e93132d5,
         type: 2}
       propertyPath: energy
-      value: 27
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 136953072696279752, guid: cb0fde1aa95f63f43aae71a2e93132d5,
         type: 2}

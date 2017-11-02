@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class YourName : MonoBehaviour
 {
-    public Text name;
+    public Text yourName;
     public MainMenu nameMenu;
 
     public void Welcome()
     {
-        name.text = "Welcome, " + nameMenu.userName + ".";
+        yourName.text = "Welcome, " + nameMenu.userName + ".";
     }
 }
