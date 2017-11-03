@@ -52,14 +52,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Update()
     {
-       if(CanSeePlayer())
-        {
-            spotLight.color = Color.red;
-        }
-        else
-        {
-            spotLight.color = Color.green;
-        }
+       
         distanceFromTarget = GetDistanceFromTarget();
         
         switch(state)
@@ -98,12 +91,22 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void PatrolUpdate()
     {
-        
-        if (distanceFromTarget < chaseRange)
+		if(CanSeePlayer())
+		{
+			spotLight.color = Color.red;
+			SetChase ();
+			return;
+		}
+		else
+		{
+			spotLight.color = Color.green;
+		}
+		if (distanceFromTarget < chaseRange)
         {
             SetChase();
             return;
         }
+
 
         if(agent.remainingDistance <= agent.stoppingDistance)
         {
@@ -116,11 +119,11 @@ public class EnemyBehaviour : MonoBehaviour
     void ChaseUpdate()
     {
         agent.SetDestination(targetTransform.position);
-        if (distanceFromTarget > chaseRange)
+        /*if (distanceFromTarget > chaseRange)
         {
             SetPatrol();
             return;
-        }
+        }*/
         if(distanceFromTarget < attackRange)
         {
             SetAttack();
