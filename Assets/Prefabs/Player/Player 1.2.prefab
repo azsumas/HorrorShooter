@@ -451,8 +451,8 @@ MonoBehaviour:
   gravitymagnitude: 1
   jump: 0
   isGrounded: 0
-  hitDamage: 5
   death: 0
+  hitYourself: 0
   maxEnergy: 100
   energy: 100
   maxStamina: 5

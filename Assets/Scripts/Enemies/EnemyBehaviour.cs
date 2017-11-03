@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour
     public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
-    public GameObject target;
+
     [Header("Patch")]
     public Transform[] points;
     private int pathIndex = 0;
@@ -21,11 +21,11 @@ public class EnemyBehaviour : MonoBehaviour
     public float attackRange;
     private float distanceFromTarget = Mathf.Infinity;
     [Header("Sneak")]
-    private Vector3 investigateSpot;
-    private float timer = 0;
-    public float investigateWait = 10;
-    public float heightMultiplier;
-    public float sightDist = 10;
+    public Light spotLight;
+    public float viewDistance;
+    float viewAngle;
+    public LayerMask viewMask;
+    Color originalSpotLightColor;
 
     [Header("Timers")]
     public float idleTime = 1;
@@ -42,16 +42,24 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start()
     {
+        viewAngle = spotLight.spotAngle;
+        originalSpotLightColor = spotLight.color;
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         SetIdle();
 
-        heightMultiplier = 1.36f;
     }
 
     void Update()
     {
-        //agent.SetDestination(targetTransform.position);
+       if(CanSeePlayer())
+        {
+            spotLight.color = Color.red;
+        }
+        else
+        {
+            spotLight.color = Color.green;
+        }
         distanceFromTarget = GetDistanceFromTarget();
         
         switch(state)
@@ -64,9 +72,6 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case EnemyState.Chase:
                 ChaseUpdate();
-                break;
-            case EnemyState.Investigate:
-                InvestigateUpdate();
                 break;
             case EnemyState.Attack:
                 AttackUpdate();
@@ -122,18 +127,7 @@ public class EnemyBehaviour : MonoBehaviour
             return;
         }
     }
-    void InvestigateUpdate()
-    {
-        timer += Time.deltaTime;
-        agent.SetDestination(this.transform.position);
-        transform.LookAt(investigateSpot);
-        if (timer >= investigateWait)
-        {
-            SetPatrol();
-            timer = 0;
-        }
 
-    }
     void AttackUpdate()
     {
         agent.SetDestination(targetTransform.position);
@@ -244,6 +238,23 @@ public class EnemyBehaviour : MonoBehaviour
             canAttack = false;
         }
     }
+
+    bool CanSeePlayer()
+    {
+        if(Vector3.Distance(transform.position, targetTransform.position) < viewDistance)
+        {
+            Vector3 dirToPlayer = (targetTransform.position - transform.position).normalized;
+            float angleBetweenEnemyAndPlayer = Vector3.Angle(transform.forward, dirToPlayer);
+            if(angleBetweenEnemyAndPlayer < viewAngle / 2f)
+            {
+                if(!Physics.Linecast(transform.position, targetTransform.position, viewMask))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     void OnDrawGizmos()
     {
         Color newColor = Color.yellow;
@@ -254,36 +265,13 @@ public class EnemyBehaviour : MonoBehaviour
         newColor.a = 0.15f;
         Gizmos.color = newColor;
         Gizmos.DrawSphere(transform.position, attackRange);
+
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * viewDistance);
     }
     void FixedUpdate()
     {
-        RaycastHit rayHit;
-        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, transform.forward * sightDist, Color.green);
-        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized * sightDist, Color.green);
-        Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized * sightDist, Color.green);
-        if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, transform.forward, out rayHit, sightDist))
-        {
-            if (rayHit.collider.gameObject.tag == "Player")
-            {
-                SetChase();
-                target = rayHit.collider.gameObject;
-            }
-        }
-        if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out rayHit, sightDist))
-        {
-            if (rayHit.collider.gameObject.tag == "Player")
-            {
-                SetChase();
-                target = rayHit.collider.gameObject;
-            }
-        }
-        if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out rayHit, sightDist))
-        {
-            if (rayHit.collider.gameObject.tag == "Player")
-            {
-                SetChase();
-                target = rayHit.collider.gameObject;
-            }
-        }
+        
     }
 }

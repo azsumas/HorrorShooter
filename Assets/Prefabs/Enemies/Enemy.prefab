@@ -147,12 +147,16 @@ MonoBehaviour:
   anim: {fileID: 0}
   targetTransform: {fileID: 0}
   target: {fileID: 0}
-  points: []
-  chaseRange: 15
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chaseRange: 10
   attackRange: 5
-  investigateWait: 10
-  heightMultiplier: 0
-  sightDist: 15
+  investigateWait: 5
+  heightMultiplier: 1.5
+  sightDist: 20
   idleTime: 1
   stunTime: 1
   coolDownAttack: 0.5
