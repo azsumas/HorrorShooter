@@ -20,7 +20,7 @@ public class EnergyBar : MonoBehaviour
         UpdateEnergyUI();
     }
 
-    private void UpdateEnergyUI()
+    public void UpdateEnergyUI()
     {
         energyBarImage.fillAmount = (1 / player.maxEnergy) * player.energy;
     }

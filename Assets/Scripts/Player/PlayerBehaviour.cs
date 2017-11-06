@@ -210,5 +210,7 @@ public class PlayerBehaviour : MonoBehaviour
             energy += recoveryEnergy;
         }
         if (energy >= maxEnergy) energy = maxEnergy;
+
+        lifeBar.UpdateEnergyUI();
     }
 }
