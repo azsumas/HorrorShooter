@@ -31,7 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float idleTime = 1;
     public float stunTime = 1;
     private float timeCounter = 0;
-    public float coolDownAttack = 0.5f;
+    public float coolDownAttack = 1;
 
     [Header("Stats")]
     [SerializeField] private bool canAttack = false;
@@ -97,12 +97,14 @@ public class EnemyBehaviour : MonoBehaviour
 			SetChase ();
 			return;
 		}
-		else
+  		else
 		{
-			spotLight.color = Color.green;
-		}
+            spotLight.color = Color.green;
+            SetPatrol();
+        }
 		if (distanceFromTarget < chaseRange)
         {
+            spotLight.color = Color.red;
             SetChase();
             return;
         }
@@ -119,12 +121,13 @@ public class EnemyBehaviour : MonoBehaviour
     void ChaseUpdate()
     {
         agent.SetDestination(targetTransform.position);
-        /*if (distanceFromTarget > chaseRange)
+        if (distanceFromTarget > chaseRange)
         {
             SetPatrol();
             return;
-        }*/
-        if(distanceFromTarget < attackRange)
+        }
+
+        if (distanceFromTarget < attackRange)
         {
             SetAttack();
             return;
@@ -194,7 +197,9 @@ public class EnemyBehaviour : MonoBehaviour
         agent.isStopped = true;
 
         //Feedback animations, sound...
+        anim.SetTrigger("Stun");
         state = EnemyState.Stun;
+        
     }
     void SetDead()
     {
