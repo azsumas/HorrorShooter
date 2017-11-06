@@ -6,7 +6,7 @@ public class LaserGun : MonoBehaviour
 {
     public Camera fpsCam;
     [Header("Settings gun")]
-    public float damage = 10f;
+    public int damage = 10;
     public float range = 100f;
     public int maxAmmo;
     public int ammo;
@@ -43,7 +43,7 @@ public class LaserGun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+			LifeTestEnemy target = hit.transform.GetComponent<LifeTestEnemy>(); //LifeTestEnemy - cambiar nombre de l'script para que el enemy reciba dañito!
             if (target != null)
             {
                 target.TakeDamage(damage);

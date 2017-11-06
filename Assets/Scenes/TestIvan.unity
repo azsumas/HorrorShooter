@@ -658,12 +658,12 @@ Prefab:
     - target: {fileID: 224981930401603828, guid: 33cd5e6c20de04345895df0f6f5b2130,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 390
+      value: 186.5
       objectReference: {fileID: 0}
     - target: {fileID: 224981930401603828, guid: 33cd5e6c20de04345895df0f6f5b2130,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 219.5
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 224981930401603828, guid: 33cd5e6c20de04345895df0f6f5b2130,
         type: 2}
@@ -1888,7 +1888,7 @@ GameObject:
   - component: {fileID: 1929932286}
   - component: {fileID: 1929932290}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: EnemyTest
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,9 +12,11 @@ public class LifeTestEnemy : MonoBehaviour
         life = maxLife;
     } 
 
-    public void TakeDamage()
+	public void TakeDamage(int amount)
     {
-        life--;
+        life-= amount;
         Debug.Log("collision ok");
+
+		if (life <= 0) this.gameObject.SetActive(false);
     }
 }
