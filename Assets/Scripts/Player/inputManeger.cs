@@ -48,10 +48,10 @@ public class inputManeger : MonoBehaviour
             player.SlowStep();
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        /*if (Input.GetKeyUp(KeyCode.Q))
         {
             player.ReceivedDamage();
-        }
+        }*/
 
 		if (Input.GetKeyUp(KeyCode.T))
 		{

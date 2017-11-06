@@ -197,9 +197,9 @@ public class PlayerBehaviour : MonoBehaviour
         Debug.Log("LANTERN CONSUME ENERGY!");
     }
 
-    public void ReceivedDamage()
+    public void ReceivedDamage(int hit)
     {
-        lifeBar.ReceivedDamage(hitYourself);
+        lifeBar.ReceivedDamage(hit);
         Debug.Log("OUCH!");
     }
 

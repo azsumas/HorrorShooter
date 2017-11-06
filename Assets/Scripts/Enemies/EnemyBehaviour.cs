@@ -137,13 +137,17 @@ public class EnemyBehaviour : MonoBehaviour
     void AttackUpdate()
     {
         agent.SetDestination(targetTransform.position);
+        transform.LookAt(targetTransform);
+        Debug.Log("ATTACKRANGE");
 
-        if(canAttack)
+        if (canAttack)
         {
+      
             agent.isStopped = true;
-            targetTransform.GetComponent<EnergyBar>().ReceivedDamage(hitDamage);
+            targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
             idleTime = coolDownAttack;
             SetIdle();
+            Debug.Log("EnemyHitting");
             return;
         }
             
