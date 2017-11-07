@@ -139,7 +139,6 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-
     public void SetHorizontalAxis(float x)
     {
         axis.x = x;

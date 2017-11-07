@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7e05e20e60c5a45b43f9c08a3d595c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: {fileID: 1970276902}
+  yourName: {fileID: 1970276902}
   nameMenu: {fileID: 615955416}
 --- !u!1 &615955411
 GameObject:

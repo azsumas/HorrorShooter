@@ -11,9 +11,9 @@ public class LaserGun : MonoBehaviour
     public int maxAmmo;
     public int ammo;
 
-    [Header("Effects")]
+    /*[Header("Effects")]
     public ParticleSystem flash;
-    public GameObject impactEffect;
+    public GameObject impactEffect;*/
 
     // Use this for initialization
     void Start ()
@@ -28,9 +28,10 @@ public class LaserGun : MonoBehaviour
         {
             if (ammo >= 1)
             {
-                flash.Play();
+                //flash.Play();
                 ammo--;
                 Shot(); // Función del disparo
+                Debug.Log("SHOT");
             }
         }
         //else flash.Stop();
@@ -54,8 +55,8 @@ public class LaserGun : MonoBehaviour
                 target.SetDamage(damage);
             }
         }
-        GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(impactGo, 0.1f);
+        /*GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactGo, 0.1f);*/
 
         Debug.Log("SHOT");
         Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 4);
