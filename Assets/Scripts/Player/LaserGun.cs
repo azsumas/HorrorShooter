@@ -10,10 +10,15 @@ public class LaserGun : MonoBehaviour
     public float range = 100f;
     public int maxAmmo;
     public int ammo;
+    public float fireRate = 10f;
 
     [Header("Effects")]
     public ParticleSystem flash;
     public GameObject impactEffect;
+    public ParticleSystem smoke;
+    public ParticleSystem smoke01;
+
+    private float nextTimeToFire = 0f;
 
     // Use this for initialization
     void Start ()
@@ -24,17 +29,18 @@ public class LaserGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
+            nextTimeToFire = Time.time + 1f / fireRate;
+
             if (ammo >= 1)
             {
-                //flash.Play();
                 ammo--;
                 Shot(); // Función del disparo
                 Debug.Log("SHOT");
             }
         }
-        //else flash.Stop();
+
     }
 
     public void ExtraAmmo(int magazine)
@@ -45,6 +51,8 @@ public class LaserGun : MonoBehaviour
     void Shot()
     {
         flash.Play();
+        smoke.Play();
+        smoke01.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
