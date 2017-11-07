@@ -11,11 +11,8 @@ public class EnergyBar : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        player.energy = player.maxEnergy;
+        UpdateEnergyUI();
     }
-
-    // Update is called once per frame
-
 
     public void ReceivedDamage(float damage)
     {
@@ -23,7 +20,7 @@ public class EnergyBar : MonoBehaviour
         UpdateEnergyUI();
     }
 
-    private void UpdateEnergyUI()
+    public void UpdateEnergyUI()
     {
         energyBarImage.fillAmount = (1 / player.maxEnergy) * player.energy;
     }

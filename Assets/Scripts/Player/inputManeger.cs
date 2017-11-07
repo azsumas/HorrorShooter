@@ -6,6 +6,7 @@ public class inputManeger : MonoBehaviour
 {
     private Vector2 inputAxis;
     private PlayerBehaviour player;
+	public LanternFunctions lantern;
     private Vector2 mouseAxis;
     public float sensitivity = 3;
     private CameraBehaviour cameraBehaviour;
@@ -27,20 +28,18 @@ public class inputManeger : MonoBehaviour
         inputAxis.y = Input.GetAxis("Vertical");
         player.SetVerticalAxis(inputAxis.y);
 
-        if (Input.GetButtonDown("Jump"))
+		if (Input.GetButtonDown("Jump"))
         {
             player.Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            player.stamina = true;
             player.Run();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
         {
-            player.stamina = false;
             player.Walk();
         }
 
@@ -49,10 +48,15 @@ public class inputManeger : MonoBehaviour
             player.SlowStep();
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        /*if (Input.GetKeyUp(KeyCode.Q))
         {
             player.ReceivedDamage();
-        }
+        }*/
+
+		if (Input.GetKeyUp(KeyCode.T))
+		{
+			lantern.SwitchOn ();
+		}
 
         //mouse
         mouseAxis.x = Input.GetAxis("Mouse X") * sensitivity;

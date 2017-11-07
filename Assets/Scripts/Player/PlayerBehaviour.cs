@@ -9,11 +9,14 @@ public class PlayerBehaviour : MonoBehaviour
     private CharacterController controller;
     public EnergyBar lifeBar;
     public Image breathFB;
+    public LanternFunctions lantern;
+    public Light lanternLight;
 
     [Header("Direction")]
     public Vector3 moveDirection;
 
 	[Header("Speed")]
+	bool moveFast;
     float speed;
 	public float run;
     public float walk;
@@ -29,21 +32,21 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Stats")]
     public bool jump;
     public bool isGrounded;
-    public float hitDamage;
-
+    
     [Header("Stats Player")]
     [SerializeField]
-    private bool death;
+    bool death;
 
     [Header("Energy Player")]
+    public float hitYourself;
     public float maxEnergy;
     public float energy;
-    [SerializeField]
-    public bool stamina;
     public float maxStamina;
-    [SerializeField]
-    private float staminaCount;
-    public float breath;
+    bool stamina;
+    float staminaCount;
+    float breath;
+    float lanternEnergy;
+    float maxLightIntensity;
 
     // Use this for initialization
     void Start ()
@@ -53,6 +56,7 @@ public class PlayerBehaviour : MonoBehaviour
         death = false;
         staminaCount = maxStamina;
 		stamina = false;
+        maxLightIntensity = lanternLight.intensity;
 	}
 	
 	// Update is called once per frame
@@ -80,6 +84,15 @@ public class PlayerBehaviour : MonoBehaviour
 
         // CONTROL ESTAMINA AND FEEDBACK BREATH
         breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (Time.deltaTime + breath));
+
+		if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
+		{
+			if (moveFast) 
+			{
+				stamina = true;
+				Debug.Log ("IS RUNNING");
+			}
+		}
 
         if (stamina == true)
         {
@@ -110,7 +123,22 @@ public class PlayerBehaviour : MonoBehaviour
             death = true;
             Debug.Log("NO ENERGY...YOU WILL DIE");
         }
+
+        // CONTROL LANTERN AND ENERGY
+        if (lantern.switchOn)
+        {
+            lanternEnergy = Time.deltaTime/2;
+            Lantern();
+
+            if (energy <= 25)
+            {
+                lanternLight.intensity = energy / 5;
+                Debug.Log("Low Battery");
+            }
+            else lanternLight.intensity = maxLightIntensity;
+        }
     }
+
 
     public void SetHorizontalAxis(float x)
     {
@@ -126,7 +154,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (controller.isGrounded)
         {
-            //sound.Play(0);
             jump = true;
             moveDirection.y = jumpSpeed;
         }
@@ -146,11 +173,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Run()
     {
+		moveFast = true;
+
         if (staminaCount >= 0) speed += run;
     }
 
     public void Walk()
     {
+		moveFast = false;
+		stamina = false;
+
         speed = walk;
     }
 
@@ -159,9 +191,26 @@ public class PlayerBehaviour : MonoBehaviour
         speed = walk - 1;
     }
 
-    public void ReceivedDamage()
+    public void Lantern()
     {
-        lifeBar.ReceivedDamage(hitDamage);
+        lifeBar.ReceivedDamage(lanternEnergy);
+        Debug.Log("LANTERN CONSUME ENERGY!");
+    }
+
+    public void ReceivedDamage(int hit)
+    {
+        lifeBar.ReceivedDamage(hit);
         Debug.Log("OUCH!");
+    }
+
+    public void RecoveryEnergy(int recoveryEnergy)
+    {
+        if (energy < maxEnergy)
+        {
+            energy += recoveryEnergy;
+        }
+        if (energy >= maxEnergy) energy = maxEnergy;
+
+        lifeBar.UpdateEnergyUI();
     }
 }

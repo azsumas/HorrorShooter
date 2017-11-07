@@ -5,15 +5,20 @@ using UnityEngine;
 public class LaserGun : MonoBehaviour
 {
     public Camera fpsCam;
-    public GameObject laser;
     [Header("Settings gun")]
-    public float damage = 10f;
+    public int damage = 10;
     public float range = 100f;
-    int startShot; // Valor para la velocidad en la que sale el "laser"
+    public int maxAmmo;
+    public int ammo;
 
-	// Use this for initialization
-	void Start ()
+    [Header("Effects")]
+    public ParticleSystem flash;
+    public GameObject impactEffect;
+
+    // Use this for initialization
+    void Start ()
     {
+        ammo = maxAmmo;
 	}
 
     // Update is called once per frame
@@ -21,34 +26,36 @@ public class LaserGun : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            startShot += 3;
-            if (startShot > 10) startShot = 10; // Distancia máxima a la que se va a dibujar el "laser"
-            laser.GetComponent<LineRenderer>().SetPosition(0, Vector3.forward*startShot); // Coger el componente de LineRenderer y darle la posición de dibujado
-            Shot(); // Función del disparo
+            if (ammo >= 1)
+            {
+                flash.Play();
+                ammo--;
+                Shot(); // Función del disparo
+            }
         }
-        else
-        {
-            startShot = 0;
-            laser.SetActive(false);
-            Debug.Log("NO SHOT!");
-        }
+        //else flash.Stop();
+    }
+
+    public void ExtraAmmo(int magazine)
+    {
+        ammo += magazine;
     }
 
     void Shot()
     {
-        laser.SetActive(true);
-
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+			EnemyBehaviour target = hit.transform.GetComponent<EnemyBehaviour>(); //LifeTestEnemy - cambiar nombre de l'script para que el enemy reciba dañito!
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.SetDamage(damage);
             }
         }
+        GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactGo, 0.1f);
 
         Debug.Log("SHOT");
         Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 4);
