@@ -16,6 +16,9 @@ MonoBehaviour:
   - pbIconGUI
   m_Int_keys:
   - pbHandleAlignment
+  - pbDefaultEditLevel
+  - pbDefaultSelectionMode
+  - pb_GIWorkflowMode
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
@@ -24,7 +27,7 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys: []
   m_Bool_values: 0101
-  m_Int_values: 00000000
+  m_Int_values: 00000000010000000200000000000000
   m_Float_values:
   - 0
   - 0
