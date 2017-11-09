@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class inputManeger : MonoBehaviour
 {
+    public OpenDoorButton door;
     private Vector2 inputAxis;
     private PlayerBehaviour player;
 	public LanternFunctions lantern;
@@ -33,27 +34,33 @@ public class inputManeger : MonoBehaviour
             player.Jump();
         }
 
-		if (Input.GetKeyDown(KeyCode.LeftShift))
+		if (Input.GetButtonDown("Run"))
         {
             player.Run();
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetButtonUp("Run") || Input.GetButtonUp("Walk"))
         {
             player.Walk();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetButtonDown("Walk"))
         {
             player.SlowStep();
         }
 
-        /*if (Input.GetKeyUp(KeyCode.Q))
+        /*if (Input.GetButtonDown("ActiveDoor"))
         {
-            player.ReceivedDamage();
+            Debug.Log("YES");
+            door.opening = true;
+        }
+        else if (Input.GetButtonUp("ActiveDoor"))
+        {
+            Debug.Log("NO");
+            door.opening = false;
         }*/
 
-		if (Input.GetKeyUp(KeyCode.T))
+        if (Input.GetButtonDown("ActiveLantern"))
 		{
 			lantern.SwitchOn ();
 		}

@@ -9,6 +9,7 @@ public class OpenDoorButton : MonoBehaviour
     float time;
     public float maxTime;
     bool canOpenDoor;
+    public bool opening;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class OpenDoorButton : MonoBehaviour
     {
         text.SetActive(true);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("ActiveDoor"))//if (opening == true) // Cambiamos el bool desde el input manager. 
         {
             anim.SetTrigger("OpenDoors");
             canOpenDoor = true;
