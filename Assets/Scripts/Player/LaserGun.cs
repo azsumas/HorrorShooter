@@ -23,7 +23,7 @@ public class LaserGun : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        ammo = maxAmmo;
+        //ammo = maxAmmo;
 	}
 
     // Update is called once per frame

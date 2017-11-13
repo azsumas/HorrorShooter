@@ -59,7 +59,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4284628202985032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AutomaticDoorSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
+  - {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,7 +187,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
+  - {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,8 +259,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 2}
-  m_Center: {x: 0, y: 1.5, z: -0.5}
+  m_Size: {x: 3, y: 0.49547863, z: 2}
+  m_Center: {x: 0, y: 0.24773932, z: -0.5}
 --- !u!95 &95257625320762188
 Animator:
   serializedVersion: 3
@@ -315,8 +315,8 @@ MonoBehaviour:
       localPivot: {x: -1, y: 1.5}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
-    manualUV: 0
+    _mat: {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
+    manualUV: 1
     elementGroup: -1
     textureGroup: -1
   - _indices: 040000000500000006000000050000000700000006000000
@@ -338,14 +338,14 @@ MonoBehaviour:
       swapUV: 0
       fill: 1
       scale: {x: 1, y: 1}
-      offset: {x: 0, y: 0}
+      offset: {x: 1.9996986, y: 0}
       rotation: 0
       justify: 0
       localPivot: {x: 1, y: 1.5}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
-    manualUV: 0
+    _mat: {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
+    manualUV: 1
     elementGroup: -1
     textureGroup: -1
   - _indices: 08000000090000000a000000090000000b0000000a000000
@@ -366,15 +366,15 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
-      offset: {x: 0, y: 0}
-      rotation: 0
+      scale: {x: 0.6331787, y: 0.6331787}
+      offset: {x: 1.2325186, y: -1.2450953}
+      rotation: 270
       justify: 0
       localPivot: {x: 0.25, y: 1.5}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
-    manualUV: 0
+    _mat: {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
+    manualUV: 1
     elementGroup: -1
     textureGroup: -1
   _sharedIndices:
@@ -400,22 +400,34 @@ MonoBehaviour:
   - {x: 0, y: 3, z: -0.5}
   - {x: 0, y: 3, z: 0}
   _uv:
-  - {x: 0, y: 0}
-  - {x: -2, y: 0}
-  - {x: 0, y: 3}
-  - {x: -2, y: 3}
-  - {x: 2, y: 0}
-  - {x: 0, y: 0}
-  - {x: 2, y: 3}
-  - {x: 0, y: 3}
-  - {x: 0.5, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0.5, y: 3}
-  - {x: 0, y: 3}
+  - {x: 0.00010031462, y: 0}
+  - {x: 0.66676724, y: 0}
+  - {x: 0.00010031462, y: 1}
+  - {x: 0.6667672, y: 1}
+  - {x: -0.00000011920929, y: 0}
+  - {x: 0.66666687, y: 0}
+  - {x: -0.000000059604645, y: 1}
+  - {x: 0.66666687, y: 1}
+  - {x: 0.011017263, y: 0.9677966}
+  - {x: 0.011017203, y: 0.86226684}
+  - {x: 0.6441959, y: 0.9677966}
+  - {x: 0.64419603, y: 0.86226684}
   _uv3: []
   _uv4: []
   _tangents: []
-  _sharedIndicesUV: []
+  _sharedIndicesUV:
+  - array: 00000000
+  - array: 01000000
+  - array: 02000000
+  - array: 03000000
+  - array: 04000000
+  - array: 05000000
+  - array: 06000000
+  - array: 07000000
+  - array: 08000000
+  - array: 09000000
+  - array: 0a000000
+  - array: 0b000000
   _colors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
@@ -507,15 +519,15 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
-      offset: {x: 0, y: 0}
+      scale: {x: 0.6953125, y: 0.6953125}
+      offset: {x: -1.6027114, y: 0.00000011920929}
       rotation: 0
       justify: 0
       localPivot: {x: -1, y: 1.5}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
-    manualUV: 0
+    _mat: {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
+    manualUV: 1
     elementGroup: -1
     textureGroup: -1
   - _indices: 040000000500000006000000050000000700000006000000
@@ -536,15 +548,15 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
-      offset: {x: 0, y: 0}
-      rotation: 0
+      scale: {x: 0.46478647, y: 0.46478647}
+      offset: {x: -0.85078263, y: -1.3213845}
+      rotation: 270
       justify: 0
-      localPivot: {x: -0.25, y: 1.5}
+      localPivot: {x: -0.25000006, y: 1.5}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
-    manualUV: 0
+    _mat: {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
+    manualUV: 1
     elementGroup: -1
     textureGroup: -1
   - _indices: 08000000090000000a000000090000000b0000000a000000
@@ -565,15 +577,15 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
-      offset: {x: 0, y: 0}
+      scale: {x: 0.6953125, y: 0.6953125}
+      offset: {x: 0.39911962, y: -0.00000011920929}
       rotation: 0
       justify: 0
       localPivot: {x: 1, y: 1.5}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 691ee6ce0dd143a408500b0f24caf331, type: 2}
-    manualUV: 0
+    _mat: {fileID: 2100000, guid: fc16e5a519309a4439cbe18a43d292b3, type: 2}
+    manualUV: 1
     elementGroup: -1
     textureGroup: -1
   _sharedIndices:
@@ -599,18 +611,18 @@ MonoBehaviour:
   - {x: 2, y: 3, z: -0.5}
   - {x: 0, y: 3, z: -0.5}
   _uv:
-  - {x: 0, y: 0}
-  - {x: -2, y: 0}
-  - {x: 0, y: 3}
-  - {x: -2, y: 3}
-  - {x: 0, y: 0}
-  - {x: -0.5, y: 0}
-  - {x: 0, y: 3}
-  - {x: -0.5, y: 3}
-  - {x: 2, y: 0}
-  - {x: 0, y: 0}
-  - {x: 2, y: 3}
-  - {x: 0, y: 3}
+  - {x: 0.66848654, y: 0}
+  - {x: 0.0018198534, y: 0}
+  - {x: 0.66848654, y: 1}
+  - {x: 0.0018198534, y: 1}
+  - {x: 0.668457, y: 0.98943275}
+  - {x: 0.668457, y: 0.8780233}
+  - {x: 0, y: 0.98943275}
+  - {x: 0, y: 0.8780233}
+  - {x: 0.66760874, y: 0.00000011429805}
+  - {x: 0.0009420445, y: 0.00000011429805}
+  - {x: 0.66760874, y: 1}
+  - {x: 0.0009420445, y: 1}
   _uv3: []
   _uv4: []
   _tangents: []
@@ -637,6 +649,30 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 000000000100000002000000
+  m_SelectedEdges:
+  - x: 0
+    y: 1
+  - x: 2
+    y: 0
+  - x: 1
+    y: 3
+  - x: 3
+    y: 2
+  - x: 4
+    y: 5
+  - x: 6
+    y: 4
+  - x: 5
+    y: 7
+  - x: 7
+    y: 6
+  - x: 8
+    y: 9
+  - x: 10
+    y: 8
+  - x: 9
+    y: 11
+  - x: 11
+    y: 10
+  m_selectedTriangles: 00000000010000000200000001000000030000000200000004000000050000000600000005000000070000000600000008000000090000000a000000090000000b0000000a000000
