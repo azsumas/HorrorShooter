@@ -70,15 +70,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860381985160148}
-  m_LocalRotation: {x: -0, y: -0.8510406, z: -0, w: 0.5250999}
-  m_LocalPosition: {x: 9.67, y: -4.7044355e-17, z: 10.593447}
+  m_LocalRotation: {x: -0, y: -0.6763647, z: -0, w: 0.7365669}
+  m_LocalPosition: {x: 4.55, y: 0, z: 15.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4632780690178512}
   - {fileID: 4971744270036168}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -116.65001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -85.12, z: 0}
 --- !u!4 &4632780690178512
 Transform:
   m_ObjectHideFlags: 1
@@ -226,8 +226,6 @@ MonoBehaviour:
   anim: {fileID: 95917154427123642}
   targetTransform: {fileID: 0}
   points:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   chaseRange: 5
