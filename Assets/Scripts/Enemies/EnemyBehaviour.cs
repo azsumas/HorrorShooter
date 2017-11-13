@@ -54,7 +54,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
        
         distanceFromTarget = GetDistanceFromTarget();
-        
+		if (distanceFromTarget < attackRange) 
+		{
+			transform.LookAt (targetTransform);
+		}
         switch(state)
         {
             case EnemyState.Idle:
@@ -83,11 +86,13 @@ public class EnemyBehaviour : MonoBehaviour
     #region Updates
     void IdleUpdate()
     {
+		
         if(timeCounter >= idleTime)
         {
             SetPatrol();
         }
         else timeCounter += Time.deltaTime;
+
     }
     void PatrolUpdate()
     {
@@ -126,31 +131,28 @@ public class EnemyBehaviour : MonoBehaviour
             SetPatrol();
             return;
         }
-
-        if (distanceFromTarget < attackRange)
-        {
-            SetAttack();
-            return;
-        }
+		else if (canAttack)
+		{
+			SetAttack ();
+			return;
+		}
     }
 
     void AttackUpdate()
     {
         agent.SetDestination(targetTransform.position);
-        transform.LookAt(targetTransform);
+       
         Debug.Log("ATTACKRANGE");
 
-        if (canAttack)
-        {
-      
-            agent.isStopped = true;
-            targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
-            idleTime = coolDownAttack;
-            SetIdle();
-            Debug.Log("EnemyHitting");
-            return;
-        }
-            
+		if (canAttack) 
+		{
+			agent.isStopped = true;
+			targetTransform.GetComponent<PlayerBehaviour> ().ReceivedDamage (hitDamage);
+			idleTime = coolDownAttack;
+			SetIdle ();
+			Debug.Log ("EnemyHitting");
+			return;
+		}
           
         if (distanceFromTarget > attackRange)
         {
@@ -259,7 +261,7 @@ public class EnemyBehaviour : MonoBehaviour
             float angleBetweenEnemyAndPlayer = Vector3.Angle(transform.forward, dirToPlayer);
             if(angleBetweenEnemyAndPlayer < viewAngle / 2f)
             {
-                if(!Physics.Linecast(transform.position, targetTransform.position, viewMask))
+				if(!Physics.Linecast(transform.position, targetTransform.position, viewMask))
                 {
                     return true;
                 }
