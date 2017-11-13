@@ -1,4 +1,4 @@
-![Image of Logo](https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/logo_02.png) 
+![Image of Logo](https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/logo.png) 
 
 # System Hazard
 First person shooter survival horror full of dark corridors and screeching noises, with a few bullets, a battered armor and robotic monsters waiting in the dark.
