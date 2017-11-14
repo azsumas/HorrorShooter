@@ -83,7 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
 
         // CONTROL ESTAMINA AND FEEDBACK BREATH
-        breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (Time.deltaTime + breath));
+        breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (breath));
 
 		if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
 		{
@@ -105,7 +105,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
 
             breath += Time.deltaTime;
-            if (breath >= 4) breath = 4;
+            if (breath >= 2) breath = 2;
         }
         else if (stamina == false)
         {
@@ -121,7 +121,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             energy = 0;
             death = true;
-            Debug.Log("NO ENERGY...YOU WILL DIE");
+            Application.LoadLevel(Application.loadedLevel);
         }
 
         // CONTROL LANTERN AND ENERGY

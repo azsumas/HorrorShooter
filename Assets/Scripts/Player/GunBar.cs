@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GunBar : MonoBehaviour
 {
     public Image gunBarImage;
+    public Image gunBarImage1;
+    public Image gunBarImage2;
     public LaserGun gun;
 
     // Use this for initialization
@@ -23,5 +25,7 @@ public class GunBar : MonoBehaviour
     public void UpdateGunUI()
     {
         gunBarImage.fillAmount = (1 / gun.maxAmmo) * gun.ammo;
+        gunBarImage1.fillAmount = (1 / gun.maxAmmo) * gun.ammo;
+        gunBarImage2.fillAmount = (1 / gun.maxAmmo) * gun.ammo;
     }
 }
