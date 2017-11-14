@@ -9,6 +9,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public enum EnemyState { Idle, Patrol, Chase, Investigate, Attack, Stun, Dead}
     public EnemyState state;
+    public EnemiesBar energyBar;
     public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
@@ -37,7 +38,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     [Header("Properties")]
     public int hitDamage;
-    public int life;
+    public float energy;
+    public float maxEnergy;
 
     void Start()
     {
@@ -218,9 +220,10 @@ public class EnemyBehaviour : MonoBehaviour
     public void SetDamage(int hit)
     {
         SetStun();
-        life -= hit;
+        energy -= hit;
+        energyBar.UpdateEnergyUI();
 
-        if(life <= 0)
+        if(energy <= 0)
         {
             SetDead();
             return;
