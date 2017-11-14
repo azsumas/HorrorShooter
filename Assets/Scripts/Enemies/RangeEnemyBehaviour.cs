@@ -21,11 +21,12 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     public float attackRange;
     private float distanceFromTarget = Mathf.Infinity;
 
-    [Header("Timers")]
+    [Header("Timers and Shoot")]
     public float idleTime = 1;
     public float stunTime = 1;
-    private float timeCounter = 0;
-    public float coolDownAttack = 1;
+    private float timeCounter = 0;  
+    public float coolDownAttack = 1; //Usado para el FireRate.
+    private float fireCounter = 0; //Contar los frames para disparar o no.
 
     [Header("Stats")]
     [SerializeField]
@@ -34,6 +35,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     [Header("Properties")]
     public int hitDamage;
     public int life;
+
+    
 
     void Start()
     {
@@ -45,8 +48,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 
     void Update()
     {
-
         distanceFromTarget = GetDistanceFromTarget();
+        
         if (distanceFromTarget < attackRange)
         {
             transform.LookAt(targetTransform);
@@ -112,7 +115,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             SetPatrol();
             return;
         }
-        else if (canAttack)
+        else if (distanceFromTarget <= attackRange)
         {
             SetAttack();
             return;
@@ -121,20 +124,17 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 
     void AttackUpdate()
     {
-        agent.SetDestination(targetTransform.position);
-
+       
         Debug.Log("ATTACKRANGE");
-
-        if (canAttack)
+        agent.isStopped = true;
+        targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
+        if (fireCounter <= 0f)
         {
-            agent.isStopped = true;
-            targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
-            idleTime = coolDownAttack;
-            SetIdle();
-            Debug.Log("EnemyHitting");
-            return;
+            Shoot();
+            fireCounter = 1f / coolDownAttack;
         }
-
+        fireCounter -= Time.deltaTime;
+        
         if (distanceFromTarget > attackRange)
         {
             SetChase();
@@ -171,12 +171,12 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     {
         //Feedback de lo que empieza a perseguirnos :D
         state = EnemyState.Chase;
-        anim.SetTrigger("Chase");
+        //anim.SetTrigger("Chase");
 
     }
     void SetAttack()
     {
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         state = EnemyState.Attack;
     }
     void SetStun()
@@ -246,8 +246,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         Gizmos.DrawSphere(transform.position, attackRange);
 
     }
-    void FixedUpdate()
+    void Shoot()
     {
-
+        Debug.Log("Shoot");
     }
 }
