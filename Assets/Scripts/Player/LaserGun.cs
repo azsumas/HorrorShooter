@@ -5,11 +5,12 @@ using UnityEngine;
 public class LaserGun : MonoBehaviour
 {
     public Camera fpsCam;
+    public GunBar gunBar;
     [Header("Settings gun")]
     public int damage = 10;
     public float range = 100f;
-    public int maxAmmo;
-    public int ammo;
+    public float maxAmmo;
+    public float ammo;
     public float fireRate = 10f;
 
     [Header("Effects")]
@@ -29,13 +30,16 @@ public class LaserGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ammo >= maxAmmo) ammo = maxAmmo;
+
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
 
-            if (ammo >= 1)
+            if (ammo >= 1.0f)
             {
                 ammo--;
+                gunBar.AmmoShot(1);
                 Shot(); // Función del disparo
                 Debug.Log("SHOT");
             }
@@ -46,6 +50,7 @@ public class LaserGun : MonoBehaviour
     public void ExtraAmmo(int magazine)
     {
         ammo += magazine;
+        gunBar.UpdateGunUI();
     }
 
     void Shot()
