@@ -25,7 +25,6 @@ public class EnemyBehaviour : MonoBehaviour
     public float viewDistance;
     float viewAngle;
     public LayerMask viewMask;
-    Color originalSpotLightColor;
 
     [Header("Timers")]
     public float idleTime = 1;
@@ -43,7 +42,6 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         viewAngle = spotLight.spotAngle;
-        originalSpotLightColor = spotLight.color;
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         SetIdle();
