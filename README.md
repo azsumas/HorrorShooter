@@ -1,4 +1,6 @@
-![Image of Logo](https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/logo.png) 
+<p align="center">
+  <img width="773" height="393" src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/new_logo.png">
+</p>
 
 # System Hazard
 First person shooter survival horror full of dark corridors and screeching noises, with a few bullets, a battered armor and robotic monsters waiting in the dark.
@@ -10,9 +12,9 @@ First person shooter survival horror full of dark corridors and screeching noise
 - Integrated HUD in the world.
 
 ## Contact US: 
-Twitter: https://twitter.com/GameDefendersCo
-
 Email: gamedefendersco@gmail.com 
+Twitter: https://twitter.com/GameDefendersCo
+Instagram: https://www.instagram.com/gamedefendersco
 
 ## License: 
 System Hazard uses a MIT license. See more information in [LICENSE](LICENSE).
