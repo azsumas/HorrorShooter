@@ -13,8 +13,11 @@ First person shooter survival horror full of dark corridors and screeching noise
 
 ## Contact US: 
 Email: gamedefendersco@gmail.com 
-Twitter: https://twitter.com/GameDefendersCo
+
+Twitter: https://twitter.com/GameDefendersCo 
+
 Instagram: https://www.instagram.com/gamedefendersco
+
 
 ## License: 
 System Hazard uses a MIT license. See more information in [LICENSE](LICENSE).
