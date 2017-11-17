@@ -128,23 +128,33 @@ public class RangeEnemyBehaviour : MonoBehaviour {
        
         Debug.Log("ATTACKRANGE");
         agent.isStopped = true;
-        targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
+        
         lr.SetPosition(0, transform.position);
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit))
         {
             if(hit.collider)
             {
-                if (fireCounter <= 0f)
+                lr.SetPosition(1, hit.point);
+                Debug.Log("Dispara");
+                if(fireCounter <= 0f)
+                {
+                    Debug.Log("counterwork");
+                    if(hit.collider.tag == "Player")
                     {
+                        Debug.Log("TAGPLAYER");
                         Shoot();
                         fireCounter = 1f / coolDownAttack;
                     }
-                    fireCounter -= Time.deltaTime;
-        
+                        
+                    
+                }
+                fireCounter -= Time.deltaTime;
             }
         }
-       
+        else lr.SetPosition(1, transform.forward * 5000);
+        
+        
         if (distanceFromTarget > attackRange)
         {
             SetChase();
@@ -258,6 +268,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void Shoot()
     {
+        targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
         Debug.Log("Shoot");
     }
 }
