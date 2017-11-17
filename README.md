@@ -12,8 +12,7 @@ First person shooter survival horror full of dark corridors and screeching noise
 - Integrated HUD in the world.
 
 ## Contact US: 
-Email: gamedefendersco@gmail.com 
-
+[<img src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/arroba_logo.png">](mailto:gamedefendersco@gmail.com)
 [<img src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/twitter_logo.png">](https://twitter.com/GameDefendersCo)
 [<img src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/insta_logo.png">](https://www.instagram.com/gamedefendersco)
 
