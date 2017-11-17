@@ -14,9 +14,8 @@ First person shooter survival horror full of dark corridors and screeching noise
 ## Contact US: 
 Email: gamedefendersco@gmail.com 
 
-Twitter: https://twitter.com/GameDefendersCo 
-
-Instagram: https://www.instagram.com/gamedefendersco
+[<img src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/twitter_logo.png">](https://twitter.com/GameDefendersCo)
+[<img src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/insta_logo.png">](https://www.instagram.com/gamedefendersco)
 
 
 ## License: 
