@@ -27,6 +27,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     private float timeCounter = 0;  
     public float coolDownAttack = 1; //Usado para el FireRate.
     private float fireCounter = 0; //Contar los frames para disparar o no.
+    public LineRenderer lr;
 
     [Header("Stats")]
     [SerializeField]
@@ -128,13 +129,22 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         Debug.Log("ATTACKRANGE");
         agent.isStopped = true;
         targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
-        if (fireCounter <= 0f)
+        lr.SetPosition(0, transform.position);
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            Shoot();
-            fireCounter = 1f / coolDownAttack;
-        }
-        fireCounter -= Time.deltaTime;
+            if(hit.collider)
+            {
+                if (fireCounter <= 0f)
+                    {
+                        Shoot();
+                        fireCounter = 1f / coolDownAttack;
+                    }
+                    fireCounter -= Time.deltaTime;
         
+            }
+        }
+       
         if (distanceFromTarget > attackRange)
         {
             SetChase();
