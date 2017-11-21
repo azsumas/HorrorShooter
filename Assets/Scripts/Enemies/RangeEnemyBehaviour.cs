@@ -87,6 +87,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         if (timeCounter >= idleTime)
         {
             SetPatrol();
+            lr.enabled = false;
         }
         else timeCounter += Time.deltaTime;
 
@@ -128,8 +129,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
        
         Debug.Log("ATTACKRANGE");
         agent.isStopped = true;
-        
-        lr.SetPosition(0, transform.position);
+     
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit))
         {
@@ -140,19 +140,21 @@ public class RangeEnemyBehaviour : MonoBehaviour {
                 if(fireCounter <= 0f)
                 {
                     Debug.Log("counterwork");
-                    if(hit.collider.tag == "Player")
+                    if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
                     {
+                        lr.enabled = true;
+                        lr.SetPosition(0, transform.position);
                         Debug.Log("TAGPLAYER");
                         Shoot();
                         fireCounter = 1f / coolDownAttack;
                     }
-                        
-                    
+                    else lr.enabled = false;
+
                 }
                 fireCounter -= Time.deltaTime;
             }
         }
-        else lr.SetPosition(1, transform.forward * 5000);
+        else lr.enabled = false;
         
         
         if (distanceFromTarget > attackRange)
