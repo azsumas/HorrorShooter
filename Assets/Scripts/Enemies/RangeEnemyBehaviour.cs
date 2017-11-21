@@ -127,7 +127,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     void AttackUpdate()
     {
        
-        Debug.Log("ATTACKRANGE");
+        //Debug.Log("ATTACKRANGE");
         agent.isStopped = true;
      
         RaycastHit hit;
@@ -136,15 +136,15 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             if(hit.collider)
             {
                 lr.SetPosition(1, hit.point);
-                Debug.Log("Dispara");
+                //Debug.Log("Dispara");
                 if(fireCounter <= 0f)
                 {
-                    Debug.Log("counterwork");
+                    //Debug.Log("counterwork");
                     if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
                     {
                         lr.enabled = true;
                         lr.SetPosition(0, transform.position);
-                        Debug.Log("TAGPLAYER");
+                        //Debug.Log("TAGPLAYER");
                         Shoot();
                         fireCounter = 1f / coolDownAttack;
                     }
@@ -222,6 +222,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     #region Public Functions
     public void SetDamage(int hit)
     {
+        Debug.Log("ENTRA DAÑO");
         SetStun();
         life -= hit;
 
