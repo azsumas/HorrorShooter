@@ -11,6 +11,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LoadScene.unity
     guid: 0151f4e2167209042af5e30827d9aa53
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestIvan.unity
     guid: bb5ff48e863434d4986900c8573253df
