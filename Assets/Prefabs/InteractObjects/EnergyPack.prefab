@@ -25,12 +25,13 @@ GameObject:
   - component: {fileID: 114689606926984484}
   - component: {fileID: 114851002034425056}
   - component: {fileID: 114754187426682288}
+  - component: {fileID: 114054301818219468}
   m_Layer: 0
   m_Name: EnergyPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4746427999069598
 Transform:
@@ -99,6 +100,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.625, y: 0.625, z: 0.625}
   m_Center: {x: 0.1875, y: -0.1875, z: 0.1875}
+--- !u!114 &114054301818219468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337975696832580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852ec4d15ab9fdd4c937f15d072691db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 114986175276908404, guid: c1b64a09c2acb6b41b378cd583a22a8e, type: 2}
 --- !u!114 &114689606926984484
 MonoBehaviour:
   m_ObjectHideFlags: 1

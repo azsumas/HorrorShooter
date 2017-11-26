@@ -25,12 +25,13 @@ GameObject:
   - component: {fileID: 114792160203897542}
   - component: {fileID: 114428853375714922}
   - component: {fileID: 114014919670305972}
+  - component: {fileID: 114476116846087086}
   m_Layer: 0
   m_Name: Magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4634050586538884
 Transform:
@@ -404,6 +405,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114476116846087086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044676364092878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852ec4d15ab9fdd4c937f15d072691db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 114986175276908404, guid: c1b64a09c2acb6b41b378cd583a22a8e, type: 2}
 --- !u!114 &114792160203897542
 MonoBehaviour:
   m_ObjectHideFlags: 1

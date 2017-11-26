@@ -6,12 +6,13 @@ public class EnergyPack : MonoBehaviour
 {
     public int energyPack;
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerBehaviour>().energy < 100)
         {
             other.GetComponent<PlayerBehaviour>().RecoveryEnergy(energyPack);
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
+            //this.gameObject.SetActive(false);
         }
     }
 }

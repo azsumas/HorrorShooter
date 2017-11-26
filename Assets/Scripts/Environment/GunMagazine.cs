@@ -12,7 +12,7 @@ public class GunMagazine : MonoBehaviour
         if (gun.ammo < gun.maxAmmo)
         {
             gun.ExtraAmmo(gunMagazine);
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }
