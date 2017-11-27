@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class RangeEnemyBehaviour : MonoBehaviour {
     // Use this for initialization
 
-    public enum EnemyState { Idle, Patrol, Chase, Investigate, Attack, Stun, Dead }
+    public enum EnemyState { Idle, Patrol, Chase, Investigate, Attack, Stun, Hide, Dead }
     public EnemyState state;
     public Animator anim;
     private NavMeshAgent agent;
@@ -43,6 +43,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        agent.isStopped = false;
         SetIdle();
 
     }
@@ -72,6 +73,9 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             case EnemyState.Stun:
                 StunUpdate();
                 break;
+            case EnemyState.Hide:
+                HideUpdate();
+                break;
             case EnemyState.Dead:
                 DeadUpdate();
                 break;
@@ -83,17 +87,19 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     #region Updates
     void IdleUpdate()
     {
-
+        agent.isStopped = false;
         if (timeCounter >= idleTime)
         {
             SetPatrol();
             lr.enabled = false;
+            return;
         }
         else timeCounter += Time.deltaTime;
 
     }
     void PatrolUpdate()
     {
+        
         if (distanceFromTarget < chaseRange)
         {
             SetChase();
@@ -122,12 +128,17 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             SetAttack();
             return;
         }
+        else
+        {
+            SetPatrol();
+            return;
+        }
     }
 
     void AttackUpdate()
     {
        
-        //Debug.Log("ATTACKRANGE");
+        Debug.Log("ATTACKRANGE");
         agent.isStopped = true;
      
         RaycastHit hit;
@@ -136,15 +147,15 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             if(hit.collider)
             {
                 lr.SetPosition(1, hit.point);
-                //Debug.Log("Dispara");
+                Debug.Log("Dispara");
                 if(fireCounter <= 0f)
                 {
-                    //Debug.Log("counterwork");
-                    if(hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+                    Debug.Log("counterwork");
+                    if(hit.collider.gameObject.CompareTag("Player"))
                     {
                         lr.enabled = true;
                         lr.SetPosition(0, transform.position);
-                        //Debug.Log("TAGPLAYER");
+                        Debug.Log("TAGPLAYER");
                         Shoot();
                         fireCounter = 1f / coolDownAttack;
                     }
@@ -159,6 +170,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         
         if (distanceFromTarget > attackRange)
         {
+            agent.isStopped = false;
             SetChase();
             return;
         }
@@ -171,6 +183,10 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             SetIdle();
         }
         else timeCounter += Time.deltaTime;
+    }
+    void HideUpdate()
+    {
+
     }
     void DeadUpdate()
     {
@@ -209,6 +225,10 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         anim.SetTrigger("Stun");
         state = EnemyState.Stun;
 
+    }
+    void SetHide()
+    {
+        state = EnemyState.Hide;
     }
     void SetDead()
     {
