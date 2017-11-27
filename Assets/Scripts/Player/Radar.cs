@@ -24,24 +24,19 @@ public class Radar : MonoBehaviour
 
     public static void RemoveRadarObject(GameObject o)
     {
-        List<RadarObject> newList = new List<RadarObject>();
         for (int i = 0; i < radObjects.Count; i++)
         {
             if (radObjects[i].owner == o)
             {
-                Destroy(radObjects[i].icon);
-                continue;
+                radObjects[i].icon.enabled = false;
+                break;
             }
-            else newList.Add(radObjects[i]);
-
-            radObjects.RemoveRange(0, radObjects.Count);
-            radObjects.AddRange(newList);
         }
     }
 
-    void DrawRadarDots()
+    private void Update()
     {
-        foreach (RadarObject ro in radObjects)
+        foreach(RadarObject ro in radObjects)
         {
             Vector3 radarPos = (ro.owner.transform.position - playerPos.position);
             float distToObject = Vector3.Distance(playerPos.position, ro.owner.transform.position) * mapScale;
@@ -52,10 +47,5 @@ public class Radar : MonoBehaviour
             ro.icon.transform.SetParent(this.transform);
             ro.icon.transform.position = new Vector3(radarPos.x, radarPos.z, 0) + this.transform.position;
         }
-    }
-
-    private void Update()
-    {
-        DrawRadarDots();
     }
 }

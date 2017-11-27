@@ -13,6 +13,7 @@ public class inputManeger : MonoBehaviour
     private CameraBehaviour cameraBehaviour;
     private MouseCursor mouse;
 
+
 	// Use this for initialization
 	void Start ()
     {
@@ -30,6 +31,8 @@ public class inputManeger : MonoBehaviour
         player.SetVerticalAxis(inputAxis.y);
 
         if (Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(5);
+
+        //if(Input.GetButtonDown("Pause")
 
         if (Input.GetButtonDown("Jump"))
         {
