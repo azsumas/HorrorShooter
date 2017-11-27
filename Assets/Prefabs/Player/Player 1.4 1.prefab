@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 108676901088173256}
   - component: {fileID: 114183802871562060}
   m_Layer: 9
-  m_Name: Spotlight
+  m_Name: Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,8 +1027,8 @@ MonoBehaviour:
   gunBar: {fileID: 114698650134425506}
   damage: 5
   range: 60
-  maxAmmo: 60
-  ammo: 30
+  maxAmmo: 1000
+  ammo: 1000
   fireRate: 10
   flash: {fileID: 198853620389593770}
   smoke: {fileID: 198460570687042022}

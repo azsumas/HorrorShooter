@@ -22,6 +22,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 	private int hideIndex = 0;
 
     [Header("Distance")]
+    public LanternFunctions lantern;
     public float chaseRange;
     public float attackRange;
     private float distanceFromTarget = Mathf.Infinity;
@@ -42,14 +43,17 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     public int hitDamage;
 	public float energy;
 	public float maxEnergy;
-    
 
+    private void Awake()
+    {
+
+    }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         SetIdle();
-
+        lantern.GetComponent<LanternFunctions>();
     }
 
     void Update()
@@ -60,6 +64,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         {
             transform.LookAt(targetTransform);
         }
+
         switch (state)
         {
             case EnemyState.Idle:
@@ -103,7 +108,15 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void PatrolUpdate()
     {
-        
+        if(lantern != null)
+        {
+
+            if(lantern.switchOn)
+            {
+                chaseRange = chaseRange + 5;
+            }
+
+        }
         if (distanceFromTarget < chaseRange)
         {
             SetChase();
@@ -163,6 +176,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 					} 
 					else 
 					{
+                        agent.isStopped = false;
 						agent.SetDestination (targetTransform.position);
 						lr.enabled = false;
 					}
