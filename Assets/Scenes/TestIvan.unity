@@ -5121,8 +5121,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763481203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 355, y: 199.5, z: 0}
+  m_LocalScale: {x: 0.36979166, y: 0.36979166, z: 0.36979166}
   m_Children:
   - {fileID: 2017391864}
   - {fileID: 1528959938}
@@ -6977,7 +6977,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1001198091}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -655, y: 285, z: 0}
+  m_LocalPosition: {x: -655, y: 284.49298, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1155770635}
@@ -13809,6 +13809,11 @@ Prefab:
       propertyPath: m_Name
       value: EnergyPack (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114054301818219468, guid: 6eb8b3584b544cf4cb5b27bd9ce79ec6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6eb8b3584b544cf4cb5b27bd9ce79ec6, type: 2}
   m_IsPrefabParent: 0
@@ -14847,7 +14852,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-830776
+  m_Name: pb_Mesh-14042
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
