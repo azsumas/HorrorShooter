@@ -9,7 +9,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public enum EnemyState { Idle, Patrol, Chase, Investigate, Attack, Stun, Dead}
     public EnemyState state;
-    public EnemiesBar energyBar;
+    //public EnemiesBar energyBar;
     public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
@@ -210,9 +210,8 @@ public class EnemyBehaviour : MonoBehaviour
     void SetDead()
     {
         agent.isStopped = true;
-        state = EnemyState.Dead;
-
         this.gameObject.SetActive(false);
+		state = EnemyState.Dead;
         //Destroy(this.gameObject);
     }
     #endregion
@@ -221,7 +220,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         SetStun();
         energy -= hit;
-        energyBar.UpdateEnergyUI();
+        //energyBar.UpdateEnergyUI();
 
         if(energy <= 0)
         {

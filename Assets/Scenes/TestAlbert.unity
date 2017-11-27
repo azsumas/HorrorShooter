@@ -209,9 +209,10 @@ GameObject:
   - component: {fileID: 171028093}
   - component: {fileID: 171028092}
   - component: {fileID: 171028091}
-  m_Layer: 8
+  - component: {fileID: 171028094}
+  m_Layer: 11
   m_Name: RangeEnemy
-  m_TagString: Enemy
+  m_TagString: EnemyRange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,15 +234,18 @@ MonoBehaviour:
   points:
   - {fileID: 371833296}
   - {fileID: 1482518365}
-  chaseRange: 15
-  attackRange: 10
+  hidePoints:
+  - {fileID: 1406904985}
+  chaseRange: 12
+  attackRange: 5
   idleTime: 1
   stunTime: 1
   coolDownAttack: 1
   lr: {fileID: 691037358}
   canAttack: 0
   hitDamage: 5
-  life: 20
+  energy: 10
+  maxEnergy: 10
 --- !u!195 &171028092
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -278,6 +282,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &171028094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171028090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &371833295
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,9 +331,8 @@ GameObject:
   m_Component:
   - component: {fileID: 548503979}
   - component: {fileID: 548503982}
-  - component: {fileID: 548503981}
   - component: {fileID: 548503980}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -371,18 +386,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &548503981
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 548503978}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &548503982
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -400,12 +403,12 @@ Prefab:
     - target: {fileID: 224985415127778174, guid: 894889a35fe904242ab43bfc3bbbcd91,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 355
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 224985415127778174, guid: 894889a35fe904242ab43bfc3bbbcd91,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 199.5
+      value: 124.5
       objectReference: {fileID: 0}
     - target: {fileID: 224985415127778174, guid: 894889a35fe904242ab43bfc3bbbcd91,
         type: 2}
@@ -611,7 +614,7 @@ GameObject:
   - component: {fileID: 691037357}
   - component: {fileID: 691037359}
   - component: {fileID: 691037358}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: fx_laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,9 +641,9 @@ LineRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 691037356}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -679,12 +682,6 @@ LineRenderer:
         value: 0.9833336
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 0.46978354
-        inSlope: -0.05670832
-        outSlope: -0.05670832
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -797,6 +794,7 @@ Transform:
   - {fileID: 942018256}
   - {fileID: 1482518365}
   - {fileID: 371833296}
+  - {fileID: 1406904985}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -946,6 +944,34 @@ Transform:
   m_Father: {fileID: 307326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1406904984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1406904985}
+  m_Layer: 10
+  m_Name: Point (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1406904985
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406904984}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.81, y: 0, z: -34.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 829194377}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482518364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1049,16 @@ Prefab:
       propertyPath: breathFB
       value: 
       objectReference: {fileID: 767040068}
+    - target: {fileID: 114836167845864638, guid: 95b09be930a2c4544b5c53a67b236428,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836167845864638, guid: 95b09be930a2c4544b5c53a67b236428,
+        type: 2}
+      propertyPath: ammo
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95b09be930a2c4544b5c53a67b236428, type: 2}
   m_IsPrefabParent: 0
@@ -1062,7 +1098,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1989004861}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: gun
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1076,7 +1112,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1989004860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 691037357}
@@ -1154,7 +1190,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1860381985160148, guid: 39a3756aa37449b4ca9d41937a5b8f8b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964201154785130, guid: 39a3756aa37449b4ca9d41937a5b8f8b,
+        type: 2}
+      propertyPath: maxEnergy
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964201154785130, guid: 39a3756aa37449b4ca9d41937a5b8f8b,
+        type: 2}
+      propertyPath: energy
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39a3756aa37449b4ca9d41937a5b8f8b, type: 2}

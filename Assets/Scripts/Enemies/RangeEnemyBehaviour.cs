@@ -11,10 +11,15 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
+	//public EnemiesBar energyBar;
 
     [Header("Patch")]
     public Transform[] points;
     private int pathIndex = 0;
+
+	[Header("Hide")]
+	public Transform[] hidePoints;
+	private int hideIndex = 0;
 
     [Header("Distance")]
     public float chaseRange;
@@ -35,15 +40,14 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 
     [Header("Properties")]
     public int hitDamage;
-    public int life;
-
+	public float energy;
+	public float maxEnergy;
     
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.isStopped = false;
         SetIdle();
 
     }
@@ -128,11 +132,11 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             SetAttack();
             return;
         }
-        else
+        /*else
         {
             SetPatrol();
             return;
-        }
+        }*/
     }
 
     void AttackUpdate()
@@ -148,22 +152,24 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             {
                 lr.SetPosition(1, hit.point);
                 Debug.Log("Dispara");
-                if(fireCounter <= 0f)
-                {
-                    Debug.Log("counterwork");
-                    if(hit.collider.gameObject.CompareTag("Player"))
-                    {
-                        lr.enabled = true;
-                        lr.SetPosition(0, transform.position);
-                        Debug.Log("TAGPLAYER");
-                        Shoot();
-                        fireCounter = 1f / coolDownAttack;
-                    }
-                    else lr.enabled = false;
+				if (fireCounter <= 0f) {
+					Debug.Log ("counterwork");
+					if (hit.collider.gameObject.CompareTag ("Player")) {
+						lr.enabled = true;
+						lr.SetPosition (0, transform.position);
+						Debug.Log ("TAGPLAYER");
+						Shoot ();
+						fireCounter = 1f / coolDownAttack;
+					} 
+					else 
+					{
+						agent.SetDestination (targetTransform.position);
+						lr.enabled = false;
+					}
+				} 
 
-                }
-                fireCounter -= Time.deltaTime;
-            }
+					fireCounter -= Time.deltaTime;
+	            }
         }
         else lr.enabled = false;
         
@@ -186,7 +192,10 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void HideUpdate()
     {
+		hideIndex++;
+		if (hideIndex >= points.Length) pathIndex = 0;
 
+		SetIdle();
     }
     void DeadUpdate()
     {
@@ -228,6 +237,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void SetHide()
     {
+		agent.SetDestination(points[hideIndex].position);
         state = EnemyState.Hide;
     }
     void SetDead()
@@ -240,17 +250,18 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     #endregion
     #region Public Functions
-    public void SetDamage(int hit)
-    {
-        Debug.Log("ENTRA DAÑO");
-        SetStun();
-        life -= hit;
+	public void SetDamage(int hit)
+	{
+		Debug.Log ("Entra daño");
+		energy -= hit;
+		//energyBar.UpdateEnergyUI();
+		SetHide();
 
-        if (life <= 0)
-        {
-            SetDead();
-            return;
-        }
+		if(energy <= 0)
+		{
+			SetDead();
+			return;
+		}
 
     }
     #endregion
