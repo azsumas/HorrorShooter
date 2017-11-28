@@ -12,7 +12,7 @@ public class inputManeger : MonoBehaviour
     public float sensitivity = 3;
     private CameraBehaviour cameraBehaviour;
     private MouseCursor mouse;
-
+    public PauseManager manager;
 
 	// Use this for initialization
 	void Start ()
@@ -25,60 +25,63 @@ public class inputManeger : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        inputAxis.x = Input.GetAxis("Horizontal");
-        player.SetHorizontalAxis(inputAxis.x);
-        inputAxis.y = Input.GetAxis("Vertical");
-        player.SetVerticalAxis(inputAxis.y);
+        if(Input.GetButtonDown("Pause")) manager.PauseGame();
 
-        if (Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(5);
-
-        //if(Input.GetButtonDown("Pause")
-
-        if (Input.GetButtonDown("Jump"))
+        if(!PauseManager.Instance.Pause)
         {
-            player.Jump();
+            inputAxis.x = Input.GetAxis("Horizontal");
+            player.SetHorizontalAxis(inputAxis.x);
+            inputAxis.y = Input.GetAxis("Vertical");
+            player.SetVerticalAxis(inputAxis.y);
+
+            if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(5);
+
+            if(Input.GetButtonDown("Jump"))
+            {
+                player.Jump();
+            }
+
+            if(Input.GetButtonDown("Run"))
+            {
+                player.Run();
+            }
+
+            if(Input.GetButtonUp("Run") || Input.GetButtonUp("Walk"))
+            {
+                player.Walk();
+            }
+
+            if(Input.GetButtonDown("Walk"))
+            {
+                player.SlowStep();
+            }
+
+            /*if (Input.GetButtonDown("ActiveDoor"))
+            {
+                Debug.Log("YES");
+                door.opening = true;
+            }
+            else if (Input.GetButtonUp("ActiveDoor"))
+            {
+                Debug.Log("NO");
+                door.opening = false;
+            }*/
+
+            if(Input.GetButtonDown("ActiveLantern"))
+            {
+                lantern.SwitchOn();
+            }
+
+            if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
+            //mouse
+            mouseAxis.x = Input.GetAxis("Mouse X") * sensitivity;
+            mouseAxis.y = Input.GetAxis("Mouse Y") * sensitivity;
+            cameraBehaviour.SetRotationX(mouseAxis.y);
+            cameraBehaviour.SetRotationY(mouseAxis.x);
+
+            if(Input.GetButtonDown("Cancel")) mouse.Show();
+            if(Input.GetMouseButtonDown(0)) mouse.Hide();
         }
-
-		if (Input.GetButtonDown("Run"))
-        {
-            player.Run();
-        }
-
-        if (Input.GetButtonUp("Run") || Input.GetButtonUp("Walk"))
-        {
-            player.Walk();
-        }
-
-        if (Input.GetButtonDown("Walk"))
-        {
-            player.SlowStep();
-        }
-
-        /*if (Input.GetButtonDown("ActiveDoor"))
-        {
-            Debug.Log("YES");
-            door.opening = true;
-        }
-        else if (Input.GetButtonUp("ActiveDoor"))
-        {
-            Debug.Log("NO");
-            door.opening = false;
-        }*/
-
-        if (Input.GetButtonDown("ActiveLantern"))
-		{
-			lantern.SwitchOn ();
-		}
-
-        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-
-        //mouse
-        mouseAxis.x = Input.GetAxis("Mouse X") * sensitivity;
-        mouseAxis.y = Input.GetAxis("Mouse Y") * sensitivity;
-        cameraBehaviour.SetRotationX(mouseAxis.y);
-        cameraBehaviour.SetRotationY(mouseAxis.x);
-
-        if (Input.GetButtonDown("Cancel")) mouse.Show();
-        if (Input.GetMouseButtonDown(0)) mouse.Hide();
     }
 }

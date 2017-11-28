@@ -30,21 +30,23 @@ public class LaserGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ammo >= maxAmmo) ammo = maxAmmo;
-
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if(!PauseManager.Instance.Pause)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
+            if(ammo >= maxAmmo) ammo = maxAmmo;
 
-            if (ammo >= 1.0f)
+            if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
             {
-                ammo--;
-                gunBar.AmmoShot(1);
-                Shot(); // Función del disparo
-                Debug.Log("SHOT");
+                nextTimeToFire = Time.time + 1f / fireRate;
+
+                if(ammo >= 1.0f)
+                {
+                    ammo--;
+                    gunBar.AmmoShot(1);
+                    Shot(); // Función del disparo
+                    Debug.Log("SHOT");
+                }
             }
         }
-
     }
 
     public void ExtraAmmo(int magazine)

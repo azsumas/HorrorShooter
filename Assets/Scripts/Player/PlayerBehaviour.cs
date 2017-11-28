@@ -57,85 +57,88 @@ public class PlayerBehaviour : MonoBehaviour
         staminaCount = maxStamina;
 		stamina = false;
         maxLightIntensity = lanternLight.intensity;
-	}
-	
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
-        //Reset states
-        if (!controller.isGrounded) isGrounded = false;
-
-        //logic
-        if (isGrounded && !jump)
+        if(!PauseManager.Instance.Pause)
         {
-            moveDirection.y = forceToGround;
-        }
-        else
-        {
-            moveDirection.y += forceToGround * Time.deltaTime;
-        }
-        moveDirection.y += Physics.gravity.y * Time.deltaTime;
+            //Reset states
+            if(!controller.isGrounded) isGrounded = false;
 
-        desiredDirection = transform.forward * axis.y + transform.right * axis.x;
-        moveDirection.x = desiredDirection.x * speed;
-        moveDirection.z = desiredDirection.z * speed;
-
-        controller.Move(moveDirection * Time.deltaTime);
-
-        // CONTROL ESTAMINA AND FEEDBACK BREATH
-        breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (breath));
-
-		if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
-		{
-			if (moveFast) 
-			{
-				stamina = true;
-				Debug.Log ("IS RUNNING");
-			}
-		}
-
-        if (stamina == true)
-        {
-            staminaCount -= Time.deltaTime;
-            if (staminaCount <= 0)
+            //logic
+            if(isGrounded && !jump)
             {
-                staminaCount = 0;
-                Walk();
-                Debug.Log("I'M TIRED");
+                moveDirection.y = forceToGround;
+            }
+            else
+            {
+                moveDirection.y += forceToGround * Time.deltaTime;
+            }
+            moveDirection.y += Physics.gravity.y * Time.deltaTime;
+
+            desiredDirection = transform.forward * axis.y + transform.right * axis.x;
+            moveDirection.x = desiredDirection.x * speed;
+            moveDirection.z = desiredDirection.z * speed;
+
+            controller.Move(moveDirection * Time.deltaTime);
+
+            // CONTROL ESTAMINA AND FEEDBACK BREATH
+            breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (breath));
+
+            if(moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
+            {
+                if(moveFast)
+                {
+                    stamina = true;
+                    Debug.Log("IS RUNNING");
+                }
             }
 
-            breath += Time.deltaTime;
-            if (breath >= 2) breath = 2;
-        }
-        else if (stamina == false)
-        {
-            staminaCount += (Time.deltaTime/4);
-            if (staminaCount >= maxStamina) staminaCount = maxStamina;
-
-            breath -= Time.deltaTime;
-            if (breath <= 0) breath = 0;
-        }
-
-        // CONTROL ENERGY PLAYER
-        if (energy <= 0)
-        {
-            energy = 0;
-            death = true;
-            Application.LoadLevel(Application.loadedLevel);
-        }
-
-        // CONTROL LANTERN AND ENERGY
-        if (lantern.switchOn)
-        {
-            lanternEnergy = Time.deltaTime/2;
-            Lantern();
-
-            if (energy <= 25)
+            if(stamina == true)
             {
-                lanternLight.intensity = energy / 5;
-                Debug.Log("Low Battery");
+                staminaCount -= Time.deltaTime;
+                if(staminaCount <= 0)
+                {
+                    staminaCount = 0;
+                    Walk();
+                    Debug.Log("I'M TIRED");
+                }
+
+                breath += Time.deltaTime;
+                if(breath >= 2) breath = 2;
             }
-            else lanternLight.intensity = maxLightIntensity;
+            else if(stamina == false)
+            {
+                staminaCount += (Time.deltaTime / 4);
+                if(staminaCount >= maxStamina) staminaCount = maxStamina;
+
+                breath -= Time.deltaTime;
+                if(breath <= 0) breath = 0;
+            }
+
+            // CONTROL ENERGY PLAYER
+            if(energy <= 0)
+            {
+                energy = 0;
+                death = true;
+                Application.LoadLevel(Application.loadedLevel);
+            }
+
+            // CONTROL LANTERN AND ENERGY
+            if(lantern.switchOn)
+            {
+                lanternEnergy = Time.deltaTime / 2;
+                Lantern();
+
+                if(energy <= 25)
+                {
+                    lanternLight.intensity = energy / 5;
+                    Debug.Log("Low Battery");
+                }
+                else lanternLight.intensity = maxLightIntensity;
+            }
         }
     }
 
