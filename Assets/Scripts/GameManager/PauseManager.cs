@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+    public Text pauseText;
     private bool paused;
 
     public bool Pause
@@ -28,10 +30,12 @@ public class PauseManager : MonoBehaviour
     {
         if(paused)
         {
+            pauseText.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
-        if(!paused)
+        else if(!paused)
         {
+            pauseText.gameObject.SetActive(false);
             Time.timeScale = 1;
         }
     }
