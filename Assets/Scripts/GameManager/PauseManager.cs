@@ -24,6 +24,18 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(paused)
+        {
+            Time.timeScale = 0;
+        }
+        if(!paused)
+        {
+            Time.timeScale = 1;
+        }
+    }
+
     public void PauseGame()
     {
         paused = !paused;

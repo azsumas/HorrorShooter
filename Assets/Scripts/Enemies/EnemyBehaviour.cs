@@ -52,12 +52,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Update()
     {
-       
         distanceFromTarget = GetDistanceFromTarget();
-		if (distanceFromTarget < attackRange) 
-		{
-			transform.LookAt (targetTransform);
-		}
+        if(distanceFromTarget < attackRange)
+        {
+            transform.LookAt(targetTransform);
+        }
         switch(state)
         {
             case EnemyState.Idle:
@@ -86,8 +85,13 @@ public class EnemyBehaviour : MonoBehaviour
     #region Updates
     void IdleUpdate()
     {
-		
-        if(timeCounter >= idleTime)
+        /*if(PauseManager.Instance.Pause)
+        {
+            Time.timeScale = 0;
+            Debug.Log("HA ENTRADO");
+            agent.isStopped = true;
+        }*/
+            if(timeCounter >= idleTime)
         {
             SetPatrol();
         }
@@ -107,13 +111,13 @@ public class EnemyBehaviour : MonoBehaviour
             spotLight.color = Color.green;
             SetPatrol();
         }
+
 		if (distanceFromTarget < chaseRange)
         {
             spotLight.color = Color.red;
             SetChase();
             return;
         }
-
 
         if(agent.remainingDistance <= agent.stoppingDistance)
         {
