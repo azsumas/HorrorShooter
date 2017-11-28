@@ -18,8 +18,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     private int pathIndex = 0;
 
 	[Header("Hide")]
-	public Transform[] hidePoints;
-	private int hideIndex = 0;
+    public float closestDistance;
+    public int wayPointRef;
 
     [Header("Distance")]
     public LanternFunctions lantern;
@@ -222,9 +222,12 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     void HideUpdate()
     {
 		hideIndex++;
-		if (hideIndex >= points.Length) pathIndex = 0;
-
-		SetIdle();
+		if (hideIndex >= points.Length) 
+        {
+            pathIndex = 0;
+            SetIdle();
+        }
+		
     }
     void DeadUpdate()
     {
@@ -333,5 +336,26 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     {
         targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
         Debug.Log("Shoot");
+    }
+    void WaypointCheck()
+    {
+        //find all waypoints note: all waypoints need to have their tag set.
+        Gameobject[] waypoints = gameobject.findgameobjectswithtag("Waypoints");
+        //reset distance so that all waypoints are used in check
+        closestDistance = farthestWaypointDistance;
+        for(int i = 0; i < waypoints.length; i++)
+        {
+            float dist = Vector3.Distance(this.gameobject.transform.position, waypoints[i].transform.position);
+            If(dist < closestDistance){
+                closestDistance = dist;
+                wayPointRef = i;
+            }
+        }
+        SetNewDestination(waypoints[wayPointRef]);
+    }
+
+    void SetNewDestination(Gameobject waypoint)
+    {
+        agent.SetDestination(waypoint.transform.position);
     }
 }
