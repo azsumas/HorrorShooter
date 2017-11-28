@@ -23,6 +23,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 
     [Header("Distance")]
     public LanternFunctions lantern;
+    public float maxChaseRange;
+    public float minChaseRange;
     public float chaseRange;
     public float attackRange;
     private float distanceFromTarget = Mathf.Infinity;
@@ -59,7 +61,30 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     void Update()
     {
         distanceFromTarget = GetDistanceFromTarget();
-        
+
+        if(lantern != null)
+        {
+
+            if(lantern.switchOn)
+            {
+                chaseRange = chaseRange + maxChaseRange;
+                if(chaseRange >= maxChaseRange)
+                {
+                    Debug.Log("ENCENDIDA");
+                    chaseRange = maxChaseRange;
+                }
+            }
+            if(!lantern.switchOn)
+            {
+                Debug.Log("APAGADO");
+                chaseRange = chaseRange - minChaseRange;
+                if(chaseRange <= minChaseRange)
+                {
+                    chaseRange = minChaseRange;
+                }
+            }
+        }
+
         if (distanceFromTarget < attackRange)
         {
             transform.LookAt(targetTransform);
@@ -108,21 +133,11 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void PatrolUpdate()
     {
-        if(lantern != null)
-        {
-
-            if(lantern.switchOn)
-            {
-                chaseRange = chaseRange + 5;
-            }
-
-        }
         if (distanceFromTarget < chaseRange)
         {
             SetChase();
             return;
         }
-
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {

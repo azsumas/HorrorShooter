@@ -14,12 +14,12 @@ public class LanternFunctions : MonoBehaviour
         if (switchOn)
         {
             gameObject.SetActive(true);
-            Debug.Log("Lantern Switch ON");
+            //Debug.Log("Lantern Switch ON");
         }
         else
         {
             gameObject.SetActive(false);
-            Debug.Log("Lantern Switch OFF");
+            //Debug.Log("Lantern Switch OFF");
         }
     }
 }
