@@ -34,7 +34,7 @@ public class inputManeger : MonoBehaviour
             inputAxis.y = Input.GetAxis("Vertical");
             player.SetVerticalAxis(inputAxis.y);
 
-            if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(5);
+            //if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(5);
 
             if(Input.GetButtonDown("Jump"))
             {

@@ -155,11 +155,12 @@ public class EnemyBehaviour : MonoBehaviour
 			idleTime = coolDownAttack;
 			SetIdle ();
 			Debug.Log ("EnemyHitting");
-			return;
+			
 		}
           
         if (distanceFromTarget > attackRange)
         {
+            agent.isStopped = false;
             SetChase();
             return;
         }
