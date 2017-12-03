@@ -32,6 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Stats")]
     public bool jump;
     public bool isGrounded;
+    public bool stealthy = false;
     
     [Header("Stats Player")]
     [SerializeField]
@@ -47,6 +48,9 @@ public class PlayerBehaviour : MonoBehaviour
     float breath;
     float lanternEnergy;
     float maxLightIntensity;
+
+    [Header("Animations")]
+    public Animator stealthyAnim;
 
     // Use this for initialization
     void Start ()
@@ -85,7 +89,7 @@ public class PlayerBehaviour : MonoBehaviour
         // CONTROL ESTAMINA AND FEEDBACK BREATH
         breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (breath));
 
-        if(moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
+        if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
         {
             if(moveFast)
             {
@@ -136,6 +140,12 @@ public class PlayerBehaviour : MonoBehaviour
             }
             else lanternLight.intensity = maxLightIntensity;
         }
+        if (stealthy == true) stealthyAnim.SetBool("Stealthy", true);
+        else if (stealthy == false)
+        {
+            stealthyAnim.enabled = true;
+            stealthyAnim.SetBool("Stealthy", false);
+        }
     }
 
     public void SetHorizontalAxis(float x)
@@ -172,20 +182,20 @@ public class PlayerBehaviour : MonoBehaviour
     public void Run()
     {
 		moveFast = true;
-
         if (staminaCount >= 0) speed += run;
     }
 
     public void Walk()
     {
-		moveFast = false;
+        stealthy = false;
+        moveFast = false;
 		stamina = false;
-
         speed = walk;
     }
 
     public void SlowStep()
     {
+        stealthy = true;
         speed = walk - 1;
     }
 
@@ -210,5 +220,10 @@ public class PlayerBehaviour : MonoBehaviour
         if (energy >= maxEnergy) energy = maxEnergy;
 
         lifeBar.UpdateEnergyUI();
+    }
+
+    void PauseAnimationEvent()
+    {
+        stealthyAnim.enabled = false;
     }
 }
