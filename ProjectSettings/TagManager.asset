@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - EnemyRange
   - Lantern
+  - EnemyDog
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Obstacle
   - EnemyRange
-  - 
+  - EnemyDog
   - 
   - 
   - 

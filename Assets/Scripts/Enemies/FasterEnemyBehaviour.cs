@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBehaviour : MonoBehaviour
+public class FasterEnemyBehaviour : MonoBehaviour
 {
 
     // Use this for initialization
 
-    public enum EnemyState { Idle, Patrol, Chase, Investigate, Attack, Stun, Dead}
+    public enum EnemyState { Idle, Patrol, Chase, Investigate, Attack, Stun, Dead }
     public EnemyState state;
     //public EnemiesBar energyBar;
     public Animator anim;
@@ -24,11 +24,6 @@ public class EnemyBehaviour : MonoBehaviour
     public float minChaseRange;
     public float attackRange;
     private float distanceFromTarget = Mathf.Infinity;
-    [Header("Sneak")]
-    public Light spotLight;
-    public float viewDistance;
-    float viewAngle;
-    public LayerMask viewMask;
 
     [Header("Timers")]
     public float idleTime = 1;
@@ -37,7 +32,8 @@ public class EnemyBehaviour : MonoBehaviour
     public float coolDownAttack = 1;
 
     [Header("Stats")]
-    [SerializeField] private bool canAttack = false;
+    [SerializeField]
+    private bool canAttack = false;
 
     [Header("Properties")]
     public int hitDamage;
@@ -46,7 +42,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start()
     {
-        viewAngle = spotLight.spotAngle;
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         SetIdle();
@@ -56,11 +51,11 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         distanceFromTarget = GetDistanceFromTarget();
-        if(distanceFromTarget < attackRange)
+        if (distanceFromTarget < attackRange)
         {
             transform.LookAt(targetTransform);
         }
-        switch(state)
+        switch (state)
         {
             case EnemyState.Idle:
                 IdleUpdate();
@@ -84,11 +79,11 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
         }
     }
-    
+
     #region Updates
     void IdleUpdate()
     {
-            if(timeCounter >= idleTime)
+        if (timeCounter >= idleTime)
         {
             SetPatrol();
         }
@@ -97,83 +92,82 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void PatrolUpdate()
     {
+        agent.speed = 1f;
         chaseRange = chaseRange - minChaseRange;
         if (chaseRange <= minChaseRange)
         {
             chaseRange = minChaseRange;
         }
-        if (CanSeePlayer())
-		{
-			spotLight.color = Color.red;
-            chaseRange = chaseRange + maxChaseRange;
-            if (chaseRange >= maxChaseRange)
-            {
-                Debug.Log("Te he visto");
-                chaseRange = maxChaseRange;
-            }
-            SetChase();
-		}
-  		else
-		{
-            spotLight.color = Color.green;
-            SetPatrol();
-        }
-
-		if (distanceFromTarget < chaseRange)
+        if (CanListenPlayer())
         {
-            spotLight.color = Color.red;
+            Debug.Log("te oigo");
+            SetChase();
+            return;
+        }
+        if (distanceFromTarget < chaseRange)
+        {
             SetChase();
             return;
         }
 
-        if(agent.remainingDistance <= agent.stoppingDistance)
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
             pathIndex++;
-            if(pathIndex >= points.Length) pathIndex = 0;
+            if (pathIndex >= points.Length) pathIndex = 0;
 
             SetPatrol();
         }
     }
     void ChaseUpdate()
     {
+        agent.speed = 10f;
         agent.SetDestination(targetTransform.position);
+
+        chaseRange = chaseRange + maxChaseRange;
+        if (chaseRange >= maxChaseRange)
+        {
+            Debug.Log("Te he visto");
+            chaseRange = maxChaseRange;
+        }
+       
         if (distanceFromTarget > chaseRange)
         {
             SetPatrol();
             return;
         }
-        else if (distanceFromTarget <= attackRange)
+        else if (distanceFromTarget < attackRange)
         {
             SetAttack();
             return;
         }
         else if (canAttack)
-		{
-			SetAttack ();
-			return;
-		}
+        {
+            SetAttack();
+            return;
+        }
     }
 
     void AttackUpdate()
     {
+        agent.speed = 1f;
         agent.SetDestination(targetTransform.position);
-       
+
         Debug.Log("ATTACKRANGE");
         chaseRange = chaseRange - minChaseRange;
         if (chaseRange <= minChaseRange)
         {
             chaseRange = minChaseRange;
         }
-        if (canAttack) 
-		{
-			agent.isStopped = true;
-			targetTransform.GetComponent<PlayerBehaviour> ().ReceivedDamage (hitDamage);
-			idleTime = coolDownAttack;
-			SetIdle ();
-			Debug.Log ("EnemyHitting");
-			
-		}
-          
+        if (canAttack)
+        {
+            agent.isStopped = true;
+            targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
+            idleTime = coolDownAttack;
+            SetIdle();
+            Debug.Log("EnemyHitting");
+
+        }
+
         if (distanceFromTarget > attackRange)
         {
             agent.isStopped = false;
@@ -183,7 +177,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void StunUpdate()
     {
-        if(timeCounter >= stunTime)
+        if (timeCounter >= stunTime)
         {
             idleTime = 0;
             SetIdle();
@@ -226,13 +220,13 @@ public class EnemyBehaviour : MonoBehaviour
         //Feedback animations, sound...
         anim.SetTrigger("Stun");
         state = EnemyState.Stun;
-        
+
     }
     void SetDead()
     {
         agent.isStopped = true;
         this.gameObject.SetActive(false);
-		state = EnemyState.Dead;
+        state = EnemyState.Dead;
         //Destroy(this.gameObject);
     }
     #endregion
@@ -243,12 +237,12 @@ public class EnemyBehaviour : MonoBehaviour
         energy -= hit;
         //energyBar.UpdateEnergyUI();
 
-        if(energy <= 0)
+        if (energy <= 0)
         {
             SetDead();
             return;
         }
-        
+
     }
     #endregion
     float GetDistanceFromTarget()
@@ -258,38 +252,31 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-           
+
             canAttack = true;
 
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            
+
             canAttack = false;
         }
     }
-
-    bool CanSeePlayer()
+    bool CanListenPlayer()
     {
-        if(Vector3.Distance(transform.position, targetTransform.position) < viewDistance)
+        PlayerBehaviour player = targetTransform.GetComponent<PlayerBehaviour>();
+        if(player.speed > 3)
         {
-            Vector3 dirToPlayer = (targetTransform.position - transform.position).normalized;
-            float angleBetweenEnemyAndPlayer = Vector3.Angle(transform.forward, dirToPlayer);
-            if(angleBetweenEnemyAndPlayer < viewAngle / 2f)
-            {
-				if(!Physics.Linecast(transform.position, targetTransform.position, viewMask))
-                {
-                    return true;
-                }
-            }
+            return true;
         }
         return false;
     }
+
     void OnDrawGizmos()
     {
         Color newColor = Color.yellow;
@@ -303,10 +290,9 @@ public class EnemyBehaviour : MonoBehaviour
 
 
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward * viewDistance);
     }
     void FixedUpdate()
     {
-        
+
     }
 }

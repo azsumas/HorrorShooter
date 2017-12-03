@@ -17,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 	[Header("Speed")]
 	bool moveFast;
-    float speed;
+    public float speed;
 	public float run;
     public float walk;
     public float slowStep;

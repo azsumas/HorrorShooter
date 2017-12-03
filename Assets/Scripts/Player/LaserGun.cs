@@ -62,21 +62,35 @@ public class LaserGun : MonoBehaviour
         smoke01.Play();
 
         RaycastHit hit;
-		if (Physics.Raycast (fpsCam.transform.position, fpsCam.transform.forward, out hit, range)) {
-			Debug.Log (hit.transform.name);
-			if (hit.collider.gameObject.CompareTag ("Enemy")) {
-				EnemyBehaviour target = hit.transform.GetComponent<EnemyBehaviour> ();
-				if (target != null) {
-					target.SetDamage (damage);
-				}
-			} else if (hit.collider.gameObject.CompareTag ("EnemyRange")) {
-				RangeEnemyBehaviour target = hit.transform.GetComponent<RangeEnemyBehaviour> ();
-				if (target != null) {
-					target.SetDamage (damage);
-				}
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                EnemyBehaviour target = hit.transform.GetComponent<EnemyBehaviour>();
+                if (target != null)
+                {
+                    target.SetDamage(damage);
+                }
+            }
+            else if (hit.collider.gameObject.CompareTag("EnemyRange"))
+            {
+                RangeEnemyBehaviour target = hit.transform.GetComponent<RangeEnemyBehaviour>();
+                if (target != null)
+                {
+                    target.SetDamage(damage);
+                }
 
-			}
-		}
+            }
+            else if (hit.collider.gameObject.CompareTag("EnemyDog"))
+            {
+                FasterEnemyBehaviour target = hit.transform.GetComponent<FasterEnemyBehaviour>();
+                if (target != null)
+                {
+                    target.SetDamage(damage);
+                }
+            }
+        }
         //GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         //Destroy(impactGo, 0.1f);
 
