@@ -15,6 +15,8 @@ MonoBehaviour:
   - pbCheckForProBuilderUpdates
   - pbIconGUI
   - pbCollapseVertexToFirst
+  - pbGenerateUV2PerObject
+  - pbDisableAutoUV2Generation
   m_Int_keys:
   - pbHandleAlignment
   - pbDefaultEditLevel
@@ -27,8 +29,8 @@ MonoBehaviour:
   - pbLastWebVersionChecked
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 010001
-  m_Int_values: 00000000000000000100000000000000
+  m_Bool_values: 0100010000
+  m_Int_values: 00000000010000000200000000000000
   m_Float_values:
   - 0
   - 0
