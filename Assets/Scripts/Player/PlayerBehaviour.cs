@@ -144,7 +144,7 @@ public class PlayerBehaviour : MonoBehaviour
         else if (stealthy == false)
         {
             stealthyAnim.enabled = true;
-            stealthyAnim.SetBool("Stealthy", false);
+           stealthyAnim.SetBool("Stealthy", false);
         }
     }
 
