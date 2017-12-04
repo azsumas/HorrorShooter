@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1946037637835528
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3d5e848352441ed409091dbaff36def9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,10 +239,13 @@ MonoBehaviour:
   points:
   - {fileID: 0}
   - {fileID: 0}
-  hidePoints:
-  - {fileID: 0}
-  chaseRange: 12
-  attackRange: 5
+  closestDistance: 0
+  wayPointRef: 0
+  lantern: {fileID: 0}
+  maxChaseRange: 20
+  minChaseRange: 10
+  chaseRange: 10
+  attackRange: 8
   idleTime: 1
   stunTime: 1
   coolDownAttack: 1
@@ -250,7 +253,7 @@ MonoBehaviour:
   canAttack: 0
   hitDamage: 5
   energy: 10
-  maxEnergy: 10
+  maxEnergy: 50
 --- !u!120 &120433655228744554
 LineRenderer:
   m_ObjectHideFlags: 1

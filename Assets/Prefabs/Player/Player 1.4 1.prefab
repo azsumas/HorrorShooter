@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4886729047535256}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 224945099264006880}
   - component: {fileID: 222209975327276248}
   - component: {fileID: 114273158443689938}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4170072050150040}
   - component: {fileID: 108390717044507658}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 23372942442553552}
   m_Layer: 9
   m_Name: Capsule
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 224440135434480072}
   - component: {fileID: 222976771993171114}
   - component: {fileID: 114127468239997908}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 124012492402066872}
   - component: {fileID: 81569325744176370}
   - component: {fileID: 114609726855386666}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 224578235901396890}
   - component: {fileID: 222365686071916908}
   - component: {fileID: 114766834518556310}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 4175201911590636}
   - component: {fileID: 108676901088173256}
   - component: {fileID: 114183802871562060}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 224362161160768582}
   - component: {fileID: 222749673714094874}
   - component: {fileID: 114229986095378792}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ammo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 224207677060519056}
   - component: {fileID: 222131078518682828}
   - component: {fileID: 114090654485325220}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ammo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 4674281739089364}
   - component: {fileID: 198853620389593770}
   - component: {fileID: 199250623362021640}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4954767413440820}
   - component: {fileID: 198330121686915328}
   - component: {fileID: 199903725482970724}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 4683700822695780}
   - component: {fileID: 198460570687042022}
   - component: {fileID: 199484761557839350}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,9 +243,9 @@ GameObject:
   - component: {fileID: 4633443007682506}
   - component: {fileID: 114836167845864638}
   - component: {fileID: 114698650134425506}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Gun
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,9 +261,9 @@ GameObject:
   - component: {fileID: 33936014083376452}
   - component: {fileID: 23891301731164186}
   - component: {fileID: 95452136657125860}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: WeaponMesh
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 224089688326050328}
   - component: {fileID: 222513555883637406}
   - component: {fileID: 114765885338848412}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 223170531860847768}
   - component: {fileID: 114118316681435122}
   - component: {fileID: 114262613480478900}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: EnergyAmmoCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804975029497754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4155593, y: -3.1419777e-17, z: 7.0751047}
+  m_LocalPosition: {x: 1.49, y: -3.1419777e-17, z: 11.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4404533425189298}
@@ -369,7 +369,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1380244270448900}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.04405531, y: 0, z: 0, w: 0.99902916}
   m_LocalPosition: {x: 0, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -732,7 +732,8 @@ MonoBehaviour:
   breathFB: {fileID: 0}
   lantern: {fileID: 114183802871562060}
   lanternLight: {fileID: 108676901088173256}
-  moveDirection: {x: 0, y: 0, z: 0}
+  moveDirection: {x: 0, y: -963.1636, z: 0}
+  speed: 3
   run: 4
   walk: 3
   slowStep: 1
@@ -742,11 +743,13 @@ MonoBehaviour:
   gravitymagnitude: 1
   jump: 0
   isGrounded: 0
-  death: 0
+  stealthy: 0
+  death: 1
   hitYourself: 0
   maxEnergy: 100
-  energy: 60
+  energy: 0
   maxStamina: 5
+  stealthyAnim: {fileID: 0}
 --- !u!114 &114090654485325220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1048,7 +1051,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277469895193540}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1.8

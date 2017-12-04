@@ -137,6 +137,7 @@ public class FasterEnemyBehaviour : MonoBehaviour
         }
         else if (distanceFromTarget < attackRange)
         {
+            agent.speed = 1f;
             SetAttack();
             return;
         }
@@ -210,6 +211,7 @@ public class FasterEnemyBehaviour : MonoBehaviour
     }
     void SetAttack()
     {
+        Debug.Log("Si que entro en ataque");
         anim.SetTrigger("Attack");
         state = EnemyState.Attack;
     }
