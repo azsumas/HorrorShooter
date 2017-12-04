@@ -135,14 +135,9 @@ public class FasterEnemyBehaviour : MonoBehaviour
             SetPatrol();
             return;
         }
-        else if (distanceFromTarget < attackRange)
+        else if (distanceFromTarget <= attackRange)
         {
             agent.speed = 1f;
-            SetAttack();
-            return;
-        }
-        else if (canAttack)
-        {
             SetAttack();
             return;
         }
@@ -150,15 +145,9 @@ public class FasterEnemyBehaviour : MonoBehaviour
 
     void AttackUpdate()
     {
-        agent.speed = 1f;
         agent.SetDestination(targetTransform.position);
 
         Debug.Log("ATTACKRANGE");
-        chaseRange = chaseRange - minChaseRange;
-        if (chaseRange <= minChaseRange)
-        {
-            chaseRange = minChaseRange;
-        }
         if (canAttack)
         {
             agent.isStopped = true;
@@ -212,8 +201,8 @@ public class FasterEnemyBehaviour : MonoBehaviour
     void SetAttack()
     {
         Debug.Log("Si que entro en ataque");
-        anim.SetTrigger("Attack");
         state = EnemyState.Attack;
+		anim.SetTrigger("Attack");
     }
     void SetStun()
     {
@@ -235,10 +224,13 @@ public class FasterEnemyBehaviour : MonoBehaviour
     #region Public Functions
     public void SetDamage(int hit)
     {
-        SetStun();
+        
         energy -= hit;
         //energyBar.UpdateEnergyUI();
-
+		if (energy > 0) {
+			SetStun ();
+			return;
+		}
         if (energy <= 0)
         {
             SetDead();
@@ -256,16 +248,13 @@ public class FasterEnemyBehaviour : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
             canAttack = true;
-
         }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-
             canAttack = false;
         }
     }
