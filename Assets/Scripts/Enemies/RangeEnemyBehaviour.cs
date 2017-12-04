@@ -160,11 +160,6 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             SetAttack();
             return;
         }
-        /*else
-        {
-            SetPatrol();
-            return;
-        }*/
     }
 
     void AttackUpdate()
@@ -180,7 +175,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
             {
                 lr.SetPosition(1, hit.point);
                 Debug.Log("Dispara");
-				if (fireCounter <= 0f) {
+				if (fireCounter <= 0f)
+				{
 					Debug.Log ("counterwork");
 					if (hit.collider.gameObject.CompareTag ("Player")) {
 						lr.enabled = true;
@@ -191,7 +187,6 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 					} 
 					else 
 					{
-                        agent.isStopped = false;
 						agent.SetDestination (targetTransform.position);
 						lr.enabled = false;
 					}
