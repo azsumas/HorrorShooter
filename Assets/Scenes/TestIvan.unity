@@ -140,8 +140,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 48089150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100, y: 56.5, z: 0}
-  m_LocalScale: {x: 0.10416667, y: 0.10416667, z: 0.10416667}
+  m_LocalPosition: {x: 291, y: 163.5, z: 0}
+  m_LocalScale: {x: 0.303125, y: 0.303125, z: 0.303125}
   m_Children:
   - {fileID: 2017391866}
   - {fileID: 1470580225}
@@ -6545,7 +6545,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 559926465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -654.99994, y: 287.39996, z: 0}
+  m_LocalPosition: {x: -655, y: 284.38147, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 950628873}
@@ -20043,6 +20043,7 @@ MonoBehaviour:
   energy: 60
   maxStamina: 5
   stealthyAnim: {fileID: 1180583895}
+  hitAnim: {fileID: 1180583895}
 --- !u!95 &1180583895
 Animator:
   serializedVersion: 3

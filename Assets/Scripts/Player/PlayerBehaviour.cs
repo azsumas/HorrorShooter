@@ -51,6 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Animations")]
     public Animator stealthyAnim;
+    public Animator hitAnim;
 
     // Use this for initialization
     void Start ()
@@ -208,6 +209,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void ReceivedDamage(int hit)
     {
         lifeBar.ReceivedDamage(hit);
+        hitAnim.SetTrigger("Hit");
         Debug.Log("OUCH!");
     }
 
