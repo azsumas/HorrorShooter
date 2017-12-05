@@ -13,13 +13,14 @@ public class inputManeger : MonoBehaviour
     private CameraBehaviour cameraBehaviour;
     private MouseCursor mouse;
     public PauseManager manager;
-
+    CharacterController characterCollider;
 	// Use this for initialization
 	void Start ()
     {
         player = GetComponent<PlayerBehaviour>();
         cameraBehaviour = GetComponentInChildren<CameraBehaviour>();
         mouse = GetComponent<MouseCursor>();
+        characterCollider = gameObject.GetComponent<CharacterController>();
 	}
 	
 	// Update is called once per frame
@@ -51,9 +52,19 @@ public class inputManeger : MonoBehaviour
                 player.Walk();
             }
 
-            if(Input.GetButtonDown("Walk"))
+            /*if(Input.GetButtonDown("Walk"))
             {
                 player.SlowStep();
+            }*/
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                player.SlowStep();
+                characterCollider.height = 1.0f;
+            }
+            else
+            {
+                player.Walk();
+                characterCollider.height = 1.8f;
             }
 
             /*if (Input.GetButtonDown("ActiveDoor"))

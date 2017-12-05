@@ -142,12 +142,6 @@ public class PlayerBehaviour : MonoBehaviour
             }
             else lanternLight.intensity = maxLightIntensity;
         }
-        if (stealthy == true) stealthyAnim.SetBool("Stealthy", true);
-        else if (stealthy == false)
-        {
-            stealthyAnim.enabled = true;
-           stealthyAnim.SetBool("Stealthy", false);
-        }
     }
 
     public void SetHorizontalAxis(float x)
@@ -230,8 +224,8 @@ public class PlayerBehaviour : MonoBehaviour
         lifeBar.UpdateEnergyUI();
     }
 
-    void PauseAnimationEvent()
+    /*void PauseAnimationEvent()
     {
         stealthyAnim.enabled = false;
-    }
+    }*/
 }
