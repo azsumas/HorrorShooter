@@ -35,8 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
     public bool stealthy = false;
     
     [Header("Stats Player")]
-    [SerializeField]
-    bool death;
+    public bool death;
 
     [Header("Energy Player")]
     public float hitYourself;
