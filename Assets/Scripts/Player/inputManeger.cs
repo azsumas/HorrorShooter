@@ -42,7 +42,8 @@ public class inputManeger : MonoBehaviour
                 player.Jump();
             }
 
-            if(Input.GetButtonDown("Run"))
+            //if(Input.GetButtonDown("Run"))
+            if(Input.GetKey(KeyCode.LeftShift))
             {
                 player.Run();
             }

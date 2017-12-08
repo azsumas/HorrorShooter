@@ -94,6 +94,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if(moveFast)
             {
+                Debug.Log("MoveFast funciona?");
                 stamina = true;
                 Debug.Log("IS RUNNING");
             }
@@ -176,8 +177,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Run()
     {
+        Debug.Log("Entro a correr");
 		moveFast = true;
-        if (staminaCount >= 0) speed += run;
+        if (staminaCount > 0) speed += run;
     }
 
     public void Walk()

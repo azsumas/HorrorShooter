@@ -140,8 +140,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 48089150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 279.5, y: 288, z: 0}
-  m_LocalScale: {x: 0.29114583, y: 0.29114583, z: 0.29114583}
+  m_LocalPosition: {x: 317, y: 178.5, z: 0}
+  m_LocalScale: {x: 0.33020833, y: 0.33020833, z: 0.33020833}
   m_Children:
   - {fileID: 2017391866}
   - {fileID: 1470580225}
@@ -6573,7 +6573,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 559926465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -655, y: 734.195, z: 0}
+  m_LocalPosition: {x: -655, y: 285.5678, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 950628873}
@@ -20055,7 +20055,7 @@ MonoBehaviour:
   lanternLight: {fileID: 2109366036}
   moveDirection: {x: 0, y: 0, z: 0}
   speed: 0
-  run: 4
+  run: 5
   walk: 3
   slowStep: 1
   axis: {x: 0, y: 0}
@@ -20069,7 +20069,7 @@ MonoBehaviour:
   hitYourself: 0
   maxEnergy: 100
   energy: 60
-  maxStamina: 5
+  maxStamina: 50
   stealthyAnim: {fileID: 1180583895}
   hitAnim: {fileID: 1180583895}
   StealthyhitAnim: {fileID: 1180583895}
