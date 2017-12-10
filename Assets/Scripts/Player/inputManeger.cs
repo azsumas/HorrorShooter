@@ -42,8 +42,7 @@ public class inputManeger : MonoBehaviour
                 player.Jump();
             }
 
-            //if(Input.GetButtonDown("Run"))
-            if(Input.GetKey(KeyCode.LeftShift))
+            if(Input.GetButtonDown("Run"))
             {
                 player.Run();
             }
@@ -57,7 +56,7 @@ public class inputManeger : MonoBehaviour
             {
                 player.SlowStep();
             }*/
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetButton("Walk"))
             {
                 player.SlowStep();
                 characterCollider.height = 1.0f;

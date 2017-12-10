@@ -179,7 +179,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Debug.Log("Entro a correr");
 		moveFast = true;
-        if (staminaCount > 0) speed += run;
+        if (staminaCount >= 0) speed += run;
     }
 
     public void Walk()
