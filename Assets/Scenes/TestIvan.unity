@@ -140,8 +140,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 48089150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 207.5, y: 116.5, z: 0}
+  m_LocalScale: {x: 0.21614584, y: 0.21614584, z: 0.21614584}
   m_Children:
   - {fileID: 2017391866}
   - {fileID: 1470580225}
@@ -6573,7 +6573,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 559926465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -655, y: 285, z: 0}
+  m_LocalPosition: {x: -654.99994, y: 283.9879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 950628873}
@@ -6611,7 +6611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -20049,6 +20049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5ba789dc4d54e4ca67a9d6ac9deccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraAim: {fileID: 2030935342}
   lifeBar: {fileID: 1403310157}
   lantern: {fileID: 2109366035}
   lanternLight: {fileID: 2109366036}
@@ -20071,9 +20072,11 @@ MonoBehaviour:
   maxStamina: 50
   breathFB: {fileID: 1063739032}
   aimPoint: {fileID: 645735057}
+  radar: {fileID: 559926468}
   hitAnim: {fileID: 1180583895}
   stealthyhitAnim: {fileID: 1180583895}
   aimAnim: {fileID: 1180583895}
+  fieldOfViewAim: 30
 --- !u!95 &1180583895
 Animator:
   serializedVersion: 3

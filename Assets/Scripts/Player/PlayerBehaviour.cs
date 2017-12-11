@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public Camera cameraAim;
     CharacterController characterCollider;
     private CharacterController controller;
     public EnergyBar lifeBar;
@@ -51,11 +52,13 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Canvas")]
     public Image breathFB;
     public Image aimPoint;
+    public Image radar;
 
     [Header("Animations")]
     public Animator hitAnim;
     public Animator stealthyhitAnim;
     public Animator aimAnim;
+    public float fieldOfViewAim;
 
     // Use this for initialization
     void Start ()
@@ -234,13 +237,19 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void AimPlayer()
     {
+        cameraAim.fieldOfView -= 2;
+        if (cameraAim.fieldOfView <= fieldOfViewAim) cameraAim.fieldOfView = fieldOfViewAim;
         aimPoint.enabled = false;
+        radar.color = new Vector4(255.0F, 255.0f, 255.0F, 0.0f);
         aimAnim.SetBool("Aim", true);
     }
 
     public void NoAimPlayer()
     {
+        cameraAim.fieldOfView += 2;
+        if (cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
         aimPoint.enabled = true;
+        radar.color = new Vector4(255.0F, 255.0f, 255.0F, 1.0f);
         aimAnim.enabled = true;
         aimAnim.SetBool("Aim", false);
     }
