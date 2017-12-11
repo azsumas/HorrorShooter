@@ -94,14 +94,26 @@ public class FasterEnemyBehaviour : MonoBehaviour
     {
         agent.speed = 1f;
         chaseRange = chaseRange - minChaseRange;
-        if (chaseRange <= minChaseRange)
+        if(chaseRange <= minChaseRange)
         {
             chaseRange = minChaseRange;
         }
         if (CanListenPlayer())
         {
             Debug.Log("te oigo");
-            SetChase();
+            chaseRange = chaseRange + maxChaseRange;
+            if(chaseRange >= maxChaseRange)
+            {
+                Debug.Log("Te he visto");
+                chaseRange = maxChaseRange;
+            }
+            return;
+        }
+        if(Playerhide())
+        {
+            Debug.Log("Can't Hear You");
+            chaseRange = minChaseRange - 1;
+
             return;
         }
         if (distanceFromTarget < chaseRange)
@@ -267,7 +279,15 @@ public class FasterEnemyBehaviour : MonoBehaviour
         }
         return false;
     }
-
+    bool Playerhide()
+    {
+        PlayerBehaviour player = targetTransform.GetComponent<PlayerBehaviour>();
+        if(player.speed < 3)
+        {
+            return true;
+        }
+        return false;
+    }
     void OnDrawGizmos()
     {
         Color newColor = Color.yellow;
