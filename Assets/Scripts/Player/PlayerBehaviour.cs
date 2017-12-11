@@ -8,7 +8,6 @@ public class PlayerBehaviour : MonoBehaviour
 {
     private CharacterController controller;
     public EnergyBar lifeBar;
-    public Image breathFB;
     public LanternFunctions lantern;
     public Light lanternLight;
 
@@ -48,10 +47,14 @@ public class PlayerBehaviour : MonoBehaviour
     float lanternEnergy;
     float maxLightIntensity;
 
+    [Header("Canvas")]
+    public Image breathFB;
+    public Image aimPoint;
+
     [Header("Animations")]
-    public Animator stealthyAnim;
     public Animator hitAnim;
-    public Animator StealthyhitAnim;
+    public Animator stealthyhitAnim;
+    public Animator aimAnim;
 
     // Use this for initialization
     void Start ()
@@ -208,7 +211,7 @@ public class PlayerBehaviour : MonoBehaviour
         if(stealthy == true)
         {
             Debug.Log("ENTRAAAAAA");
-            StealthyhitAnim.SetTrigger("StealthyHit");
+            stealthyhitAnim.SetTrigger("StealthyHit");
         }
         hitAnim.SetTrigger("Hit");
         Debug.Log("OUCH!");
@@ -225,8 +228,21 @@ public class PlayerBehaviour : MonoBehaviour
         lifeBar.UpdateEnergyUI();
     }
 
-    /*void PauseAnimationEvent()
+    public void AimPlayer()
     {
-        stealthyAnim.enabled = false;
-    }*/
+        aimPoint.enabled = false;
+        aimAnim.SetBool("Aim", true);
+    }
+
+    public void NoAimPlayer()
+    {
+        aimPoint.enabled = true;
+        aimAnim.enabled = true;
+        aimAnim.SetBool("Aim", false);
+    }
+
+    void PauseAnimationEvent()
+    {
+       aimAnim.enabled = false;
+    }
 }

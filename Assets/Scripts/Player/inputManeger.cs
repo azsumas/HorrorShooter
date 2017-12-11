@@ -52,10 +52,12 @@ public class inputManeger : MonoBehaviour
                 player.Walk();
             }
 
-            /*if(Input.GetButtonDown("Walk"))
+            if (Input.GetButton("Aim"))
             {
-                player.SlowStep();
-            }*/
+                player.AimPlayer();
+            }
+            else player.NoAimPlayer();
+
             if (Input.GetButton("Walk"))
             {
                 player.SlowStep();
