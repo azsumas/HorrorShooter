@@ -15,7 +15,7 @@ public class LaserGun : MonoBehaviour
 
     [Header("Effects")]
     public ParticleSystem flash;
-    //public GameObject impactEffect;
+    public GameObject impactEffect;
     public ParticleSystem smoke;
     public ParticleSystem smoke01;
 
@@ -91,8 +91,8 @@ public class LaserGun : MonoBehaviour
                 }
             }
         }
-        //GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        //Destroy(impactGo, 0.1f);
+        GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impactGo, 0.1f);
 
         Debug.Log("SHOT");
         Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 4);
