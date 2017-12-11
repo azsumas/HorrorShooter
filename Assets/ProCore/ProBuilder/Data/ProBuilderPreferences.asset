@@ -17,24 +17,32 @@ MonoBehaviour:
   - pbCollapseVertexToFirst
   - pbGenerateUV2PerObject
   - pbDisableAutoUV2Generation
+  - pbStripProBuilderOnBuild
+  - pbForceConvex
+  - pbMeshesAreAssets
   m_Int_keys:
   - pbHandleAlignment
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
   - pb_GIWorkflowMode
+  - pbDefaultEntity
+  - pbDefaultCollider
+  - pbShadowCastingMode
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
   m_String_keys:
   - pbLastWebVersionChecked
   m_Color_keys: []
-  m_Material_keys: []
-  m_Bool_values: 0100010000
-  m_Int_values: 00000000000000000200000000000000
+  m_Material_keys:
+  - pbDefaultMaterial
+  m_Bool_values: 0100010001010000
+  m_Int_values: 00000000000000000100000000000000000000000200000002000000
   m_Float_values:
   - 0
   - 0
   m_String_values:
   - 2.9.7f5
   m_Color_values: []
-  m_Material_values: []
+  m_Material_values:
+  - {fileID: 2100000, guid: 833c505fc3885ef47946332c7c266725, type: 2}
