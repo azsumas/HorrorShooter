@@ -20056,7 +20056,7 @@ MonoBehaviour:
   speed: 0
   run: 5
   walk: 3
-  slowStep: 1
+  slowStep: 2
   axis: {x: 0, y: 0}
   forceToGround: -9.81
   jumpSpeed: 5

@@ -13,14 +13,14 @@ public class inputManeger : MonoBehaviour
     private CameraBehaviour cameraBehaviour;
     private MouseCursor mouse;
     public PauseManager manager;
-    CharacterController characterCollider;
+    bool stealthy;
 	// Use this for initialization
 	void Start ()
     {
         player = GetComponent<PlayerBehaviour>();
         cameraBehaviour = GetComponentInChildren<CameraBehaviour>();
         mouse = GetComponent<MouseCursor>();
-        characterCollider = gameObject.GetComponent<CharacterController>();
+        stealthy = false;
 	}
 	
 	// Update is called once per frame
@@ -58,15 +58,17 @@ public class inputManeger : MonoBehaviour
             }
             else player.NoAimPlayer();
 
-            if (Input.GetButton("Walk"))
+            if (Input.GetButtonDown("Walk"))
             {
-                player.SlowStep();
-                characterCollider.height = 1.0f;
+                stealthy = true;
+                if (stealthy == true)
+                {
+                    player.SlowStep();
+                }
             }
-            else
+            else 
             {
-                player.Walk();
-                characterCollider.height = 1.8f;
+                stealthy = false;
             }
 
             /*if (Input.GetButtonDown("ActiveDoor"))

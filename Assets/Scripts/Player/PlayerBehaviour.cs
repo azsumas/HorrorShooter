@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    CharacterController characterCollider;
     private CharacterController controller;
     public EnergyBar lifeBar;
     public LanternFunctions lantern;
@@ -59,6 +60,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        characterCollider = gameObject.GetComponent<CharacterController>();
         controller = GetComponent<CharacterController>();
         speed = walk;
         death = false;
@@ -180,13 +182,14 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Run()
     {
-        Debug.Log("Entro a correr");
 		moveFast = true;
-        if (staminaCount >= 0) speed += run;
+        speed += run;
+        Debug.Log("RUN");
     }
 
     public void Walk()
     {
+        characterCollider.height = 1.8f;
         stealthy = false;
         moveFast = false;
 		stamina = false;
@@ -195,8 +198,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void SlowStep()
     {
+        characterCollider.height = 1.0f;
         stealthy = true;
-        speed = walk - 1;
+        speed -= slowStep;
     }
 
     public void Lantern()
