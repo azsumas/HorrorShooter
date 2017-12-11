@@ -36,7 +36,7 @@ public class PlayerBehaviour : MonoBehaviour
     public bool stealthy = false;
     
     [Header("Stats Player")]
-    public bool death;
+    public bool death = false;
 
     [Header("Energy Player")]
     public float hitYourself;
@@ -66,7 +66,6 @@ public class PlayerBehaviour : MonoBehaviour
         characterCollider = gameObject.GetComponent<CharacterController>();
         controller = GetComponent<CharacterController>();
         speed = walk;
-        death = false;
         staminaCount = maxStamina;
 		stamina = false;
         maxLightIntensity = lanternLight.intensity;
@@ -131,9 +130,10 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         // CONTROL ENERGY PLAYER
-        if(energy <= 0)
+        if (energy <= 0) energy = 0;
+
+        if (energy == 0)
         {
-            energy = 0;
             death = true;
         }
 
