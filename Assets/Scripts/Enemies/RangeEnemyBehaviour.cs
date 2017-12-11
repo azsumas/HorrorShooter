@@ -178,20 +178,20 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 				if (fireCounter <= 0f)
 				{
 					Debug.Log ("counterwork");
-					if (hit.collider.gameObject.CompareTag ("Player")) {
-						lr.enabled = true;
-						lr.SetPosition (0, transform.position);
+					//if (hit.collider.gameObject.CompareTag ("Player")) {
+					if (hit.collider.gameObject.layer == 9) {
 						Debug.Log ("TAGPLAYER");
 						Shoot ();
 						fireCounter = 1f / coolDownAttack;
 					} 
 					else 
 					{
-						agent.SetDestination (targetTransform.position);
-						lr.enabled = false;
+						/*agent.SetDestination (targetTransform.position);
+						lr.enabled = false;*/
 					}
 				} 
-
+				else
+					lr.enabled = false;
 					fireCounter -= Time.deltaTime;
 	            }
         }
@@ -323,6 +323,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void Shoot()
     {
+		lr.enabled = true;
+		lr.SetPosition (0, transform.position);
         targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
         Debug.Log("Shoot");
     }

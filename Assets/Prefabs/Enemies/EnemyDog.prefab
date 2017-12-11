@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 195780113227472992}
   - component: {fileID: 136536727791682216}
   - component: {fileID: 114155231434722902}
-  - component: {fileID: 114918676617284686}
   - component: {fileID: 65799178324491456}
   m_Layer: 12
   m_Name: EnemyDog
@@ -41,7 +40,6 @@ GameObject:
   - component: {fileID: 4295404958197262}
   - component: {fileID: 33872760941189722}
   - component: {fileID: 23709251342382488}
-  - component: {fileID: 95858005875079510}
   m_Layer: 12
   m_Name: EnemyMesh
   m_TagString: Untagged
@@ -49,35 +47,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1869956975708360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4039477970839666}
-  - component: {fileID: 108328415997137908}
-  m_Layer: 12
-  m_Name: Spotlight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4039477970839666
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1869956975708360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4635425328845272}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4295404958197262
 Transform:
   m_ObjectHideFlags: 1
@@ -102,7 +71,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4295404958197262}
-  - {fileID: 4039477970839666}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -159,59 +127,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 0.71}
---- !u!95 &95858005875079510
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1584426224431496}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c84198c908fd8d94ea3ca4b7c16f79ce, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!108 &108328415997137908
-Light:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1869956975708360}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 0.15862082, g: 0, b: 1, a: 1}
-  m_Intensity: 10
-  m_Range: 15
-  m_SpotAngle: 43.1
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!114 &114155231434722902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,47 +147,14 @@ MonoBehaviour:
   chaseRange: 5
   maxChaseRange: 15
   minChaseRange: 5
-  attackRange: 1
-  idleTime: 0
-  stunTime: 1
-  coolDownAttack: 1
-  canAttack: 1
-  hitDamage: 0
-  energy: 0
-  maxEnergy: 0
---- !u!114 &114918676617284686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1408075065728960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1770eb41a781cc4ebb5544e5429962e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  anim: {fileID: 95858005875079510}
-  targetTransform: {fileID: 0}
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
-  chaseRange: 5
-  maxChaseRange: 15
-  minChaseRange: 5
-  attackRange: 2
-  spotLight: {fileID: 108328415997137908}
-  viewDistance: 15
-  viewMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  idleTime: 0
+  attackRange: 1.5
+  idleTime: 0.5
   stunTime: 1
   coolDownAttack: 1
   canAttack: 0
-  hitDamage: 10
-  energy: 50
-  maxEnergy: 50
+  hitDamage: 5
+  energy: 10
+  maxEnergy: 10
 --- !u!136 &136536727791682216
 CapsuleCollider:
   m_ObjectHideFlags: 1
