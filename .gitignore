@@ -80,4 +80,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-Thumbs.db
+
+.vs
