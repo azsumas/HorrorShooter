@@ -1,6 +1,4 @@
-<p align="center">
-  <img width="1503" height="816" src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/game_logo_lightver.png">
-</p>
+![Image of menu flow](https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/game_logo_lightver.png)  
 
 # System Hazard
 First person shooter survival horror full of dark corridors and screeching noises, with a few bullets, a battered armor and robotic monsters waiting in the dark.
