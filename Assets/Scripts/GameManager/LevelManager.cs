@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
         FadeIn();
 
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
+        else if(SceneManager.sceneCount == 1) StartLoad(titleScene);
 
         UpdateSceneState();
     }
@@ -58,6 +59,9 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadNext() { StartLoad(nextScene); }
+    public void LoadBack() { StartLoad(backScene); }
+    public void LoadMenu() { StartLoad(titleScene); }
+    public void LoadSceneIndex(int index) { StartLoad(index); }
 
     void StartLoad(int index)
     {

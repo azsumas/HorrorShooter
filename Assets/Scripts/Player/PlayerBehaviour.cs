@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    public enum State { Default, GOD}
+    public State state = State.Default;
+
     public Camera cameraAim;
     CharacterController characterCollider;
     private CharacterController controller;
@@ -72,7 +75,20 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 	// Update is called once per frame
-	void Update ()
+    void Update()
+    {
+        switch(state)
+        {
+            case State.Default:
+                DefaultUpdate();
+                break;
+            case State.GOD:
+                break;
+            default:
+                break;
+        }
+    }
+	void DefaultUpdate ()
     {
         //Reset states
         if(!controller.isGrounded) isGrounded = false;
@@ -257,5 +273,20 @@ public class PlayerBehaviour : MonoBehaviour
     void PauseAnimationEvent()
     {
        aimAnim.enabled = false;
+    }
+
+    public void SetGodMode()
+    {
+        if(state == State.Default)
+        {
+            controller.enabled = false;
+            state = State.GOD;
+        }
+
+        else
+        {
+            controller.enabled = true;
+            state = State.Default;
+        }
     }
 }

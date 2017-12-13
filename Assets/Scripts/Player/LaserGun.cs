@@ -16,6 +16,7 @@ public class LaserGun : MonoBehaviour
     [Header("Effects")]
     public ParticleSystem flash;
     public GameObject impactEffect;
+    public GameObject enemyImpactEffect;
     public ParticleSystem smoke;
     public ParticleSystem smoke01;
 
@@ -71,6 +72,8 @@ public class LaserGun : MonoBehaviour
                 if (target != null)
                 {
                     target.SetDamage(damage);
+                    GameObject enemyImpactGo = Instantiate(enemyImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(enemyImpactGo, 0.1f);
                 }
             }
             else if (hit.collider.gameObject.CompareTag("EnemyRange"))
