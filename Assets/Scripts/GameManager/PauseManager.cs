@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject mainPause;
+    public Text pauseText;
     private bool paused;
-    public Transform player;
 
     public bool Pause
     {
@@ -31,15 +30,13 @@ public class PauseManager : MonoBehaviour
     {
         if(paused)
         {
-            mainPause.gameObject.SetActive(true);
+            pauseText.gameObject.SetActive(true);
             Time.timeScale = 0;
-            player.GetComponent<CharacterController>().enabled = false;
         }
         else if(!paused)
         {
-            mainPause.gameObject.SetActive(false);
+            pauseText.gameObject.SetActive(false);
             Time.timeScale = 1;
-            player.GetComponent<CharacterController>().enabled = true;
         }
     }
 
