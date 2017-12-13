@@ -63,15 +63,15 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4140459328652222
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860381985160148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.57, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.6085243, y: -4.298069, z: -6.1583424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4632780690178512}
@@ -185,7 +185,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.15862082, g: 0, b: 1, a: 1}
-  m_Intensity: 10
+  m_Intensity: 0
   m_Range: 15
   m_SpotAngle: 43.1
   m_CookieSize: 10
@@ -237,8 +237,8 @@ MonoBehaviour:
   viewMask:
     serializedVersion: 2
     m_Bits: 1024
-  idleTime: 0
-  stunTime: 1
+  idleTime: 0.2
+  stunTime: 0.5
   coolDownAttack: 1
   canAttack: 0
   hitDamage: 10

@@ -11,11 +11,6 @@ public class ButtonsFunctions : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void LoadScene(int buildIndex)
-    {
-        SceneManager.LoadScene(buildIndex);
-    }
-
     public void QuitGame()
     {
         Application.Quit();
