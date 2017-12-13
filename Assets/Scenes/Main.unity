@@ -2513,6 +2513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8abe8d17ff91a489237e11aa30fbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  managerScene: {fileID: 0}
 --- !u!1 &766186438
 GameObject:
   m_ObjectHideFlags: 0
@@ -4596,8 +4597,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252814886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 357.5, y: 201, z: 0}
-  m_LocalScale: {x: 0.37239584, y: 0.37239584, z: 0.37239584}
+  m_LocalPosition: {x: 416, y: 234, z: 0}
+  m_LocalScale: {x: 0.43333334, y: 0.43333334, z: 0.43333334}
   m_Children:
   - {fileID: 1731899828}
   - {fileID: 569356667}
@@ -9115,8 +9116,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 743762765}
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: NewGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

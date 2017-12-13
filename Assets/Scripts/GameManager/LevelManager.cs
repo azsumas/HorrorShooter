@@ -39,12 +39,11 @@ public class LevelManager : MonoBehaviour
 
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        if(currentScene - 1 <= managerScene) backScene = sceneCountInBuildSettings - 1;
+        if (currentScene - 1 <= managerScene) backScene = sceneCountInBuildSettings - 1;
         else backScene = currentScene - 1;
 
         if(currentScene + 1 >= sceneCountInBuildSettings) nextScene = managerScene + 1;
         else nextScene = currentScene + 1;
-
     }
 
     private void Update()
@@ -62,6 +61,10 @@ public class LevelManager : MonoBehaviour
     public void LoadBack() { StartLoad(backScene); }
     public void LoadMenu() { StartLoad(titleScene); }
     public void LoadSceneIndex(int index) { StartLoad(index); }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
     void StartLoad(int index)
     {
@@ -76,9 +79,10 @@ public class LevelManager : MonoBehaviour
 
         FadeOut();
     }
+
     void LoadLevel()
     {
-        if(currentScene != managerScene) unloadAsync = SceneManager.UnloadSceneAsync(currentScene);
+        if (currentScene != managerScene) unloadAsync = SceneManager.UnloadSceneAsync(currentScene);
         loadAsync = SceneManager.LoadSceneAsync(loadingSceneIndex, LoadSceneMode.Additive);
 
         StartCoroutine(Loading());
@@ -109,6 +113,11 @@ public class LevelManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    void QuitGame()
+    {
+       //Application.Quit();
     }
 
     void FadeIn()

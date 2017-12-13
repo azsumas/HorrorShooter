@@ -5,14 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class ButtonsFunctions : MonoBehaviour
 {
+    public GameObject managerScene;
+    private LevelManager script;
+
+    private void Start()
+    {
+        managerScene = GameObject.FindWithTag("Manager");
+        script = managerScene.GetComponent<LevelManager>();
+    }
+
     public void Update()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
+    public void NewGame()
+    {
+        script.LoadNext();
+    }
+
     public void QuitGame()
     {
-        Application.Quit();
+        script.ExitGame();
     }
 }

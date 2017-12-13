@@ -8,6 +8,7 @@ TagManager:
   - EnemyRange
   - Lantern
   - EnemyDog
+  - Manager
   layers:
   - Default
   - TransparentFX
