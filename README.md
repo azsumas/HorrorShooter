@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="773" height="393" src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/logo.png">
+  <img width="1503" height="816" src="https://github.com/azsumas/HorrorShooter/blob/master/WikiResources/game_logo_lightver.png">
 </p>
 
 # System Hazard
