@@ -27,6 +27,7 @@ public class inputManeger : MonoBehaviour
 	void Update ()
     {
         if(Input.GetButtonDown("Pause")) manager.PauseGame();
+        if (Input.GetKeyDown(KeyCode.F10)) player.SetGodMode();
 
         if(!PauseManager.Instance.Pause)
         {
