@@ -27,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float slowStep;
     public Vector2 axis;
 	Vector3 desiredDirection;
+    float altura;
 
 	[Header("Stats Jumps")]
     public float forceToGround = Physics.gravity.y;
@@ -91,7 +92,10 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void GODUpdate()
     {
-        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+        if (Input.GetKey(KeyCode.Z)) altura = -1f;
+        else if (Input.GetKey(KeyCode.Q)) altura = 1f;
+        else altura = 0f;
+        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, altura*Time.deltaTime, speed * Input.GetAxis("Vertical") * Time.deltaTime);
         energy = maxEnergy;
         
     }
