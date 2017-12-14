@@ -25,6 +25,16 @@ public class ButtonsFunctions : MonoBehaviour
         script.LoadNext();
     }
 
+    public void TryAgain()
+    {
+        script.LoadGamePlay();
+    }
+
+    public void MainGame()
+    {
+        script.LoadMenu();
+    }
+
     public void QuitGame()
     {
         script.ExitGame();

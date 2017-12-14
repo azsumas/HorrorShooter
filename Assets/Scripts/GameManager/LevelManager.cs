@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
 
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentScene - 1 <= managerScene) backScene = sceneCountInBuildSettings - 1;
+        if(currentScene - 1 <= managerScene) backScene = sceneCountInBuildSettings - 1;
         else backScene = currentScene - 1;
 
         if(currentScene + 1 >= sceneCountInBuildSettings) nextScene = managerScene + 1;
@@ -60,10 +60,11 @@ public class LevelManager : MonoBehaviour
     public void LoadNext() { StartLoad(nextScene); }
     public void LoadBack() { StartLoad(backScene); }
     public void LoadMenu() { StartLoad(titleScene); }
+    public void LoadGamePlay() { StartLoad(2); }
     public void LoadSceneIndex(int index) { StartLoad(index); }
     public void ExitGame()
     {
-        Application.Quit();
+        FadeOutExit();
     }
 
     void StartLoad(int index)
@@ -93,6 +94,12 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(fadeTime);
         LoadLevel();
     }
+
+    IEnumerator WaitForExit()
+    {
+        yield return new WaitForSeconds(fadeTime);
+        QuitGame();
+    }
     IEnumerator Loading()
     {
         while(true)
@@ -117,7 +124,9 @@ public class LevelManager : MonoBehaviour
 
     void QuitGame()
     {
-       //Application.Quit();
+        Debug.Log("ExitGame");
+        Application.Quit();
+        return;
     }
 
     void FadeIn()
@@ -128,5 +137,12 @@ public class LevelManager : MonoBehaviour
     {
         blackScreen.CrossFadeAlpha(1, fadeTime, true);
         StartCoroutine(WaitForFade());
+    }
+
+    void FadeOutExit()
+    {
+        blackScreen.CrossFadeAlpha(1, fadeTime, true);
+        Debug.Log("ToExit");
+        StartCoroutine(WaitForExit());
     }
 }
