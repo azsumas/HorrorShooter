@@ -83,12 +83,20 @@ public class PlayerBehaviour : MonoBehaviour
                 DefaultUpdate();
                 break;
             case State.GOD:
+                GODUpdate();
                 break;
             default:
                 break;
         }
     }
-	void DefaultUpdate ()
+    void GODUpdate()
+    {
+        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+        energy = maxEnergy;
+        
+    }
+
+    void DefaultUpdate ()
     {
         //Reset states
         if(!controller.isGrounded) isGrounded = false;
