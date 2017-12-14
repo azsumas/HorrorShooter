@@ -15,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     public EnergyBar lifeBar;
     public LanternFunctions lantern;
     public Light lanternLight;
+    public DeathCondition dead;
 
     [Header("Direction")]
     public Vector3 moveDirection;
@@ -69,6 +70,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         characterCollider = gameObject.GetComponent<CharacterController>();
         controller = GetComponent<CharacterController>();
+        dead = GetComponent<DeathCondition>();
         speed = walk;
         staminaCount = maxStamina;
 		stamina = false;
@@ -163,6 +165,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (energy == 0)
         {
             death = true;
+            dead.SetDeath();
         }
 
         // CONTROL LANTERN AND ENERGY

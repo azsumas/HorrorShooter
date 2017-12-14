@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 149544026}
   - component: {fileID: 149544027}
+  - component: {fileID: 149544028}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -162,6 +163,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   managerScene: {fileID: 0}
+--- !u!114 &149544028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 149544025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32824d410b259b40990306cdf66a750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dieText: {fileID: 255403751}
+  winText: {fileID: 1772199704}
+  dead: 0
 --- !u!1 &232640651
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &255403752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -938,7 +953,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 990220576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 553, y: 311, z: 0}
+  m_LocalPosition: {x: 562.5, y: 316.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474833131}
