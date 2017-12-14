@@ -15,7 +15,8 @@ public class PlayerBehaviour : MonoBehaviour
     public EnergyBar lifeBar;
     public LanternFunctions lantern;
     public Light lanternLight;
-    public DeathCondition dead;
+    public GameObject managerScene;
+    private LevelManager script;
 
     [Header("Direction")]
     public Vector3 moveDirection;
@@ -42,6 +43,7 @@ public class PlayerBehaviour : MonoBehaviour
     
     [Header("Stats Player")]
     public bool death = false;
+    public int deadCondition;
 
     [Header("Energy Player")]
     public float hitYourself;
@@ -66,15 +68,24 @@ public class PlayerBehaviour : MonoBehaviour
     public float fieldOfViewAim;
 
     // Use this for initialization
+    private void Awake()
+    {
+        this.gameObject.SetActive(true);
+    }
     void Start ()
     {
+        Cursor.visible = false;
         characterCollider = gameObject.GetComponent<CharacterController>();
         controller = GetComponent<CharacterController>();
-        dead = GetComponent<DeathCondition>();
         speed = walk;
         staminaCount = maxStamina;
 		stamina = false;
+        death = false;
         maxLightIntensity = lanternLight.intensity;
+        PlayerPrefs.SetInt("Death", 0);
+
+        managerScene = GameObject.FindWithTag("Manager");
+        script = managerScene.GetComponent<LevelManager>();
     }
 
 	// Update is called once per frame
@@ -165,7 +176,9 @@ public class PlayerBehaviour : MonoBehaviour
         if (energy == 0)
         {
             death = true;
-            dead.SetDeath();
+            //this.gameObject.SetActive(false);
+            PlayerPrefs.SetInt("Death", 1);
+            script.LoadNext();
         }
 
         // CONTROL LANTERN AND ENERGY
