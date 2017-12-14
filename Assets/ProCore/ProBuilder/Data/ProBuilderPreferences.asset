@@ -36,8 +36,8 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys:
   - pbDefaultMaterial
-  m_Bool_values: 0101010001010000
-  m_Int_values: 00000000010000000200000000000000000000000200000002000000
+  m_Bool_values: 0100010001010000
+  m_Int_values: 00000000010000000100000000000000000000000200000002000000
   m_Float_values:
   - 0
   - 0
