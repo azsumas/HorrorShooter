@@ -13,12 +13,17 @@ public class EndScreen : MonoBehaviour
     void Start ()
     {
         dead = PlayerPrefs.GetInt("Death");
+        if(dead == 1) DeadText();
+        else WinText(); 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    void DeadText()
     {
-        if(dead == 1) dieText.SetActive(true);
-        else winText.SetActive(true);
-	}
+        dieText.SetActive(true);
+    }
+
+    void WinText()
+    {
+        winText.SetActive(true);
+    }
 }
