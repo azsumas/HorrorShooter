@@ -694,7 +694,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205755332181702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.052354, y: -1.0722836e-16, z: -1.0341727}
+  m_LocalPosition: {x: -7.8, y: 0.9, z: 5.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4396163853269646}
@@ -768,8 +768,8 @@ Camera:
   m_GameObject: {fileID: 1030104321977456}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -777,7 +777,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 23
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4198a34178431b489743559a21e34cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 4512222189088122}
   mapScale: 5
 --- !u!114 &114040873917791808
 MonoBehaviour:
@@ -1528,6 +1528,7 @@ MonoBehaviour:
   lifeBar: {fileID: 114300893705044334}
   lantern: {fileID: 114317217026592820}
   lanternLight: {fileID: 108852303504729222}
+  managerScene: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   speed: 0
   run: 5
@@ -1541,9 +1542,10 @@ MonoBehaviour:
   isGrounded: 0
   stealthy: 0
   death: 0
+  deadCondition: 0
   hitYourself: 0
   maxEnergy: 100
-  energy: 60
+  energy: 100
   maxStamina: 50
   breathFB: {fileID: 114514432692132316}
   aimPoint: {fileID: 114912598151736938}
@@ -12260,7 +12262,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868780727365764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0341727}
+  m_LocalPosition: {x: 0, y: 0, z: 24.7}
   m_LocalScale: {x: 0.42916667, y: 0.42916667, z: 0.42916667}
   m_Children:
   - {fileID: 224560808659598958}

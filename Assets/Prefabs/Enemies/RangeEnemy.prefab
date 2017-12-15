@@ -110,8 +110,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734373184567762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4745266, y: 0, z: 27.53645}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -29.143723, y: 0, z: 4.2620544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4872870722790820}
@@ -242,10 +242,10 @@ MonoBehaviour:
   closestDistance: 0
   wayPointRef: 0
   lantern: {fileID: 0}
-  maxChaseRange: 20
-  minChaseRange: 10
-  chaseRange: 10
-  attackRange: 8
+  maxChaseRange: 10
+  minChaseRange: 6
+  chaseRange: 6
+  attackRange: 7
   idleTime: 1
   stunTime: 1
   coolDownAttack: 1
