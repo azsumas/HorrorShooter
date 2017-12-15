@@ -55,6 +55,7 @@ public class PlayerBehaviour : MonoBehaviour
     float breath;
     float lanternEnergy;
     float maxLightIntensity;
+    float runEnergy;
 
     [Header("Canvas")]
     public Image breathFB;
@@ -176,6 +177,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (energy == 0)
         {
             death = true;
+            speed = 0;
             //this.gameObject.SetActive(false);
             PlayerPrefs.SetInt("Death", 1);
             script.LoadNext();
@@ -184,7 +186,7 @@ public class PlayerBehaviour : MonoBehaviour
         // CONTROL LANTERN AND ENERGY
         if(lantern.switchOn)
         {
-            lanternEnergy = Time.deltaTime / 2;
+            lanternEnergy = Time.deltaTime / 4;
             Lantern();
 
             if(energy <= 25)
@@ -193,6 +195,11 @@ public class PlayerBehaviour : MonoBehaviour
                 Debug.Log("Low Battery");
             }
             else lanternLight.intensity = maxLightIntensity;
+        }
+        if(moveFast == true)
+        {
+            runEnergy = Time.deltaTime;
+            RunEnergy();
         }
     }
 
@@ -232,6 +239,11 @@ public class PlayerBehaviour : MonoBehaviour
 		moveFast = true;
         speed += run;
         Debug.Log("RUN");
+    }
+
+    public void RunEnergy()
+    {
+        lifeBar.ReceivedDamage(runEnergy);
     }
 
     public void Walk()
