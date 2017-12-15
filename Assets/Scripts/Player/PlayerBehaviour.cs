@@ -295,7 +295,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         cameraAim.fieldOfView -= 2;
         if (cameraAim.fieldOfView <= fieldOfViewAim) cameraAim.fieldOfView = fieldOfViewAim;
-        aimPoint.enabled = false;
+        //aimPoint.enabled = false;
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 0.0f);
         aimAnim.SetBool("Aim", true);
     }
@@ -304,7 +304,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         cameraAim.fieldOfView += 2;
         if (cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
-        aimPoint.enabled = true;
+        //aimPoint.enabled = true;
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 1.0f);
         aimAnim.enabled = true;
         aimAnim.SetBool("Aim", false);

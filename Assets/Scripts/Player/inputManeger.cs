@@ -5,6 +5,7 @@ using UnityEngine;
 public class inputManeger : MonoBehaviour
 {
     public OpenDoorButton door;
+    public LaserGun gun;
     private Vector2 inputAxis;
     private PlayerBehaviour player;
 	public LanternFunctions lantern;
@@ -39,7 +40,9 @@ public class inputManeger : MonoBehaviour
                 inputAxis.y = Input.GetAxis("Vertical");
                 player.SetVerticalAxis(inputAxis.y);
 
-                if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(5);
+                if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(10);
+                if(Input.GetKeyDown(KeyCode.L)) player.RecoveryEnergy(100);
+                if((Input.GetKeyDown(KeyCode.R))) gun.ExtraAmmo(25);
 
                 if(Input.GetButtonDown("Jump"))
                 {
