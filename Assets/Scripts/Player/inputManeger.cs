@@ -15,6 +15,10 @@ public class inputManeger : MonoBehaviour
     private MouseCursor mouse;
     public PauseManager manager;
     bool stealthy;
+
+    [Header("SoundEffects")]
+    public AudioSource breathSound;
+    public AudioSource reload;
 	// Use this for initialization
 	void Start ()
     {
@@ -40,9 +44,13 @@ public class inputManeger : MonoBehaviour
                 inputAxis.y = Input.GetAxis("Vertical");
                 player.SetVerticalAxis(inputAxis.y);
 
-                if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(10);
+                //if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(10);
                 if(Input.GetKeyDown(KeyCode.L)) player.RecoveryEnergy(100);
-                if((Input.GetKeyDown(KeyCode.R))) gun.ExtraAmmo(25);
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    reload.Play();
+                    gun.ExtraAmmo(25);
+                }
 
                 if(Input.GetButtonDown("Jump"))
                 {
@@ -51,6 +59,7 @@ public class inputManeger : MonoBehaviour
 
                 if(Input.GetButtonDown("Run"))
                 {
+                    breathSound.Play();
                     player.Run();
                 }
 

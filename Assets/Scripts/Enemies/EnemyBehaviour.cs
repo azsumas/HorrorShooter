@@ -46,6 +46,9 @@ public class EnemyBehaviour : MonoBehaviour
     public float energy;
     public float maxEnergy;
 
+    [Header("SoundEffects")]
+    public AudioSource chaseSound;
+
     void Start()
     {
         viewAngle = spotLight.spotAngle;
@@ -214,6 +217,7 @@ public class EnemyBehaviour : MonoBehaviour
         //Feedback de lo que empieza a perseguirnos :D
         state = EnemyState.Chase;
         anim.SetTrigger("Chase");
+        chaseSound.Play();
 
     }
     void SetAttack()
