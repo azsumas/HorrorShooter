@@ -17,6 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Light lanternLight;
     public GameObject managerScene;
     private LevelManager script;
+    private LaserGun laser;
 
     [Header("Direction")]
     public Vector3 moveDirection;
@@ -87,6 +88,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         managerScene = GameObject.FindWithTag("Manager");
         script = managerScene.GetComponent<LevelManager>();
+        laser = this.gameObject.GetComponent<LaserGun>();
     }
 
 	// Update is called once per frame
@@ -111,6 +113,7 @@ public class PlayerBehaviour : MonoBehaviour
         else altura = 0f;
         transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, altura*Time.deltaTime, speed * Input.GetAxis("Vertical") * Time.deltaTime);
         energy = maxEnergy;
+        if(Input.GetKey(KeyCode.A)) laser.ammo = laser.maxAmmo;
         
     }
 
