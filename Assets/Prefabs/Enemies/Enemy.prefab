@@ -225,6 +225,7 @@ MonoBehaviour:
   state: 0
   anim: {fileID: 95917154427123642}
   targetTransform: {fileID: 0}
+  finalDoor: {fileID: 0}
   points:
   - {fileID: 0}
   - {fileID: 0}
@@ -241,6 +242,7 @@ MonoBehaviour:
   stunTime: 0.5
   coolDownAttack: 1
   canAttack: 0
+  theBoss: 0
   hitDamage: 10
   energy: 50
   maxEnergy: 50

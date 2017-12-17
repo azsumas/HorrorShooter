@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
+    public FinalDoor finalDoor;
 
     [Header("Patch")]
     public Transform[] points;
@@ -38,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] private bool canAttack = false;
+    public bool theBoss;
 
     [Header("Properties")]
     public int hitDamage;
@@ -233,6 +235,11 @@ public class EnemyBehaviour : MonoBehaviour
         agent.isStopped = true;
         this.gameObject.SetActive(false);
 		state = EnemyState.Dead;
+        if (theBoss == true)
+        {
+            Debug.Log("TRUE");
+            finalDoor.OpenFinalDoor();
+        }
         //Destroy(this.gameObject);
     }
     #endregion

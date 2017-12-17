@@ -15,6 +15,9 @@ public class FinishLevel : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        script.LoadNext();
+        if (other.tag == "Player")
+        {
+            script.LoadNext();
+        }
 	}
 }
