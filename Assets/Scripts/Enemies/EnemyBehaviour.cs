@@ -208,6 +208,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void SetPatrol()
     {
+        chaseSound.Stop();
         agent.isStopped = false;
         agent.SetDestination(points[pathIndex].position);
         state = EnemyState.Patrol;

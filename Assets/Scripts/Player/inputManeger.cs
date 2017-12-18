@@ -65,6 +65,7 @@ public class inputManeger : MonoBehaviour
 
                 if(Input.GetButtonUp("Run") || Input.GetButtonUp("Walk"))
                 {
+                    breathSound.Stop();
                     player.Walk();
                 }
 

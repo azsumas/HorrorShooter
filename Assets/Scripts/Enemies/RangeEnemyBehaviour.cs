@@ -235,6 +235,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void SetPatrol()
     {
+        chaseSound.Stop();
         agent.isStopped = false;
         agent.SetDestination(points[pathIndex].position);
         state = EnemyState.Patrol;
