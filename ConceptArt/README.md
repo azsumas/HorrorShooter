@@ -6,3 +6,4 @@
 ![Image of menu flow](https://github.com/azsumas/HorrorShooter/blob/master/ConceptArt/concept_props_02.png)  
 ![Image of menu flow](https://github.com/azsumas/HorrorShooter/blob/master/ConceptArt/concept_props_03.png)
 ![Image of menu flow](https://github.com/azsumas/HorrorShooter/blob/master/ConceptArt/concept_props_04.png)
+![Image of menu flow](https://github.com/azsumas/HorrorShooter/blob/master/ConceptArt/concept_character_04.png) 
