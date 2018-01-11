@@ -15,13 +15,18 @@ public class GunMagazine : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (gun.ammo < gun.maxAmmo)
+        /*if (gun.ammo < gun.maxAmmo)
         {
             gun.ExtraAmmo(gunMagazine);
 
             Radar.RemoveRadarObject(this.gameObject);
 
             this.gameObject.SetActive(false);
-        }
+        }*/
+        gun.MagazineReload(gunMagazine);
+
+        Radar.RemoveRadarObject(this.gameObject);
+
+        this.gameObject.SetActive(false);
     }
 }

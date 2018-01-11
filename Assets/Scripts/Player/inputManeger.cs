@@ -45,11 +45,12 @@ public class inputManeger : MonoBehaviour
                 player.SetVerticalAxis(inputAxis.y);
 
                 //if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(10);
-                if(Input.GetKeyDown(KeyCode.L)) player.RecoveryEnergy(100);
+                if(Input.GetKeyDown(KeyCode.Q)) player.RecoveryEnergy();
+
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     reload.Play();
-                    gun.ExtraAmmo(25);
+                    gun.Reload();
                 }
 
                 if(Input.GetButtonDown("Jump"))

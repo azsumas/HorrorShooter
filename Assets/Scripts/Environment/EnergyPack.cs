@@ -15,13 +15,18 @@ public class EnergyPack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerBehaviour>().energy < 100)
+        /*if (other.GetComponent<PlayerBehaviour>().energy < 100)
         {
             other.GetComponent<PlayerBehaviour>().RecoveryEnergy(energyPack);
 
             Radar.RemoveRadarObject(this.gameObject);
 
             this.gameObject.SetActive(false);
-        }
+        }*/
+            other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
+
+            Radar.RemoveRadarObject(this.gameObject);
+
+            this.gameObject.SetActive(false);
     }
 }

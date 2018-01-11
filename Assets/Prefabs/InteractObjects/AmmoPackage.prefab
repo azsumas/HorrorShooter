@@ -126,5 +126,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
-  gunMagazine: 10
+  gunMagazine: 1
   icon: {fileID: 114986175276908404, guid: c1b64a09c2acb6b41b378cd583a22a8e, type: 2}

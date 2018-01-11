@@ -18,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject managerScene;
     private LevelManager script;
     private LaserGun laser;
+    public Text packEnergyCount;
 
     [Header("Direction")]
     public Vector3 moveDirection;
@@ -57,6 +58,7 @@ public class PlayerBehaviour : MonoBehaviour
     float lanternEnergy;
     float maxLightIntensity;
     float runEnergy;
+    public int energyPackCount;
 
     [Header("Canvas")]
     public Image breathFB;
@@ -204,6 +206,7 @@ public class PlayerBehaviour : MonoBehaviour
             runEnergy = Time.deltaTime;
             RunEnergy();
         }
+        packEnergyCount.text =  energyPackCount + ("");
     }
 
     public void SetHorizontalAxis(float x)
@@ -283,16 +286,26 @@ public class PlayerBehaviour : MonoBehaviour
         Debug.Log("OUCH!");
     }
 
-    public void RecoveryEnergy(int recoveryEnergy)
+    public void PackEnergy(int energyPack)
     {
-        if (energy < maxEnergy)
+        /*if (energy < maxEnergy)
         {
             energy += recoveryEnergy;
         }
-        if (energy >= maxEnergy) energy = maxEnergy;
+        if (energy >= maxEnergy) energy = maxEnergy;*/
+        energyPackCount += energyPack;
+    }
 
+    public void RecoveryEnergy()
+    {
+        if (energyPackCount >= 1 && energy != maxEnergy)
+        {
+            energy = maxEnergy;
+            energyPackCount -= 1;
+        }
         lifeBar.UpdateEnergyUI();
     }
+
 
     public void AimPlayer()
     {

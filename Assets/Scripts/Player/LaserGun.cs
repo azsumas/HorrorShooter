@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LaserGun : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class LaserGun : MonoBehaviour
     public float range = 100f;
     public float maxAmmo;
     public float ammo;
+    public int magazine;
     public float fireRate = 10f;
+
+    public Text magazineCount;
 
     [Header("Effects")]
     public ParticleSystem flash;
@@ -52,13 +56,30 @@ public class LaserGun : MonoBehaviour
                     shootSound.Play();
                     Debug.Log("SHOT");
                 }
+                if(ammo <= 0.0f) ammo = 0.0f;
             }
+            magazineCount.text = ammo + ("/") + magazine;
         }
     }
 
-    public void ExtraAmmo(int magazine)
+    /*public void ExtraAmmo(int magazine)
     {
         ammo += magazine;
+        gunBar.UpdateGunUI();
+    }*/
+
+    public void MagazineReload(int reload)
+    {
+        magazine += reload;
+    }
+
+    public void Reload()
+    {
+        if(magazine >= 1 && ammo != maxAmmo)
+        {
+            ammo = maxAmmo;
+            magazine -= 1;
+        }
         gunBar.UpdateGunUI();
     }
 
