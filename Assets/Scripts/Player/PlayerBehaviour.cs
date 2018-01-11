@@ -85,7 +85,7 @@ public class PlayerBehaviour : MonoBehaviour
         death = false;
         maxLightIntensity = lanternLight.intensity;
         PlayerPrefs.SetInt("Death", 0);
-
+       // energy = GameState.GameData.energy;
         managerScene = GameObject.FindWithTag("Manager");
         script = managerScene.GetComponent<LevelManager>();
         laser = this.gameObject.GetComponent<LaserGun>();

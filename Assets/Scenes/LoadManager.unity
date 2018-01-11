@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 25.096775, g: 5.43198e-40, b: 4.218492e+14, a: 1}
+  m_IndirectSpecularColor: {r: 25.096775, g: 5.55291e-40, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270191599}
   - component: {fileID: 270191600}
+  - component: {fileID: 270191601}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -161,6 +162,24 @@ MonoBehaviour:
   titleScene: 1
   sceneCountInBuildSettings: 0
   blackScreen: {fileID: 687513369}
+--- !u!114 &270191601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 270191598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bdc6b7681315b479455a18facd8e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: 0
+  state:
+    playerPosition: 0
+    hasKey: 0
+    ammo: 0
+    playerName: 
+    energy: 0
 --- !u!1 &313158004
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,8 +205,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313158004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.757965, y: 28.21125, z: -13.816803}
-  m_LocalScale: {x: 0.26484376, y: 0.26484376, z: 0.26484376}
+  m_LocalPosition: {x: 205.75797, y: 111.21125, z: -13.816803}
+  m_LocalScale: {x: 0.49609375, y: 0.49609375, z: 0.49609375}
   m_Children:
   - {fileID: 687513368}
   m_Father: {fileID: 270191599}
