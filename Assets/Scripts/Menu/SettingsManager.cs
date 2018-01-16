@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.Audio;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SettingsManager : MonoBehaviour
     public Dropdown resolutionDrop;
     public Dropdown qualityDrop;
     public Button applyButton;
+    public AudioMixer audioMixer;
 
     public Resolution[] resolutions;
     public GameSettings gameSettings;
@@ -71,4 +73,9 @@ public class SettingsManager : MonoBehaviour
         resolutionDrop.value = gameSettings.resolution;
         qualityDrop.value = gameSettings.resolution;
     }*/
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
 }
