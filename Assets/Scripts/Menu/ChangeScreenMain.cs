@@ -11,6 +11,7 @@ public class ChangeScreenMain : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        Cursor.visible = true;
         title.SetActive(true);
         main.SetActive(false);
     }

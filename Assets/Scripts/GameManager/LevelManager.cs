@@ -46,16 +46,17 @@ public class LevelManager : MonoBehaviour
         else nextScene = currentScene + 1;
     }
 
-    private void Update()
+    /*private void Update()
     {
-        if(Input.GetKey(KeyCode.AltGr))
+
+        if (Input.GetKey(KeyCode.AltGr))
         {
             if(Input.GetKeyDown(KeyCode.N)) LoadNext();
             if(Input.GetKeyDown(KeyCode.B)) StartLoad(backScene);
             if(Input.GetKeyDown(KeyCode.M)) StartLoad(titleScene);
             if(Input.GetKeyDown(KeyCode.R)) StartLoad(currentScene);
         }
-    }
+    }*/
 
     public void LoadNext() { StartLoad(nextScene); }
     public void LoadBack() { StartLoad(backScene); }
@@ -69,7 +70,9 @@ public class LevelManager : MonoBehaviour
 
     void StartLoad(int index)
     {
-        if(isLoading)
+        Cursor.visible = false;
+
+        if (isLoading)
         {
             Debug.LogError("No se puede cargar mas de una escena al mismo tiempo");
             return;

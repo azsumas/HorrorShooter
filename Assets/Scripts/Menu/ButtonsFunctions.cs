@@ -10,18 +10,19 @@ public class ButtonsFunctions : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
         managerScene = GameObject.FindWithTag("Manager");
         script = managerScene.GetComponent<LevelManager>();
     }
 
     public void Update()
     {
-        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void NewGame()
     {
+        Cursor.visible = false;
         script.LoadNext();
     }
 
@@ -37,6 +38,7 @@ public class ButtonsFunctions : MonoBehaviour
 
     public void QuitGame()
     {
+        Cursor.visible = false;
         script.ExitGame();
     }
 }
