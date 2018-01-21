@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
-    public Text pauseText;
     private bool paused;
+    public GameObject pauseCanvas;
+    public GameObject hud;
 
     public bool Pause
     {
@@ -30,13 +31,18 @@ public class PauseManager : MonoBehaviour
     {
         if(paused)
         {
-            pauseText.gameObject.SetActive(true);
             Time.timeScale = 0;
+            hud.SetActive(false);
+            pauseCanvas.SetActive(true);
+            Cursor.visible = true;
         }
-        else if(!paused)
+
+        else if (!paused)
         {
-            pauseText.gameObject.SetActive(false);
+            hud.SetActive(true);
+            pauseCanvas.SetActive(false);
             Time.timeScale = 1;
+            Cursor.visible = false;
         }
     }
 

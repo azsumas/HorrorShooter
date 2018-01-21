@@ -31,6 +31,7 @@ public class SettingsManager : MonoBehaviour
     {
         gameSettings.fullScreen =  Screen.fullScreen = fullScreenToggle.isOn;
     }
+
     public void FullHDRes()
     {
         Screen.SetResolution(1920, 1080, Screen.fullScreen);
