@@ -2,15 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Break : MonoBehaviour {
+public class Break : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float energy;
+
+    public GameObject normal;
+    public GameObject roto;
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    public void TakeDamage(int hit)
+    {
+        energy -= hit;
+        //energyBar.UpdateEnergyUI();
+
+        if (energy <= 0)
+        {
+            Debug.Log("Entra");
+            Die();
+            
+            return;
+        }
+    }
+    void Die()
+    {
+        normal.SetActive(false);
+        roto.SetActive(true);
+        Debug.Log("Cambio");
+    }
 }
