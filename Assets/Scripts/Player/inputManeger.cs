@@ -105,7 +105,7 @@ public class inputManeger : MonoBehaviour
                     lantern.SwitchOn();
                 }
 
-                if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+                //if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 
                 //mouse
                 mouseAxis.x = Input.GetAxis("Mouse X") * sensitivity;
