@@ -16,7 +16,7 @@ public class Break : MonoBehaviour
 
     }
 
-    public void TakeDamage(int hit)
+    public void SetDamage(int hit)
     {
         energy -= hit;
         //energyBar.UpdateEnergyUI();
@@ -26,7 +26,6 @@ public class Break : MonoBehaviour
             Debug.Log("Entra");
             Die();
             
-            return;
         }
     }
     void Die()

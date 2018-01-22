@@ -120,6 +120,14 @@ public class LaserGun : MonoBehaviour
                     target.SetDamage(damage);
                 }
             }
+            else if (hit.collider.gameObject.CompareTag("BreakProp"))
+            {
+                Break target = hit.transform.GetComponent<Break>();
+                if(target != null)
+                {
+                    target.SetDamage(damage);
+                }
+            }
         }
         GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGo, 0.1f);

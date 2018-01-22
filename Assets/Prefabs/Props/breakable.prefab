@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4718951453962440}
   - component: {fileID: 114790191879076046}
-  - component: {fileID: 64950551785314236}
+  - component: {fileID: 136874958356714006}
   m_Layer: 0
   m_Name: breakable
-  m_TagString: Untagged
+  m_TagString: BreakProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1759,20 +1759,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300016, guid: 673fee75230bed04e88732589aecc2bb, type: 3}
---- !u!64 &64950551785314236
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1031690547819622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!114 &114790191879076046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1787,3 +1773,16 @@ MonoBehaviour:
   energy: 1
   normal: {fileID: 1791721621038508}
   roto: {fileID: 1441088697960074}
+--- !u!136 &136874958356714006
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031690547819622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.75
+  m_Height: 3.54
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.17, z: 0}
