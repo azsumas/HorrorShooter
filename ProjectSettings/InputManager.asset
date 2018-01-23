@@ -150,6 +150,38 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: Recovery
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: q
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Reload
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: r
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: Mouse X
     descriptiveName: 
     descriptiveNegativeName: 
@@ -166,6 +198,22 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: Mouse X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 0.7
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: Mouse Y
     descriptiveName: 
     descriptiveNegativeName: 
@@ -180,6 +228,22 @@ InputManager:
     invert: 0
     type: 1
     axis: 1
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mouse Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 0.7
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 4
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse ScrollWheel

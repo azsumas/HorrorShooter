@@ -44,10 +44,9 @@ public class inputManeger : MonoBehaviour
                 inputAxis.y = Input.GetAxis("Vertical");
                 player.SetVerticalAxis(inputAxis.y);
 
-                //if(Input.GetKeyDown(KeyCode.Q)) player.ReceivedDamage(10);
-                if(Input.GetKeyDown(KeyCode.Q)) player.RecoveryEnergy();
+                if(Input.GetButtonDown("Recovery")) player.RecoveryEnergy();
 
-                if (Input.GetKeyDown(KeyCode.R))
+                if (Input.GetButtonDown("Reload"))
                 {
                     reload.Play();
                     gun.Reload();
