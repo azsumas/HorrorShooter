@@ -27,27 +27,26 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if(paused)
-        {
-            Time.timeScale = 0;
-            hud.SetActive(false);
-            pauseCanvas.SetActive(true);
-            Cursor.visible = true;
-        }
-
-        else if (!paused)
-        {
-            hud.SetActive(true);
-            pauseCanvas.SetActive(false);
-            Time.timeScale = 1;
-            Cursor.visible = false;
-        }
-    }
-
     public void PauseGame()
     {
         paused = !paused;
+        if (paused) PauseOn();
+        else if (!paused) PauseOff();
+    }
+
+    public void PauseOn()
+    {
+        Time.timeScale = 0;
+        hud.SetActive(false);
+        pauseCanvas.SetActive(true);
+        Cursor.visible = true;
+    }
+
+    public void PauseOff()
+    {
+        hud.SetActive(true);
+        pauseCanvas.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.visible = false;
     }
 }
