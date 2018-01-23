@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.Audio;
+using UnityEngine.PostProcessing;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class SettingsManager : MonoBehaviour
     public Image HDResButton;
     public Image MidResButton;
     public Image FullResButton;
+    public PostProcessingProfile postProcessingAsset;
+    public Slider basicExposure;
 
     public GameSettings gameSettings;
 
@@ -68,5 +71,12 @@ public class SettingsManager : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
+    }
+
+    public void PostProcessing()
+    {
+        ColorGradingModel.Settings gradientSettings = postProcessingAsset.colorGrading.settings;
+        gradientSettings.basic.postExposure = basicExposure.value;
+        postProcessingAsset.colorGrading.settings = gradientSettings;
     }
 }
