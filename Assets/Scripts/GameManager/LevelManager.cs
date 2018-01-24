@@ -94,13 +94,13 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator WaitForFade()
     {
-        yield return new WaitForSeconds(fadeTime);
+        yield return new WaitForSecondsRealtime(fadeTime);
         LoadLevel();
     }
 
     IEnumerator WaitForExit()
     {
-        yield return new WaitForSeconds(fadeTime);
+        yield return new WaitForSecondsRealtime(fadeTime);
         QuitGame();
     }
     IEnumerator Loading()
@@ -116,6 +116,8 @@ public class LevelManager : MonoBehaviour
                 unloadAsync = null;
 
                 FadeIn();
+
+                Time.timeScale = 1;
 
                 isLoading = false;
                 break;
