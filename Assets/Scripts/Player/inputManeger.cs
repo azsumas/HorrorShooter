@@ -16,9 +16,6 @@ public class inputManeger : MonoBehaviour
     public PauseManager manager;
     bool stealthy;
 
-    [Header("SoundEffects")]
-    public AudioSource breathSound;
-    public AudioSource reload;
 	// Use this for initialization
 	void Start ()
     {
@@ -48,7 +45,6 @@ public class inputManeger : MonoBehaviour
 
                 if (Input.GetButtonDown("Reload"))
                 {
-                    reload.Play();
                     gun.Reload();
                 }
 
@@ -59,13 +55,11 @@ public class inputManeger : MonoBehaviour
 
                 if(Input.GetButtonDown("Run"))
                 {
-                    breathSound.Play();
                     player.Run();
                 }
 
                 if(Input.GetButtonUp("Run") || Input.GetButtonUp("Walk"))
                 {
-                    breathSound.Stop();
                     player.Walk();
                 }
 

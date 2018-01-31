@@ -68,9 +68,24 @@ public class SettingsManager : MonoBehaviour
         QualitySettings.masterTextureLimit = gameSettings.quality = qualityDrop.value;
     }
 
-    public void SetVolume(float volume)
+    public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("MasterVolume", volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("MusicVolume", volume);
+    }
+
+    public void SetAmbientVolume(float volume)
+    {
+        audioMixer.SetFloat("AmbientVolume", volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        audioMixer.SetFloat("SFXVolume", volume);
     }
 
     public void PostProcessing()

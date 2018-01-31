@@ -24,16 +24,11 @@ public class LaserGun : MonoBehaviour
     public ParticleSystem smoke;
     public ParticleSystem smoke01;
 
-    [Header("SoundEffects")]
-    public AudioSource shootSound;
-
     private float nextTimeToFire = 0f;
 
     // Use this for initialization
     void Start ()
     {
-        
-        shootSound = GetComponent<AudioSource>();
         //ammo = maxAmmo;
     }
 
@@ -53,7 +48,6 @@ public class LaserGun : MonoBehaviour
                     ammo--;
                     gunBar.AmmoShot(1);
                     Shot(); // Función del disparo
-                    shootSound.Play();
                     Debug.Log("SHOT");
                 }
                 if(ammo <= 0.0f) ammo = 0.0f;

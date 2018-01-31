@@ -80,6 +80,9 @@ public class PlayerBehaviour : MonoBehaviour
     public float currentTime;
     public float timeDuration;
 
+    [Header("Sounds")]
+    private AudioPlayer audioPlayer;
+
     // Use this for initialization
     private void Awake()
     {
@@ -101,6 +104,7 @@ public class PlayerBehaviour : MonoBehaviour
         script = managerScene.GetComponent<LevelManager>();
         laser = this.gameObject.GetComponent<LaserGun>();
         gun.transform.localPosition = new Vector3(iniPosX, iniPosY, transform.position.z);
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
     }
 
 	// Update is called once per frame
@@ -156,6 +160,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
         {
+            audioPlayer.PlayMusic(0);
             if(moveFast)
             {
                 //Debug.Log("MoveFast funciona?");

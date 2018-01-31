@@ -46,9 +46,6 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 	public float energy;
 	public float maxEnergy;
 
-    [Header("SoundEffects")]
-    public AudioSource chaseSound;
-
     private void Awake()
     {
 
@@ -235,7 +232,6 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void SetPatrol()
     {
-        chaseSound.Stop();
         agent.isStopped = false;
         agent.SetDestination(points[pathIndex].position);
         state = EnemyState.Patrol;
@@ -245,8 +241,6 @@ public class RangeEnemyBehaviour : MonoBehaviour {
         //Feedback de lo que empieza a perseguirnos :D
         state = EnemyState.Chase;
         //anim.SetTrigger("Chase");
-        chaseSound.Play();
-
     }
     void SetAttack()
     {
