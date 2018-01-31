@@ -9,7 +9,7 @@ public class DataLogic : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
     {      
-        Language.Initialize();        
+      //  Language.Initialize();        
 	}
 
     private void Start()
@@ -33,5 +33,10 @@ public class DataLogic : MonoBehaviour
             GameData.gameState = state;
             GameData.SaveGame(slot);
         }
+    }
+
+    public void SetEnergy(float e)
+    {
+        state.energy = e;
     }
 }

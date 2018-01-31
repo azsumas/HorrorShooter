@@ -61,7 +61,8 @@ public static class GameData
     [Serializable]
     public struct GameState
     {
-        public Vector3 playerPosition;
+        //public Vector3 playerPosition;
+        public V3 playerPosition;
         public bool hasKey;
         public int ammo;
         public string playerName;
@@ -70,7 +71,37 @@ public static class GameData
     }
     public static GameState gameState;
 
-    
+    [Serializable]
+    public struct V3
+    {
+        public float x;
+        public float y;
+        public float z;
+
+        public V3(float vx, float vy, float vz)
+        {
+            x = vx;
+            y = vy;
+            z = vz;
+        }
+        public V3(Vector3 v)
+        {
+            x = v.x;
+            y = v.y;
+            z = v.z;
+        }
+
+        public static implicit operator Vector3(V3 serializableVector3)
+        {
+            return new Vector3(serializableVector3.x, serializableVector3.y, serializableVector3.z);
+        }
+        public static implicit operator V3(Vector3 vector3)
+        {
+            return new V3(vector3.x, vector3.y, vector3.z);
+        }
+    }
+
+
 
     public static void SaveGame(int slot)
     {
