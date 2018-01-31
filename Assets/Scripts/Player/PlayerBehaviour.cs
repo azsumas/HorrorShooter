@@ -207,6 +207,15 @@ public class PlayerBehaviour : MonoBehaviour
             RunEnergy();
         }
         packEnergyCount.text =  energyPackCount + ("");
+
+        if (stealthy == true)
+        {
+            if(characterCollider.height >= 1.0f) { characterCollider.height -= Time.deltaTime*10; }
+        }
+        else if ( stealthy == false)
+        {
+            if(characterCollider.height <= 1.8f) { characterCollider.height += Time.deltaTime * 10; }
+        }
     }
 
     public void SetHorizontalAxis(float x)
@@ -254,7 +263,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Walk()
     {
-        characterCollider.height = 1.8f;
+        //characterCollider.height = 1.8f;
         stealthy = false;
         moveFast = false;
 		stamina = false;
@@ -263,7 +272,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void SlowStep()
     {
-        characterCollider.height = 1.0f;
+        //characterCollider.height = 1.0f;
         stealthy = true;
         speed -= slowStep;
     }
