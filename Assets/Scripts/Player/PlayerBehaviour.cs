@@ -160,7 +160,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
         {
-            audioPlayer.PlayMusic(0);
+            //audioPlayer.PlayMusic(0);
             if(moveFast)
             {
                 //Debug.Log("MoveFast funciona?");

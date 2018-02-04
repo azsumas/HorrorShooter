@@ -221,8 +221,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313158004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 431.25797, y: 238.21124, z: -13.816803}
-  m_LocalScale: {x: 0.8484375, y: 0.8484375, z: 0.8484375}
+  m_LocalPosition: {x: 275.75797, y: 150.71124, z: -13.816803}
+  m_LocalScale: {x: 0.60546875, y: 0.60546875, z: 0.60546875}
   m_Children:
   - {fileID: 687513368}
   m_Father: {fileID: 270191599}
@@ -387,11 +387,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: 0
   sfxClips:
-  - {fileID: 8300000, guid: f1d5f2cead404a242829a207ca2e310f, type: 3}
+  - {fileID: 8300000, guid: 1632d501820919141884e14783450c0c, type: 3}
+  - {fileID: 0}
   ambientClips:
-  - {fileID: 8300000, guid: d6e7d9726186a26498548191140879eb, type: 3}
+  - {fileID: 0}
   musicClips:
-  - {fileID: 8300000, guid: 7310a83998ad336498807f316d2f618f, type: 3}
+  - {fileID: 8300000, guid: 3c7973cd90983ee4caa7fc53f19d69f5, type: 3}
 --- !u!4 &694382297
 Transform:
   m_ObjectHideFlags: 0

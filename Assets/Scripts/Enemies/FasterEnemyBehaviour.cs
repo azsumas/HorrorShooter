@@ -45,7 +45,6 @@ public class FasterEnemyBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         SetIdle();
-
     }
 
     void Update()
