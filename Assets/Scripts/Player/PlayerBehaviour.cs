@@ -239,24 +239,24 @@ public class PlayerBehaviour : MonoBehaviour
             if(currentTime <= timeDuration) //Hacer el easing durante el tiempo
             {
                 //Calcular el valor del easing en currentTime
-                float valueX = Easing.BackEaseOut(currentTime, iniPosX, finalPosX - iniPosX, timeDuration);
-                float valueY = Easing.BackEaseOut(currentTime, iniPosY, finalPosY - iniPosY, timeDuration);
+                float valueX = Easing.SineEaseOut(currentTime, iniPosX, finalPosX - iniPosX, timeDuration);
+                float valueY = Easing.SineEaseOut(currentTime, iniPosY, finalPosY - iniPosY, timeDuration);
 
                 currentTime += Time.deltaTime;
                 // ASignar el valor calculado a la posicion que queremos modificar. Los demás ejes, no los modificamos.
-                gun.transform.localPosition = new Vector3(valueX, valueY, transform.position.z);
+                gun.transform.localPosition = new Vector3(valueX, valueY, 0);
 
                 //Ha terminado el easing justo cuando se cumpla esa condicion
                 if(currentTime >= timeDuration)
                 {
                     //Nos aseguramos de que acabe en la posición final.
-                    gun.transform.localPosition = new Vector3(finalPosX, finalPosY, transform.position.z);
+                    gun.transform.localPosition = new Vector3(finalPosX, finalPosY, 0);
                 }
             }
         }
-        else if ( aimEasing == false)
+        if ( aimEasing == false)
         {
-
+            gun.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 
@@ -369,6 +369,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void NoAimPlayer()
     {
+        currentTime = 0;
         cameraAim.fieldOfView += 2;
         if (cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
         //aimPoint.enabled = true;
