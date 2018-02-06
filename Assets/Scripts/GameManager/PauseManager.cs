@@ -8,6 +8,14 @@ public class PauseManager : MonoBehaviour
     private bool paused;
     public GameObject pauseCanvas;
     public GameObject hud;
+    public GameObject managerScene;
+    private AudioPlayer audioPlayer;
+
+    private void Start()
+    {   
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+    }
 
     public bool Pause
     {
@@ -29,6 +37,7 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame()
     {
+        audioPlayer.PlaySFX(2);
         paused = !paused;
         if (paused) PauseOn();
         else if (!paused) PauseOff();

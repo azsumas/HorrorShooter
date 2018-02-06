@@ -181,7 +181,7 @@ public static class AudioManager
         Debug.Log("Stopped already");
         return false;
     }
-    
+
     public static void Play(this AudioSource source, AudioClip clip, float volume, float pitch, bool loop, bool audio2D, string mixerGroupName)
     {
         source.clip = clip;

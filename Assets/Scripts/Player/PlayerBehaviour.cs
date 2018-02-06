@@ -105,12 +105,13 @@ public class PlayerBehaviour : MonoBehaviour
         laser = this.gameObject.GetComponent<LaserGun>();
         gun.transform.localPosition = new Vector3(iniPosX, iniPosY, transform.position.z);
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+        audioPlayer.PlayMusic(1, 0.1f, true);
     }
 
 	// Update is called once per frame
     void Update()
     {
-        switch(state)
+        switch (state)
         {
             case State.Default:
                 DefaultUpdate();
@@ -129,8 +130,7 @@ public class PlayerBehaviour : MonoBehaviour
         else altura = 0f;
         transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, altura*Time.deltaTime, speed * Input.GetAxis("Vertical") * Time.deltaTime);
         energy = maxEnergy;
-        if(Input.GetKey(KeyCode.A)) laser.ammo = laser.maxAmmo;
-        
+        if(Input.GetKey(KeyCode.A)) laser.ammo = laser.maxAmmo;   
     }
 
     void DefaultUpdate ()

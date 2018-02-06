@@ -57,7 +57,7 @@ public class AudioPlayer : MonoBehaviour
     }
     public void PlayAmbient(int clip, float volume)
     {
-        Play(ambientClips[clip], volume, 1, true, true, "Ambient");
+        Play(ambientClips[clip], volume, 1, false, true, "Ambient");
     }
     public void StopAmbient()
     {
