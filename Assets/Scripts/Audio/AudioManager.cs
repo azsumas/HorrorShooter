@@ -182,6 +182,28 @@ public static class AudioManager
         return false;
     }
 
+    public static bool TryPause(this AudioSource source)
+    {
+        if(source.isPlaying)
+        {
+            source.Pause();
+            return true;
+        }
+        Debug.Log("Paused already");
+        return false;
+    }
+
+    public static bool TryUnPause(this AudioSource source)
+    {
+        if(!source.isPlaying)
+        {
+            source.UnPause();
+            return true;
+        }
+        Debug.Log("UnPaused already");
+        return false;
+    }
+
     public static void Play(this AudioSource source, AudioClip clip, float volume, float pitch, bool loop, bool audio2D, string mixerGroupName)
     {
         source.clip = clip;

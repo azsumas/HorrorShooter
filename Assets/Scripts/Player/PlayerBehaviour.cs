@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public enum State { Default, GOD}
+    public enum State { Default, GOD }
     public State state = State.Default;
 
     public Camera cameraAim;
@@ -23,17 +23,17 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Direction")]
     public Vector3 moveDirection;
 
-	[Header("Speed")]
-	bool moveFast;
+    [Header("Speed")]
+    bool moveFast;
     public float speed;
-	public float run;
+    public float run;
     public float walk;
     public float slowStep;
     public Vector2 axis;
-	Vector3 desiredDirection;
+    Vector3 desiredDirection;
     float altura;
 
-	[Header("Stats Jumps")]
+    [Header("Stats Jumps")]
     public float forceToGround = Physics.gravity.y;
     public float jumpSpeed;
     public float gravitymagnitude = 1;
@@ -42,7 +42,7 @@ public class PlayerBehaviour : MonoBehaviour
     public bool jump;
     public bool isGrounded;
     public bool stealthy = false;
-    
+
     [Header("Stats Player")]
     public bool death = false;
     public int deadCondition;
@@ -89,14 +89,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         this.gameObject.SetActive(true);
     }
-    void Start ()
+    void Start()
     {
         Cursor.visible = false;
         characterCollider = gameObject.GetComponent<CharacterController>();
         controller = GetComponent<CharacterController>();
         speed = walk;
         staminaCount = maxStamina;
-		stamina = false;
+        stamina = false;
         death = false;
         maxLightIntensity = lanternLight.intensity;
         PlayerPrefs.SetInt("Death", 0);
@@ -109,10 +109,10 @@ public class PlayerBehaviour : MonoBehaviour
         audioPlayer.PlayMusic(1, 0.1f, true);
     }
 
-	// Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-        switch (state)
+        switch(state)
         {
             case State.Default:
                 DefaultUpdate();
@@ -126,15 +126,15 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void GODUpdate()
     {
-        if (Input.GetKey(KeyCode.Z)) altura = -1f;
-        else if (Input.GetKey(KeyCode.Q)) altura = 1f;
+        if(Input.GetKey(KeyCode.Z)) altura = -1f;
+        else if(Input.GetKey(KeyCode.Q)) altura = 1f;
         else altura = 0f;
-        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, altura*Time.deltaTime, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, altura * Time.deltaTime, speed * Input.GetAxis("Vertical") * Time.deltaTime);
         energy = maxEnergy;
-        if(Input.GetKey(KeyCode.A)) laser.ammo = laser.maxAmmo;   
+        if(Input.GetKey(KeyCode.A)) laser.ammo = laser.maxAmmo;
     }
 
-    void DefaultUpdate ()
+    void DefaultUpdate()
     {
         //Reset states
         if(!controller.isGrounded) isGrounded = false;
@@ -159,7 +159,7 @@ public class PlayerBehaviour : MonoBehaviour
         // CONTROL ESTAMINA AND FEEDBACK BREATH
         breathFB.color = new Vector4(255.0F, 255.0f, 255.0F, 0.1f * (breath));
 
-        if (moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
+        if(moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
         {
             //audioPlayer.PlayMusic(0);
             if(moveFast)
@@ -193,9 +193,9 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         // CONTROL ENERGY PLAYER
-        if (energy <= 0) energy = 0;
+        if(energy <= 0) energy = 0;
 
-        if (energy == 0)
+        if(energy == 0)
         {
             death = true;
             speed = 0;
@@ -222,22 +222,22 @@ public class PlayerBehaviour : MonoBehaviour
             runEnergy = Time.deltaTime;
             RunEnergy();
         }
-        packEnergyCount.text =  energyPackCount + ("");
+        packEnergyCount.text = energyPackCount + ("");
 
         //STEALTHY ANIMATION
-        if (stealthy == true)
+        if(stealthy == true)
         {
-            if(characterCollider.height >= 1.0f) { characterCollider.height -= Time.deltaTime*10; }
+            if(characterCollider.height >= 1.0f) { characterCollider.height -= Time.deltaTime * 10; }
         }
-        else if ( stealthy == false)
+        else if(stealthy == false)
         {
             if(characterCollider.height <= 1.8f) { characterCollider.height += Time.deltaTime * 10; }
         }
 
         //AIM ANIMATION
-        if (aimEasing == true)
+        if(aimEasing == true)
         {
-            if (currentTime <= timeDuration) //Hacer el easing durante el tiempo
+            if(currentTime <= timeDuration) //Hacer el easing durante el tiempo
             {
                 //Calcular el valor del easing en currentTime
                 float valueX = Easing.SineEaseOut(currentTime, iniPosX, finalPosX - iniPosX, timeDuration);
@@ -255,19 +255,19 @@ public class PlayerBehaviour : MonoBehaviour
                 }
             }
         }
-        else if ( aimEasing == false)
+        else if(aimEasing == false)
         {
             currentTime -= Time.deltaTime;
-            if (currentTime <= 0) { currentTime = 0; }
+            if(currentTime <= 0) { currentTime = 0; }
 
-            float valueX = Easing.SineEaseOut(currentTime, gun.transform.position.z,  iniPosX - gun.transform.position.z, timeDuration);
+            float valueX = Easing.SineEaseOut(currentTime, gun.transform.position.z, iniPosX - gun.transform.position.z, timeDuration);
             float valueY = Easing.SineEaseOut(currentTime, gun.transform.position.y, iniPosY - gun.transform.position.y, timeDuration);
 
             // Asignar el valor calculado a la posicion que queremos modificar. Los demás ejes, no los modificamos.
             gun.transform.localPosition = new Vector3(valueX, valueY, 0);
 
             // Ha terminado el easing justo cuando se cumpla esa condicion
-            if (currentTime <= 0)
+            if(currentTime <= 0)
             {
                 // Nos aseguramos de que acabe en la posición final.
                 gun.transform.localPosition = new Vector3(iniPosX, iniPosY, 0);
@@ -287,7 +287,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Jump()
     {
-        if (controller.isGrounded)
+        if(controller.isGrounded)
         {
             jump = true;
             moveDirection.y = jumpSpeed;
@@ -298,7 +298,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if(hit.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            if (controller.isGrounded)
+            if(controller.isGrounded)
             {
                 isGrounded = true;
                 jump = false;
@@ -308,7 +308,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Run()
     {
-		moveFast = true;
+        moveFast = true;
         speed += run;
         //Debug.Log("RUN");
     }
@@ -323,7 +323,7 @@ public class PlayerBehaviour : MonoBehaviour
         //characterCollider.height = 1.8f;
         stealthy = false;
         moveFast = false;
-		stamina = false;
+        stamina = false;
         speed = walk;
     }
 
@@ -367,7 +367,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void RecoveryEnergy()
     {
-        if (energyPackCount >= 1 && energy != maxEnergy)
+        if(energyPackCount >= 1 && energy != maxEnergy)
         {
             energy = maxEnergy;
             energyPackCount -= 1;
@@ -380,7 +380,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void AimPlayer()
     {
         cameraAim.fieldOfView -= 2;
-        if (cameraAim.fieldOfView <= fieldOfViewAim) cameraAim.fieldOfView = fieldOfViewAim;
+        if(cameraAim.fieldOfView <= fieldOfViewAim) cameraAim.fieldOfView = fieldOfViewAim;
         //aimPoint.enabled = false;
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 0.0f);
         aimEasing = true;
@@ -390,7 +390,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         //currentTime = 0;
         cameraAim.fieldOfView += 2;
-        if (cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
+        if(cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
         //aimPoint.enabled = true;
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 1.0f);
         aimEasing = false;
@@ -410,4 +410,56 @@ public class PlayerBehaviour : MonoBehaviour
             state = State.Default;
         }
     }
+
+
+
+    /*void Aim()
+    {
+        if(aiming) return;
+        aiming = true;
+
+        StopCoroutine(AimAnim());
+
+        iniValue = gun.localPos
+        finalValue = 1
+        currentTime = 0:
+        timeDuration = 1
+
+        StartCoroutine(AimAnim());
+    }
+    void NoAim()
+    {
+        if(!aiming) return;
+        aiming = false;
+
+        StopCoroutine(AimAnim());
+
+        iniValue = gun.localPos;
+        finalValue = 0
+        currentTime = 0:
+        timeDuration = 1
+
+        StartCoroutine(AimAnim());
+    }
+
+    IEnumerator AimAnim()
+    {
+        while(true)
+        {
+            if(currentTime <= timeDuration)
+            {
+                //Vector3 v = Easing.nasda(currentTime, iniValue, finalValue - iniValue, timeDurati
+                //gun.pos = v;
+
+                currentTime += Time.deltaTime;
+            }
+            else
+            {
+                //gun.pos = final;
+                currentTime = 0;
+                break;
+            }
+            yield return null;
+        }
+    }*/
 }

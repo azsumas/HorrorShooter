@@ -45,6 +45,7 @@ public class PauseManager : MonoBehaviour
 
     public void PauseOn()
     {
+        audioPlayer.PauseMusic();
         Time.timeScale = 0;
         hud.SetActive(false);
         pauseCanvas.SetActive(true);
@@ -53,6 +54,7 @@ public class PauseManager : MonoBehaviour
 
     public void PauseOff()
     {
+        audioPlayer.UnPauseMusic();
         hud.SetActive(true);
         pauseCanvas.SetActive(false);
         Time.timeScale = 1;

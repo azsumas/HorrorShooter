@@ -48,6 +48,14 @@ public class AudioPlayer : MonoBehaviour
         musicSource.TryStop();
         Destroy(musicSource);
     }
+    public void PauseMusic()
+    {
+        musicSource.TryPause();
+    }
+    public void UnPauseMusic()
+    {
+        musicSource.TryUnPause();
+    }
     #endregion
 
     #region Ambient // SFX Loop
