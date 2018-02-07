@@ -39,4 +39,9 @@ public class DataLogic : MonoBehaviour
     {
         state.energy = e;
     }
+
+    public void SetAmmo(float m)
+    {
+        state.energy = m;
+    }
 }

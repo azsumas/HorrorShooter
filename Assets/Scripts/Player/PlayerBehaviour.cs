@@ -48,6 +48,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int deadCondition;
 
     [Header("Energy Player")]
+    private DataLogic data;
     public float hitYourself;
     public float maxEnergy;
     public float energy;
@@ -99,9 +100,9 @@ public class PlayerBehaviour : MonoBehaviour
         death = false;
         maxLightIntensity = lanternLight.intensity;
         PlayerPrefs.SetInt("Death", 0);
-        //energy = GameState.GameData.energy;
         managerScene = GameObject.FindWithTag("Manager");
         script = managerScene.GetComponent<LevelManager>();
+        data = managerScene.GetComponent<DataLogic>();
         laser = this.gameObject.GetComponent<LaserGun>();
         gun.transform.localPosition = new Vector3(iniPosX, iniPosY, transform.position.z);
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
@@ -336,12 +337,14 @@ public class PlayerBehaviour : MonoBehaviour
     public void Lantern()
     {
         lifeBar.ReceivedDamage(lanternEnergy);
+        data.SetEnergy(energy);
         //Debug.Log("LANTERN CONSUME ENERGY!");
     }
 
     public void ReceivedDamage(int hit)
     {
         lifeBar.ReceivedDamage(hit);
+        data.SetEnergy(energy);
         if(stealthy == true)
         {
             //Debug.Log("ENTRAAAAAA");
@@ -359,6 +362,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (energy >= maxEnergy) energy = maxEnergy;*/
         energyPackCount += energyPack;
+        data.SetEnergy(energy);
     }
 
     public void RecoveryEnergy()
@@ -369,6 +373,7 @@ public class PlayerBehaviour : MonoBehaviour
             energyPackCount -= 1;
         }
         lifeBar.UpdateEnergyUI();
+        data.SetEnergy(energy);
     }
 
 
