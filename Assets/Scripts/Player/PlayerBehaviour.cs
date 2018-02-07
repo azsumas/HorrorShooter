@@ -73,7 +73,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Easing Aim")]
     public GameObject gun;
-    public bool aimEasing;
+    public bool aiming;
     public float iniPosX;
     public float iniPosY;
     public float finalPosX;
@@ -83,6 +83,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Sounds")]
     private AudioPlayer audioPlayer;
+
+    IEnumerator aimCoroutine;
 
     // Use this for initialization
     private void Awake()
@@ -104,7 +106,7 @@ public class PlayerBehaviour : MonoBehaviour
         script = managerScene.GetComponent<LevelManager>();
         data = managerScene.GetComponent<DataLogic>();
         laser = this.gameObject.GetComponent<LaserGun>();
-        gun.transform.localPosition = new Vector3(iniPosX, iniPosY, transform.position.z);
+        gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
         audioPlayer.PlayMusic(1, 0.1f, true);
     }
@@ -164,9 +166,7 @@ public class PlayerBehaviour : MonoBehaviour
             //audioPlayer.PlayMusic(0);
             if(moveFast)
             {
-                //Debug.Log("MoveFast funciona?");
                 stamina = true;
-                //Debug.Log("IS RUNNING");
             }
         }
 
@@ -177,7 +177,6 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 staminaCount = 0;
                 Walk();
-                //Debug.Log("I'M TIRED");
             }
 
             breath += Time.deltaTime;
@@ -199,7 +198,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             death = true;
             speed = 0;
-            //this.gameObject.SetActive(false);
             PlayerPrefs.SetInt("Death", 1);
             script.LoadNext();
         }
@@ -213,7 +211,6 @@ public class PlayerBehaviour : MonoBehaviour
             if(energy <= 25)
             {
                 lanternLight.intensity = energy / 25;
-                //Debug.Log("Low Battery");
             }
             else lanternLight.intensity = maxLightIntensity;
         }
@@ -232,46 +229,6 @@ public class PlayerBehaviour : MonoBehaviour
         else if(stealthy == false)
         {
             if(characterCollider.height <= 1.8f) { characterCollider.height += Time.deltaTime * 10; }
-        }
-
-        //AIM ANIMATION
-        if(aimEasing == true)
-        {
-            if(currentTime <= timeDuration) //Hacer el easing durante el tiempo
-            {
-                //Calcular el valor del easing en currentTime
-                float valueX = Easing.SineEaseOut(currentTime, iniPosX, finalPosX - iniPosX, timeDuration);
-                float valueY = Easing.SineEaseOut(currentTime, iniPosY, finalPosY - iniPosY, timeDuration);
-
-                currentTime += Time.deltaTime;
-                // Asignar el valor calculado a la posicion que queremos modificar. Los demás ejes, no los modificamos.
-                gun.transform.localPosition = new Vector3(valueX, valueY, 0);
-
-                // Ha terminado el easing justo cuando se cumpla esa condicion
-                if(currentTime >= timeDuration)
-                {
-                    // Nos aseguramos de que acabe en la posición final.
-                    gun.transform.localPosition = new Vector3(finalPosX, finalPosY, 0);
-                }
-            }
-        }
-        else if(aimEasing == false)
-        {
-            currentTime -= Time.deltaTime;
-            if(currentTime <= 0) { currentTime = 0; }
-
-            float valueX = Easing.SineEaseOut(currentTime, gun.transform.position.z, iniPosX - gun.transform.position.z, timeDuration);
-            float valueY = Easing.SineEaseOut(currentTime, gun.transform.position.y, iniPosY - gun.transform.position.y, timeDuration);
-
-            // Asignar el valor calculado a la posicion que queremos modificar. Los demás ejes, no los modificamos.
-            gun.transform.localPosition = new Vector3(valueX, valueY, 0);
-
-            // Ha terminado el easing justo cuando se cumpla esa condicion
-            if(currentTime <= 0)
-            {
-                // Nos aseguramos de que acabe en la posición final.
-                gun.transform.localPosition = new Vector3(iniPosX, iniPosY, 0);
-            }
         }
     }
 
@@ -310,7 +267,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         moveFast = true;
         speed += run;
-        //Debug.Log("RUN");
     }
 
     public void RunEnergy()
@@ -320,7 +276,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Walk()
     {
-        //characterCollider.height = 1.8f;
         stealthy = false;
         moveFast = false;
         stamina = false;
@@ -329,7 +284,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void SlowStep()
     {
-        //characterCollider.height = 1.0f;
         stealthy = true;
         speed -= slowStep;
     }
@@ -338,7 +292,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         lifeBar.ReceivedDamage(lanternEnergy);
         data.SetEnergy(energy);
-        //Debug.Log("LANTERN CONSUME ENERGY!");
     }
 
     public void ReceivedDamage(int hit)
@@ -347,20 +300,13 @@ public class PlayerBehaviour : MonoBehaviour
         data.SetEnergy(energy);
         if(stealthy == true)
         {
-            //Debug.Log("ENTRAAAAAA");
             stealthyhitAnim.SetTrigger("StealthyHit");
         }
         hitAnim.SetTrigger("Hit");
-        //Debug.Log("OUCH!");
     }
 
     public void PackEnergy(int energyPack)
     {
-        /*if (energy < maxEnergy)
-        {
-            energy += recoveryEnergy;
-        }
-        if (energy >= maxEnergy) energy = maxEnergy;*/
         energyPackCount += energyPack;
         data.SetEnergy(energy);
     }
@@ -381,19 +327,58 @@ public class PlayerBehaviour : MonoBehaviour
     {
         cameraAim.fieldOfView -= 2;
         if(cameraAim.fieldOfView <= fieldOfViewAim) cameraAim.fieldOfView = fieldOfViewAim;
-        //aimPoint.enabled = false;
+
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 0.0f);
-        aimEasing = true;
+
+        if (aiming) return;
+
+        aiming = true;
+        currentTime = 0;
+
+        if (aimCoroutine != null)
+        {
+            StopCoroutine(aimCoroutine);
+            aimCoroutine = null;
+        }
+        aimCoroutine = AimAnim();
+
+        iniPosX = gun.transform.localPosition.x;
+        iniPosY = gun.transform.localPosition.y;
+        finalPosX = -0.331f;
+        finalPosY = 0.155f;
+        currentTime = 0 + currentTime;
+        timeDuration = 0 + timeDuration;
+
+        StartCoroutine(aimCoroutine);
     }
 
     public void NoAimPlayer()
     {
-        //currentTime = 0;
         cameraAim.fieldOfView += 2;
         if(cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
-        //aimPoint.enabled = true;
+
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 1.0f);
-        aimEasing = false;
+
+        if (!aiming) return;
+
+        aiming = false;
+        currentTime = 0;
+
+        if (aimCoroutine != null)
+        {
+            StopCoroutine(aimCoroutine);
+            aimCoroutine = null;
+        }
+        aimCoroutine = AimAnim();
+
+        iniPosX = gun.transform.localPosition.x;
+        iniPosY = gun.transform.localPosition.y;
+        finalPosX = 0;
+        finalPosY = 0;
+        currentTime = 0 + currentTime;
+        timeDuration = 0 + timeDuration;
+
+        StartCoroutine(aimCoroutine);
     }
 
     public void SetGodMode()
@@ -411,55 +396,26 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-
-
-    /*void Aim()
-    {
-        if(aiming) return;
-        aiming = true;
-
-        StopCoroutine(AimAnim());
-
-        iniValue = gun.localPos
-        finalValue = 1
-        currentTime = 0:
-        timeDuration = 1
-
-        StartCoroutine(AimAnim());
-    }
-    void NoAim()
-    {
-        if(!aiming) return;
-        aiming = false;
-
-        StopCoroutine(AimAnim());
-
-        iniValue = gun.localPos;
-        finalValue = 0
-        currentTime = 0:
-        timeDuration = 1
-
-        StartCoroutine(AimAnim());
-    }
-
     IEnumerator AimAnim()
     {
         while(true)
         {
             if(currentTime <= timeDuration)
             {
-                //Vector3 v = Easing.nasda(currentTime, iniValue, finalValue - iniValue, timeDurati
-                //gun.pos = v;
+                float x = Easing.SineEaseOut(currentTime, iniPosX, finalPosX - iniPosX, timeDuration);
+                float y = Easing.SineEaseOut(currentTime, iniPosY, finalPosY - iniPosY, timeDuration);
+                gun.transform.localPosition = new Vector3(x, y, 0); ;
 
                 currentTime += Time.deltaTime;
             }
             else
             {
-                //gun.pos = final;
+                gun.transform.localPosition = new Vector3(finalPosX,finalPosY , 0);
                 currentTime = 0;
+                aimCoroutine = null;
                 break;
             }
             yield return null;
         }
-    }*/
+    }
 }
