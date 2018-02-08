@@ -27,4 +27,15 @@ public class GameManager : MonoBehaviour
     {
         levelManager.LoadMenu();
     }
+
+    public void NewGame()
+    {
+        levelManager.LoadGamePlay();
+    }
+
+    public void ExitGame()
+    {
+        levelManager.ExitGame();
+    }
+
 }

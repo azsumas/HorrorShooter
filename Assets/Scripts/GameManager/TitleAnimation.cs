@@ -7,11 +7,6 @@ public class TitleAnimation : MonoBehaviour
     public float timeCounter;
     public float maxTimeCounter;
     bool loadNext = false;
-
-    // Use this for initialization
-    void Start ()
-    {
-    }
 	
 	// Update is called once per frame
 	void Update ()

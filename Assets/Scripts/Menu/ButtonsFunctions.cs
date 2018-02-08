@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonsFunctions : MonoBehaviour
 {
-    public GameObject managerScene;
-    private LevelManager script;
 
     private void Start()
     {
         Cursor.visible = true;
-        managerScene = GameObject.FindWithTag("Manager");
-        script = managerScene.GetComponent<LevelManager>();
     }
 
     public void Update()
@@ -23,22 +19,22 @@ public class ButtonsFunctions : MonoBehaviour
     public void NewGame()
     {
         Cursor.visible = false;
-        script.LoadNext();
+        GameManager.instance.NewGame();
     }
 
     public void TryAgain()
     {
-        script.LoadGamePlay();
+        GameManager.instance.NewGame();
     }
 
     public void MainGame()
     {
-        script.LoadMenu();
+        GameManager.instance.LoadMenu();
     }
 
     public void QuitGame()
     {
         Cursor.visible = false;
-        script.ExitGame();
+        GameManager.instance.ExitGame();
     }
 }

@@ -36,7 +36,7 @@ public class Radar : MonoBehaviour
 
     private void Update()
     {
-        foreach(RadarObject ro in radObjects)
+        foreach (RadarObject ro in radObjects)
         {
             Vector3 radarPos = (ro.owner.transform.position - playerPos.position);
             float distToObject = Vector3.Distance(playerPos.position, ro.owner.transform.position) * mapScale;
