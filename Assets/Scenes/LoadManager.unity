@@ -161,7 +161,7 @@ MonoBehaviour:
   currentScene: 0
   nextScene: 0
   managerScene: 0
-  titleScene: 1
+  titleScene: 2
   sceneCountInBuildSettings: 0
   blackScreen: {fileID: 687513369}
 --- !u!114 &270191601
@@ -221,8 +221,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313158004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 383.75797, y: 211.21124, z: -13.816803}
-  m_LocalScale: {x: 0.77421874, y: 0.77421874, z: 0.77421874}
+  m_LocalPosition: {x: 455.25797, y: 251.71124, z: -13.816803}
+  m_LocalScale: {x: 0.8859375, y: 0.8859375, z: 0.8859375}
   m_Children:
   - {fileID: 687513368}
   m_Father: {fileID: 270191599}

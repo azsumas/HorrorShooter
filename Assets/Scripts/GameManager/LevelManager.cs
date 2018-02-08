@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     public int currentScene;
     public int nextScene;
     public int managerScene = 0;
-    public int titleScene = 1;
+    public int titleScene = 2;
     public int sceneCountInBuildSettings;
     [Header("Load parameters")]
     AsyncOperation loadAsync = null;
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
         FadeIn();
 
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
-        else if(SceneManager.sceneCount == 1) StartLoad(titleScene);
+        else if(SceneManager.sceneCount == 1) StartLoad(1);
 
         UpdateSceneState();
     }
@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
         else nextScene = currentScene + 1;
     }
 
-    /*private void Update()
+    private void Update()
     {
 
         if (Input.GetKey(KeyCode.AltGr))
@@ -56,12 +56,12 @@ public class LevelManager : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.M)) StartLoad(titleScene);
             if(Input.GetKeyDown(KeyCode.R)) StartLoad(currentScene);
         }
-    }*/
+    }
 
     public void LoadNext() { StartLoad(nextScene); }
     public void LoadBack() { StartLoad(backScene); }
     public void LoadMenu() { StartLoad(titleScene); }
-    public void LoadGamePlay() { StartLoad(2); }
+    public void LoadGamePlay() { StartLoad(3); }
     public void LoadSceneIndex(int index) { StartLoad(index); }
     public void ExitGame()
     {
