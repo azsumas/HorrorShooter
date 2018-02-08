@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TitleAnimation : MonoBehaviour
 {
-    public GameObject managerScene;
-    private LevelManager script;
     public float timeCounter;
     public float maxTimeCounter;
     bool loadNext = false;
@@ -13,8 +11,6 @@ public class TitleAnimation : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        managerScene = GameObject.FindWithTag("Manager");
-        script = managerScene.GetComponent<LevelManager>();
     }
 	
 	// Update is called once per frame
@@ -28,7 +24,7 @@ public class TitleAnimation : MonoBehaviour
     void ChangeScene()
     {
         if (loadNext == true) return;
-        script.LoadMenu();
+        GameManager.instance.LoadMenu();
         loadNext = true;
     }
 }

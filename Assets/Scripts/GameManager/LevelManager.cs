@@ -15,14 +15,13 @@ public class LevelManager : MonoBehaviour
     public int sceneCountInBuildSettings;
     [Header("Load parameters")]
     AsyncOperation loadAsync = null;
-    AsyncOperation unloadAsync = null;
+    //AsyncOperation unloadAsync = null;
     int loadingSceneIndex;
     bool isLoading = false;
     [Header("UI")]
     public Image blackScreen;
     float fadeTime = 2.0f;
-
-
+    
     private void Start()
     {
         blackScreen.color = Color.black;
@@ -86,8 +85,8 @@ public class LevelManager : MonoBehaviour
 
     void LoadLevel()
     {
-        if (currentScene != managerScene) unloadAsync = SceneManager.UnloadSceneAsync(currentScene);
-        loadAsync = SceneManager.LoadSceneAsync(loadingSceneIndex, LoadSceneMode.Additive);
+        //if (currentScene != managerScene) unloadAsync = SceneManager.UnloadSceneAsync(currentScene);
+        loadAsync = SceneManager.LoadSceneAsync(loadingSceneIndex, LoadSceneMode.Single);
 
         StartCoroutine(Loading());
     }
@@ -107,13 +106,13 @@ public class LevelManager : MonoBehaviour
     {
         while(true)
         {
-            if(loadAsync.isDone && (unloadAsync == null || unloadAsync.isDone))
+            if(loadAsync.isDone )//&& (unloadAsync == null || unloadAsync.isDone))
             {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(loadingSceneIndex));
                 UpdateSceneState();
 
                 loadAsync = null;
-                unloadAsync = null;
+                //unloadAsync = null;
 
                 FadeIn();
 
