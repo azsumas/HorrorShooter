@@ -1,0 +1,14 @@
+id	spanish	english
+start	Pulsa una tecla...	Press any key...
+welcome	Bienvenido Defender.	Welcome Defender.
+load	Cargar Partida	Load Game
+new	Nueva Partida	New Game
+options	Opciones	Options
+credits	Créditos	Credits
+esc	Salir	Exit
+back	Atrás	Back
+graphic	Opciones Gráficas	Graphic Settings
+sound	Opciones de Sonido	Sound Settings
+music	Volúmen Musica	Music Volume
+effects Volúmen Efectos	Effects Volume
+ambient	Volúmen Ambiente	Ambient Volume	
