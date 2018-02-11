@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4386113003629456}
   - component: {fileID: 33822238758376586}
   - component: {fileID: 23834836817394056}
-  - component: {fileID: 95557191025786614}
+  - component: {fileID: 64821515291465504}
   m_Layer: 0
   m_Name: WallRoom_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4386113003629456
 Transform:
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546477173298594}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 3.4992862, y: 85.87891, z: -12.591191}
+  m_LocalPosition: {x: 21.965466, y: 1.768994, z: -30.08757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,20 +83,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546477173298594}
   m_Mesh: {fileID: 4300000, guid: 8bffc9c505c51ad419b69f1e18a445a5, type: 3}
---- !u!95 &95557191025786614
-Animator:
-  serializedVersion: 3
+--- !u!64 &64821515291465504
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546477173298594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 8bffc9c505c51ad419b69f1e18a445a5, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 8bffc9c505c51ad419b69f1e18a445a5, type: 3}

@@ -21,13 +21,12 @@ GameObject:
   - component: {fileID: 4851936759736138}
   - component: {fileID: 33434673493214374}
   - component: {fileID: 23699288741845996}
-  - component: {fileID: 95736035483462430}
   m_Layer: 0
   m_Name: RoofLateral_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4851936759736138
 Transform:
@@ -83,20 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399699653522954}
   m_Mesh: {fileID: 4300000, guid: 0a4f11f43ccf8694caf4bee539138619, type: 3}
---- !u!95 &95736035483462430
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399699653522954}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0a4f11f43ccf8694caf4bee539138619, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

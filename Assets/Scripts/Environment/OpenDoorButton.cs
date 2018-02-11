@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpenDoorButton : MonoBehaviour
 {
     public Animator anim;
-    public Animator animLightAccess;
+    //public Animator animLightAccess;
     public GameObject text;
     float time;
     public float maxTime;
@@ -15,7 +15,7 @@ public class OpenDoorButton : MonoBehaviour
     void Start()
     {
         anim.GetComponent<Animator>();
-        animLightAccess.GetComponent<Animator>();
+        //animLightAccess.GetComponent<Animator>();
         canOpenDoor = false;
     }
 
@@ -27,7 +27,7 @@ public class OpenDoorButton : MonoBehaviour
             if (time >= maxTime)
             {
                 anim.enabled = true;
-                animLightAccess.enabled = true;
+                //animLightAccess.enabled = true;
                 canOpenDoor = false;
                 time = 0;
                 return;
@@ -41,8 +41,8 @@ public class OpenDoorButton : MonoBehaviour
 
         if (Input.GetButtonDown("ActiveDoor"))//if (opening == true) // Cambiamos el bool desde el input manager. 
         {
-            anim.SetTrigger("OpenDoors");
-            animLightAccess.SetTrigger("GreenLight");
+            anim.SetTrigger("OpenDoor");
+            //animLightAccess.SetTrigger("GreenLight");
             canOpenDoor = true;
         }
     }
@@ -55,6 +55,6 @@ public class OpenDoorButton : MonoBehaviour
     void PauseAnimationEvent()
     {
         anim.enabled = false;
-        animLightAccess.enabled = false;
+        //animLightAccess.enabled = false;
     }
 }

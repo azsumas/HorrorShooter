@@ -13,7 +13,7 @@ public class OpenDoor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        anim.SetTrigger("OpenDoors");
+        anim.SetTrigger("OpenDoor");
     }
 
     private void OnTriggerExit(Collider other)

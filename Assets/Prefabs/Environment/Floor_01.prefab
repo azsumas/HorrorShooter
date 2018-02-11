@@ -21,13 +21,12 @@ GameObject:
   - component: {fileID: 4262736761169334}
   - component: {fileID: 33073083862018474}
   - component: {fileID: 23489998111046740}
-  - component: {fileID: 95613526024411250}
   m_Layer: 0
   m_Name: Floor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4262736761169334
 Transform:
@@ -83,20 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172445735601268}
   m_Mesh: {fileID: 4300000, guid: 465e0468a1ef5a14399e768e43260b7f, type: 3}
---- !u!95 &95613526024411250
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1172445735601268}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 465e0468a1ef5a14399e768e43260b7f, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
