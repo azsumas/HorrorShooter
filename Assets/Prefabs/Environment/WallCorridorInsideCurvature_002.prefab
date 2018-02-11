@@ -21,13 +21,12 @@ GameObject:
   - component: {fileID: 4552333520970456}
   - component: {fileID: 33584923629598256}
   - component: {fileID: 23933294993035508}
-  - component: {fileID: 95527938966907422}
   m_Layer: 0
   m_Name: WallCorridorInsideCurvature_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4552333520970456
 Transform:
@@ -83,20 +82,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989354086962912}
   m_Mesh: {fileID: 4300000, guid: dd9adbf3c67d70b44ab3884280e51bea, type: 3}
---- !u!95 &95527938966907422
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1989354086962912}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: dd9adbf3c67d70b44ab3884280e51bea, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1

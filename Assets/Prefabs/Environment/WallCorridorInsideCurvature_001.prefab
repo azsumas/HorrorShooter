@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4704014515568198}
   - component: {fileID: 33408543911271134}
   - component: {fileID: 23675069630968562}
-  - component: {fileID: 95023965045030734}
+  - component: {fileID: 64645624948430916}
   m_Layer: 0
   m_Name: WallCorridorInsideCurvature_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4704014515568198
 Transform:
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735414783301606}
   m_LocalRotation: {x: 0.27059713, y: -0.65328187, z: -0.65328187, w: -0.27059713}
-  m_LocalPosition: {x: -13, y: 1.9, z: -25}
+  m_LocalPosition: {x: 18.420681, y: 1.7703549, z: -33.7733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,20 +83,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735414783301606}
   m_Mesh: {fileID: 4300000, guid: 3d92f071bc4dd1c498963e8f9ff24baa, type: 3}
---- !u!95 &95023965045030734
-Animator:
-  serializedVersion: 3
+--- !u!64 &64645624948430916
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735414783301606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 3d92f071bc4dd1c498963e8f9ff24baa, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 3d92f071bc4dd1c498963e8f9ff24baa, type: 3}
