@@ -8,8 +8,6 @@ using UnityEngine.PostProcessing;
 
 public class SettingsManager : MonoBehaviour
 {
-    public Toggle fullScreenToggle;
-    public Dropdown qualityDrop;
     public Button applyButton;
     public AudioMixer audioMixer;
     public Image HDResButton;
@@ -17,25 +15,27 @@ public class SettingsManager : MonoBehaviour
     public Image FullResButton;
     public PostProcessingProfile postProcessingAsset;
     public Slider basicExposure;
-
-    public GameSettings gameSettings;
+    public GameObject TextOn;
+    public GameObject TextOff;
 
     void Start()
     {
-        OnFullScreenChange();
-        HDRes();
-    }
-    void OnEnable()
-    {
-        gameSettings = new GameSettings();
 
-        fullScreenToggle.onValueChanged.AddListener(delegate { OnFullScreenChange(); });
-        qualityDrop.onValueChanged.AddListener(delegate { OnQualityChange(); });
     }
 
-    public void OnFullScreenChange()
+    public void OnFullScreenOn()
     {
-        gameSettings.fullScreen =  Screen.fullScreen = fullScreenToggle.isOn;
+        Screen.fullScreen = !Screen.fullScreen;
+        if (Screen.fullScreen == true)
+        {
+            TextOn.SetActive(false);
+            TextOff.SetActive(true);
+        }
+        else
+        {
+            TextOn.SetActive(true);
+            TextOff.SetActive(false);
+        }
     }
 
     public void FullHDRes()
@@ -60,12 +60,26 @@ public class SettingsManager : MonoBehaviour
         MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         HDResButton.GetComponent<Image>().color = new Color32(165, 165, 255, 255);
         Screen.SetResolution(1280, 720, Screen.fullScreen);
-        Debug.Log("asas");
     }
 
-    public void OnQualityChange()
+    public void ChangeQualityFast()
     {
-        QualitySettings.masterTextureLimit = gameSettings.quality = qualityDrop.value;
+        QualitySettings.SetQualityLevel(0, true);
+    }
+
+    public void ChangeQualityGood()
+    {
+        QualitySettings.SetQualityLevel(1, true);
+    }
+
+    public void ChangeQualityFantastic()
+    {
+        QualitySettings.SetQualityLevel(2, true);
+    }
+
+    public void ChangeQualityUltra()
+    {
+        QualitySettings.SetQualityLevel(3, true);
     }
 
     public void SetMasterVolume(float volume)
