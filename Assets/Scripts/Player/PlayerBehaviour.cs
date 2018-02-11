@@ -180,14 +180,14 @@ public class PlayerBehaviour : MonoBehaviour
             }
 
             breath += Time.deltaTime;
-            if(breath >= 2) breath = 2;
+            if(breath >= 0.5f) breath = 0.5f;
         }
         else if(stamina == false)
         {
             staminaCount += (Time.deltaTime / 4);
             if(staminaCount >= maxStamina) staminaCount = maxStamina;
 
-            breath -= Time.deltaTime;
+            breath -= Time.deltaTime/4;
             if(breath <= 0) breath = 0;
         }
 
