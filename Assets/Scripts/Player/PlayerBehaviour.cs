@@ -187,7 +187,7 @@ public class PlayerBehaviour : MonoBehaviour
             staminaCount += (Time.deltaTime / 4);
             if(staminaCount >= maxStamina) staminaCount = maxStamina;
 
-            breath -= Time.deltaTime/4;
+            breath -= Time.deltaTime/2;
             if(breath <= 0) breath = 0;
         }
 
