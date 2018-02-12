@@ -8,10 +8,14 @@ public class GunMagazine : MonoBehaviour
     public LaserGun gun;
     public int gunMagazine;
     public Image icon;
+    public GameObject managerScene;
+    AudioPlayer audioPlayer;
 
     private void Start()
     {
         Radar.RegisterRadarObject(this.gameObject, icon);
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -28,5 +32,6 @@ public class GunMagazine : MonoBehaviour
         Radar.RemoveRadarObject(this.gameObject);
 
         this.gameObject.SetActive(false);
+        audioPlayer.PlaySFX(7);
     }
 }

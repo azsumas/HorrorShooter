@@ -163,7 +163,6 @@ public class PlayerBehaviour : MonoBehaviour
 
         if(moveDirection != new Vector3(0, moveDirection.y, 0)) // SI LA DIRECCIÓN DEL JUGADOR ES IGUAL A 0 ( NO SE ESTÁ MOVIENDO ), STAMINA = FALSE.
         {
-            //audioPlayer.PlayMusic(0);
             if(moveFast)
             {
                 stamina = true;
@@ -265,6 +264,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Run()
     {
+        if (moveFast == true) return;
+        audioPlayer.PlaySFX(3, 2.0f, 1.0f);
         moveFast = true;
         speed += run;
     }
@@ -315,6 +316,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if(energyPackCount >= 1 && energy != maxEnergy)
         {
+            audioPlayer.PlaySFX(10);
             energy = maxEnergy;
             energyPackCount -= 1;
         }

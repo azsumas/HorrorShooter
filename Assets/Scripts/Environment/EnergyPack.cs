@@ -7,10 +7,14 @@ public class EnergyPack : MonoBehaviour
 {
     public int energyPack;
     public Image icon;
+    public GameObject managerScene;
+    AudioPlayer audioPlayer;
 
     private void Start()
     {
         Radar.RegisterRadarObject(this.gameObject, icon);
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,10 +27,11 @@ public class EnergyPack : MonoBehaviour
 
             this.gameObject.SetActive(false);
         }*/
-            other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
+        other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
 
-            Radar.RemoveRadarObject(this.gameObject);
+        Radar.RemoveRadarObject(this.gameObject);
 
-            this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
+        audioPlayer.PlaySFX(6);
     }
 }

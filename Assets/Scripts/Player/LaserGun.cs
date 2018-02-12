@@ -28,11 +28,14 @@ public class LaserGun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    private AudioPlayer audioPlayer;
+
     // Use this for initialization
     void Start ()
     {
         managerScene = GameObject.FindWithTag("Manager");
         data = managerScene.GetComponent<DataLogic>();
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
         //ammo = maxAmmo;
     }
 
@@ -76,6 +79,7 @@ public class LaserGun : MonoBehaviour
     {
         if(magazine >= 1 && ammo != maxAmmo)
         {
+            audioPlayer.PlaySFX(4);
             ammo = maxAmmo;
             magazine -= 1;
         }
@@ -88,6 +92,7 @@ public class LaserGun : MonoBehaviour
         flash.Play();
         smoke.Play();
         smoke01.Play();
+        audioPlayer.PlaySFX(5);
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))

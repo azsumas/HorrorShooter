@@ -45,6 +45,8 @@ public class EnemyBehaviour : MonoBehaviour
     public int hitDamage;
     public float energy;
     public float maxEnergy;
+    public GameObject managerScene;
+    AudioPlayer audioPlayer;
 
     void Start()
     {
@@ -52,6 +54,8 @@ public class EnemyBehaviour : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         SetIdle();
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
 
     }
 
@@ -212,6 +216,7 @@ public class EnemyBehaviour : MonoBehaviour
     void SetChase()
     {
         //Feedback de lo que empieza a perseguirnos :D
+        audioPlayer.PlaySFX(13);
         state = EnemyState.Chase;
         anim.SetTrigger("Chase");
     }
@@ -231,6 +236,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void SetDead()
     {
+        audioPlayer.PlaySFX(14);
         agent.isStopped = true;
         this.gameObject.SetActive(false);
 		state = EnemyState.Dead;
