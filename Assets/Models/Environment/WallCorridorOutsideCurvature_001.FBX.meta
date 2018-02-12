@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Wall_Curvature_01
+    4300002: Wall_InsideCurvature_001
     9500000: //RootNode
   externalObjects:
   - first:
