@@ -156,7 +156,7 @@ public static class TextData
     {
         textData = new Dictionary<string, string>();
         //Leyendo el texto entero
-        string textFromFile = Data.LoadTextFromResources("Data/TextFile");
+        string textFromFile = Data.LoadTextFromResources("Data/DialogueFile");
         //Separando el texto en lineas
         List<string> allLines = Data.ReadAllLinesFromString(textFromFile);
         //Separando las columnas de cada linea
@@ -191,14 +191,14 @@ public static class TextData
     public static void UpdateUIText()
     {
         if(uiText == null) return;
-        /*foreach(LoadUIText ui in uiText)
+        foreach(LoadUIText ui in uiText)
         {
             ui.LoadText();
-        }*/
-        for(int i = 0; i < uiText.Count; i++)
+        }
+        /*for(int i = 0; i < uiText.Count; i++)
         {
             uiText[i].LoadText();
-        }
+        }*/
     }
     //DIALOG TEXT
     /*public static List<DialogText> dialogText;

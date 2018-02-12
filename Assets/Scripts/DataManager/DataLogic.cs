@@ -9,7 +9,7 @@ public class DataLogic : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
     {      
-      //  Language.Initialize();        
+        Language.Initialize();        
 	}
 
     private void Start()
