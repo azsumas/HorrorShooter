@@ -2,37 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataLogic : MonoBehaviour
+[System.Serializable]
+public class DataLogic
 {
     public int slot;
     public GameData.GameState state;
-	// Use this for initialization
-	void Awake ()
-    {      
-        Language.Initialize();        
-	}
 
-    private void Start()
+    public DataLogic()
+    {
+    }    
+
+    public void InitData()
     {
         state = GameData.LoadGame(slot);
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Language.SetLanguage(Language.Lang.esES);
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Language.SetLanguage(Language.Lang.enUS);
-        }
-
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            GameData.gameState = state;
-            GameData.SaveGame(slot);
-        }
     }
 
     public void SetEnergy(float e)
@@ -43,5 +25,18 @@ public class DataLogic : MonoBehaviour
     public void SetAmmo(float m)
     {
         state.energy = m;
+    }
+
+    public void SetPlayerPos()
+    {
+        state.playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+    }
+
+    public void SaveState()
+    {
+        SetPlayerPos();
+
+        GameData.gameState = state;
+        GameData.SaveGame(slot);        
     }
 }

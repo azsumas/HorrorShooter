@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 4917195722401706}
   - component: {fileID: 114833940076343712}
   - component: {fileID: 114617140023413242}
-  - component: {fileID: 114390362070254722}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -193,27 +192,6 @@ MonoBehaviour:
   musicClips:
   - {fileID: 8300000, guid: 3c7973cd90983ee4caa7fc53f19d69f5, type: 3}
   - {fileID: 8300000, guid: 15fddd1fb30e4f74cbca44f4a53a7e6a, type: 3}
---- !u!114 &114390362070254722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1537046629110896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66bdc6b7681315b479455a18facd8e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slot: 0
-  state:
-    playerPosition:
-      x: 0
-      y: 0
-      z: 0
-    hasKey: 0
-    ammo: 0
-    playerName: 
-    energy: 0
 --- !u!114 &114617140023413242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,6 +221,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481a8d9ef8945764dac1318af88953c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataLogic:
+    slot: 0
+    state:
+      playerPosition:
+        x: 0
+        y: 0
+        z: 0
+      hasKey: 0
+      ammo: 0
+      playerName: 
+      energy: 0
 --- !u!222 &222214041413066250
 CanvasRenderer:
   m_ObjectHideFlags: 1

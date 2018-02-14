@@ -97,6 +97,8 @@ public class inputManeger : MonoBehaviour
                 {
                     lantern.SwitchOn();
                 }
+                //DataLogic Imputs:
+                
 
                 //if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 

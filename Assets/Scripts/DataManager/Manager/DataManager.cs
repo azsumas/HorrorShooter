@@ -162,7 +162,7 @@ public static class TextData
         //Separando las columnas de cada linea
         for(int line = 1; line < allLines.Count; line++)
         {
-            string[] colText = allLines[line].Split('\t');            
+            string[] colText = allLines[line].Split('\t');
 
             if(Language.language == Language.Lang.esES) textData.Add(colText[0], colText[1]);
             else textData.Add(colText[0], colText[2]);
@@ -184,6 +184,7 @@ public static class TextData
     public static List<LoadUIText> uiText;
     public static void AddUIText(LoadUIText ui)
     {
+        Debug.Log("Adduitext");
         if(uiText == null) uiText = new List<LoadUIText>();
         uiText.Add(ui);
         ui.LoadText();
