@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Initialize();
         Language.Initialize();
         dataLogic = new DataLogic();
-        dataLogic.InitData();
-        
+        dataLogic.InitData(); 
     }
 
     public void LoadMenu()
@@ -55,12 +54,12 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
-
+        dataLogic.LoadState();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.G))
         {
             SaveGame();
         }

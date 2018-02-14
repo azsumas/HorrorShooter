@@ -8,7 +8,6 @@ public class LaserGun : MonoBehaviour
     public Camera fpsCam;
     public GunBar gunBar;
     private GameObject managerScene;
-    private DataLogic data;
     [Header("Settings gun")]
     public int damage = 10;
     public float range = 100f;
@@ -34,9 +33,7 @@ public class LaserGun : MonoBehaviour
     void Start ()
     {
         managerScene = GameObject.FindWithTag("Manager");
-        data = managerScene.GetComponent<DataLogic>();
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
-        //ammo = maxAmmo;
     }
 
     // Update is called once per frame
@@ -56,19 +53,13 @@ public class LaserGun : MonoBehaviour
                     gunBar.AmmoShot(1);
                     Shot(); // Función del disparo
                     Debug.Log("SHOT");
-                    data.SetAmmo(ammo);
+                    GameManager.instance.dataLogic.SetAmmo(ammo);
                 }
                 if(ammo <= 0.0f) ammo = 0.0f;
             }
             magazineCount.text = ammo + ("/") + magazine;
         }
     }
-
-    /*public void ExtraAmmo(int magazine)
-    {
-        ammo += magazine;
-        gunBar.UpdateGunUI();
-    }*/
 
     public void MagazineReload(int reload)
     {
@@ -84,7 +75,7 @@ public class LaserGun : MonoBehaviour
             magazine -= 1;
         }
         gunBar.UpdateGunUI();
-        data.SetAmmo(ammo);
+        GameManager.instance.dataLogic.SetAmmo(ammo);
     }
 
     void Shot()
@@ -136,8 +127,5 @@ public class LaserGun : MonoBehaviour
         }
         GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGo, 0.1f);
-
-        //Debug.Log("SHOT");
-        //Debug.DrawLine(fpsCam.transform.position, hit.point, Color.red, 4);
     }
 }

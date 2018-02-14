@@ -22,14 +22,12 @@ public class LanternFunctions : MonoBehaviour
         if (switchOn)
         {
             gameObject.SetActive(true);
-            audioPlayer.PlaySFX(8);
-            //Debug.Log("Lantern Switch ON");
+            //audioPlayer.PlaySFX(8);
         }
         else
         {
             gameObject.SetActive(false);
-            audioPlayer.PlaySFX(9);
-            //Debug.Log("Lantern Switch OFF");
+            //audioPlayer.PlaySFX(9);
         }
     }
 }

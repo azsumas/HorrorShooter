@@ -48,7 +48,6 @@ public class PlayerBehaviour : MonoBehaviour
     public int deadCondition;
 
     [Header("Energy Player")]
-    private DataLogic data;
     public float hitYourself;
     public float maxEnergy;
     public float energy;
@@ -105,7 +104,6 @@ public class PlayerBehaviour : MonoBehaviour
         PlayerPrefs.SetInt("Death", 0);
         managerScene = GameObject.FindWithTag("Manager");
         script = managerScene.GetComponent<LevelManager>();
-        data = managerScene.GetComponent<DataLogic>();
         laser = this.gameObject.GetComponent<LaserGun>();
         gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
@@ -294,14 +292,14 @@ public class PlayerBehaviour : MonoBehaviour
     public void Lantern()
     {
         lifeBar.ReceivedDamage(lanternEnergy);
-        data.SetEnergy(energy);
+        GameManager.instance.dataLogic.SetEnergy(energy);
     }
 
     public void ReceivedDamage(int hit)
     {
         lifeBar.ReceivedDamage(hit);
-        data.SetEnergy(energy);
-        if(stealthy == true)
+        GameManager.instance.dataLogic.SetEnergy(energy);
+        if (stealthy == true)
         {
             stealthyhitAnim.SetTrigger("StealthyHit");
         }
@@ -311,7 +309,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void PackEnergy(int energyPack)
     {
         energyPackCount += energyPack;
-        data.SetEnergy(energy);
+        GameManager.instance.dataLogic.SetEnergy(energy);
     }
 
     public void RecoveryEnergy()
@@ -323,7 +321,7 @@ public class PlayerBehaviour : MonoBehaviour
             energyPackCount -= 1;
         }
         lifeBar.UpdateEnergyUI();
-        data.SetEnergy(energy);
+        GameManager.instance.dataLogic.SetEnergy(energy);
     }
 
 

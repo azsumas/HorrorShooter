@@ -39,4 +39,9 @@ public class DataLogic
         GameData.gameState = state;
         GameData.SaveGame(slot);        
     }
+
+    public void LoadState()
+    {
+        GameData.LoadGame(slot);
+    }
 }
