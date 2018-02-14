@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class PositionEasing : MonoBehaviour
 {
-    public float iniPos;
-    public float finalPos;
+    public Vector2 iniPos;
+    public Vector2 finalPos;
     public float currentTime;
     public float duration;
 
     // Update is called once per frame
     public void Start()
     {
-        transform.position = new Vector3(transform.position.x, iniPos, transform.position.z);
+        transform.localPosition = new Vector3(iniPos.x, iniPos.y, transform.position.z);
     }
 
     void Update ()
     {
         if(currentTime >= 0)
         {
-            float value = Easing.BounceEaseOut(currentTime, iniPos, finalPos - iniPos, duration);
-            transform.localPosition = new Vector3(transform.position.x, value, transform.position.z);
+            Vector2 value = new Vector2(Easing.BounceEaseOut(currentTime, iniPos.x, finalPos.x - iniPos.x, duration), Easing.BounceEaseOut(currentTime, iniPos.y, finalPos.y - iniPos.y, duration));
+            transform.localPosition = new Vector3(value.x, value.y, transform.position.z);
         }
 
         currentTime += Time.deltaTime;
 
         if(currentTime >= duration)
         {
-            transform.localPosition = new Vector3(transform.position.x, finalPos, transform.position.z);
+            transform.localPosition = new Vector3(finalPos.x, finalPos.y, transform.position.z);
         }
     }
 }
