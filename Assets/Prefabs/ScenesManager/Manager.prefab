@@ -187,6 +187,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1632d501820919141884e14783450c0c, type: 3}
   - {fileID: 8300000, guid: 0590e91bfe168e643b3f7a87747820ce, type: 3}
   - {fileID: 8300000, guid: c213d7954fcd36e4fb1d64139f2efe3b, type: 3}
+  - {fileID: 8300000, guid: d4e874be439a8684d88b94e7bce00db6, type: 3}
+  - {fileID: 8300000, guid: f5185462258bc4b4687a631f0bbe8f0a, type: 3}
+  - {fileID: 8300000, guid: 9bed87234ece59b4a84ac1787684c408, type: 3}
+  - {fileID: 8300000, guid: 71b0e9f7776ba3f408f42ea24d07f2c4, type: 3}
+  - {fileID: 8300000, guid: a33fa3da70fd14f4c84a514f2e4bf36c, type: 3}
+  - {fileID: 8300000, guid: a9f59c6db230d404bb04e9a085443321, type: 3}
+  - {fileID: 8300000, guid: f7b566b3c78090047b752d2cdad4b83b, type: 3}
+  - {fileID: 8300000, guid: a0f965204d80ba842998d51aead59bf0, type: 3}
+  - {fileID: 8300000, guid: 05f3612386c3aaf488f4d85efe2c4470, type: 3}
+  - {fileID: 8300000, guid: c57c76cd97a27894ca5067d6bf3f14a9, type: 3}
+  - {fileID: 8300000, guid: 2baaddbd4df7bb34c95a2770d8f07ee7, type: 3}
+  - {fileID: 8300000, guid: f9e2b13bde225b049a9151920b50e1af, type: 3}
   ambientClips:
   - {fileID: 0}
   musicClips:
