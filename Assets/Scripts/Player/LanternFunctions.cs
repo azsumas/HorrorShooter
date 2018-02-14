@@ -7,7 +7,7 @@ public class LanternFunctions : MonoBehaviour
     public bool switchOn;
     public Light lantern;
     public GameObject managerScene;
-    AudioPlayer audioPlayer;
+    private AudioPlayer audioPlayer;
 
     private void Start()
     {
@@ -15,10 +15,9 @@ public class LanternFunctions : MonoBehaviour
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
     }
 
-    public void SwitchOn () 
+    public void SwitchOn() 
 	{
         switchOn = !switchOn;
-
         if (switchOn)
         {
             gameObject.SetActive(true);

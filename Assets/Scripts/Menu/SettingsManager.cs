@@ -10,55 +10,42 @@ public class SettingsManager : MonoBehaviour
 {
     public Button applyButton;
     public AudioMixer audioMixer;
-    public Image HDResButton;
-    public Image MidResButton;
-    public Image FullResButton;
     public PostProcessingProfile postProcessingAsset;
     public Slider basicExposure;
     public GameObject TextOn;
     public GameObject TextOff;
 
-    void Start()
+    public void Update()
     {
-
+        if (Screen.fullScreen)
+        {
+            TextOn.SetActive(true);
+            TextOff.SetActive(false);
+        }
+        else if (!Screen.fullScreen)
+        {
+            TextOn.SetActive(false);
+            TextOff.SetActive(true);
+        }
     }
 
     public void OnFullScreenOn()
     {
         Screen.fullScreen = !Screen.fullScreen;
-        if (Screen.fullScreen == true)
-        {
-            TextOn.SetActive(false);
-            TextOff.SetActive(true);
-        }
-        else
-        {
-            TextOn.SetActive(true);
-            TextOff.SetActive(false);
-        }
     }
 
     public void FullHDRes()
     {
-        FullResButton.GetComponent<Image>().color = new Color32(165, 165, 255, 255);
-        MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        HDResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         Screen.SetResolution(1920, 1080, Screen.fullScreen);
     }
 
     public void MidFullRes()
     {
-        FullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        MidResButton.GetComponent<Image>().color = new Color32(165, 165, 255, 255);
-        HDResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         Screen.SetResolution(1600, 1200, Screen.fullScreen);
     }
 
     public void HDRes()
     {
-        FullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-        HDResButton.GetComponent<Image>().color = new Color32(165, 165, 255, 255);
         Screen.SetResolution(1280, 720, Screen.fullScreen);
     }
 
