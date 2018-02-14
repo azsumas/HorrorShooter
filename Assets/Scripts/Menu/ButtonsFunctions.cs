@@ -32,6 +32,26 @@ public class ButtonsFunctions : MonoBehaviour
         GameManager.instance.LoadMenu();
     }
 
+    public void SpanishLanguageButton()
+    {
+        GameManager.instance.SpanishLanguage();
+    }
+
+    public void EnglishhLanguageButton()
+    {
+        GameManager.instance.EnglishLanguage();
+    }
+
+    public void SaveGameButton()
+    {
+        GameManager.instance.SaveGame();
+    }
+
+    public void LoadGameButton()
+    {
+        GameManager.instance.LoadGame();
+    }
+
     public void QuitGame()
     {
         Cursor.visible = false;

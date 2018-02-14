@@ -51,22 +51,30 @@ public class GameManager : MonoBehaviour
     public void SaveGame()
     {
         dataLogic.SaveState();
-    } 
+    }
 
+    public void LoadGame()
+    {
+
+    }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Language.SetLanguage(Language.Lang.esES);
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Language.SetLanguage(Language.Lang.enUS);
-        }
         if(Input.GetKeyDown(KeyCode.S))
         {
             SaveGame();
         }
+    }
+
+    public void SpanishLanguage()
+    {
+        Language.SetLanguage(Language.Lang.esES);
+        Debug.Log("1");
+    }
+
+    public void EnglishLanguage()
+    {
+        Language.SetLanguage(Language.Lang.enUS);
+        Debug.Log("2");
     }
 }
