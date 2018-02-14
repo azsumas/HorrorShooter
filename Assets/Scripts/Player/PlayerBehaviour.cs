@@ -17,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Light lanternLight;
     public GameObject managerScene;
     private LevelManager script;
-    private LaserGun laser;
+    public LaserGun laser;
     public Text packEnergyCount;
 
     [Header("Direction")]
@@ -104,7 +104,6 @@ public class PlayerBehaviour : MonoBehaviour
         PlayerPrefs.SetInt("Death", 0);
         managerScene = GameObject.FindWithTag("Manager");
         script = managerScene.GetComponent<LevelManager>();
-        laser = this.gameObject.GetComponent<LaserGun>();
         gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
         audioPlayer.PlayMusic(1, 0.1f, true);

@@ -44,4 +44,9 @@ public class DataLogic
     {
         GameData.LoadGame(slot);
     }
+
+    public void NewGameState()
+    {
+        GameData.NewGame(slot);
+    }
 }

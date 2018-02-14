@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         levelManager.LoadGamePlay();
+        dataLogic.NewGameState();
     }
 
     public void ExitGame()
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
+        levelManager.LoadGamePlay();
         dataLogic.LoadState();
     }
 

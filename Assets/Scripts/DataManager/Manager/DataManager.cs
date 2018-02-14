@@ -100,9 +100,7 @@ public static class GameData
             return new V3(vector3.x, vector3.y, vector3.z);
         }
     }
-
-
-
+    
     public static void SaveGame(int slot)
     {
         Debug.Log("Saving");
@@ -196,11 +194,12 @@ public static class TextData
         {
             ui.LoadText();
         }
-        /*for(int i = 0; i < uiText.Count; i++)
+        for(int i = 0; i < uiText.Count; i++)
         {
             uiText[i].LoadText();
-        }*/
+        }
     }
+
     //DIALOG TEXT
     /*public static List<DialogText> dialogText;
     public static void AddDialogText(DialogText dialog)
