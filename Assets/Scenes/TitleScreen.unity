@@ -198,7 +198,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465610302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -478.76956, z: 0}
+  m_LocalPosition: {x: 0, y: -478.98343, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695621701}
@@ -344,8 +344,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 695621696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 556.5, y: 313, z: 0}
-  m_LocalScale: {x: 0.5796875, y: 0.5796875, z: 0.5796875}
+  m_LocalPosition: {x: 562.5, y: 316.5, z: 0}
+  m_LocalScale: {x: 0.5859375, y: 0.5859375, z: 0.5859375}
   m_Children:
   - {fileID: 465610303}
   - {fileID: 957201859}
@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 957201859}
   - component: {fileID: 957201861}
   - component: {fileID: 957201860}
+  - component: {fileID: 957201862}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -425,6 +426,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 957201858}
+--- !u!114 &957201862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957201858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe638b6e31ec4f748bc93709b5bcc3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iniPos: 730
+  finalPos: 0
+  currentTime: 0
+  duration: 5
 --- !u!1001 &1182714552
 Prefab:
   m_ObjectHideFlags: 0
@@ -467,12 +483,12 @@ Prefab:
     - target: {fileID: 224687865974583930, guid: bdef3d84957e4924d9fe9ae124a10c6a,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 444.75797
+      value: 450.75797
       objectReference: {fileID: 0}
     - target: {fileID: 224687865974583930, guid: bdef3d84957e4924d9fe9ae124a10c6a,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 245.71124
+      value: 249.21124
       objectReference: {fileID: 0}
     - target: {fileID: 1537046629110896, guid: bdef3d84957e4924d9fe9ae124a10c6a, type: 2}
       propertyPath: m_IsActive
