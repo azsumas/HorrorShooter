@@ -83,6 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Sounds")]
     private AudioPlayer audioPlayer;
+    public AudioSource breathingSound;
 
     IEnumerator aimCoroutine;
 
@@ -265,7 +266,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void Run()
     {
         if (moveFast == true) return;
-        audioPlayer.PlaySFX(3, 2.0f, 1.0f);
+        breathingSound.Stop();
         moveFast = true;
         speed += run;
     }
@@ -277,6 +278,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Walk()
     {
+        breathingSound.Play();
         stealthy = false;
         moveFast = false;
         stamina = false;
