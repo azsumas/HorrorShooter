@@ -14,6 +14,8 @@ public class TitleAnimation : MonoBehaviour
 		timeCounter += Time.deltaTime;
 
         if (timeCounter >= maxTimeCounter) ChangeScene();
+
+        if(Input.anyKey) ChangeScene();
 	}
 
     void ChangeScene()
