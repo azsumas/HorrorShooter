@@ -9,10 +9,19 @@ public class EnergyPack : MonoBehaviour
     public Image icon;
     public GameObject managerScene;
     AudioPlayer audioPlayer;
+    Radar radar;
+    RadarObject radObj;
 
     private void Start()
     {
-        Radar.RegisterRadarObject(this.gameObject, icon);
+        radar = GameObject.FindGameObjectWithTag("Radar").GetComponent<Radar>();
+
+        icon = Instantiate(icon, radar.transform);
+        icon.enabled = false;
+        radObj = new RadarObject(this.gameObject, icon);
+
+        radar.RegisterRadarObject(radObj);
+
         managerScene = GameObject.FindWithTag("Manager");
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
     }
@@ -29,7 +38,7 @@ public class EnergyPack : MonoBehaviour
         }*/
         other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
 
-        Radar.RemoveRadarObject(this.gameObject);
+        radar.RemoveRadarObject(radObj);
 
         this.gameObject.SetActive(false);
         audioPlayer.PlaySFX(6);

@@ -199,7 +199,10 @@ public static class TextData
             uiText[i].LoadText();
         }
     }
-
+    public static void ResetUIText()
+    {
+        uiText = new List<LoadUIText>();
+    }
     //DIALOG TEXT
     /*public static List<DialogText> dialogText;
     public static void AddDialogText(DialogText dialog)

@@ -11,6 +11,7 @@ TagManager:
   - Manager
   - BreakProp
   - Boss
+  - Radar
   layers:
   - Default
   - TransparentFX

@@ -69,6 +69,9 @@ public class LevelManager : MonoBehaviour
 
     void StartLoad(int index)
     {
+        TextData.ResetUIText();
+
+
         Cursor.visible = false;
 
         if (isLoading)

@@ -9,10 +9,11 @@ public class LanternFunctions : MonoBehaviour
     public GameObject managerScene;
     private AudioPlayer audioPlayer;
 
-    private void Start()
+    private void Awake()
     {
         managerScene = GameObject.FindWithTag("Manager");
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+        this.gameObject.SetActive(false);
     }
 
     public void SwitchOn() 
@@ -21,12 +22,12 @@ public class LanternFunctions : MonoBehaviour
         if (switchOn)
         {
             gameObject.SetActive(true);
-            audioPlayer.PlaySFX(8);
+            if((object)audioPlayer != null) audioPlayer.PlaySFX(8);
         }
         else
         {
             gameObject.SetActive(false);
-            audioPlayer.PlaySFX(9);
+            if((object)audioPlayer != null) audioPlayer.PlaySFX(9);
         }
     }
 }
