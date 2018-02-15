@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: b40d92d2e0058f642812dcd313c97ef5
+timeCreated: 1518704243
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cylinder001
+    100002: //RootNode
+    100004: Triped
+    100006: TripedHead
+    100008: TripedHeadPoint
+    100010: TripedPata1
+    100012: TripedPata1Bone001
+    100014: TripedPata1Bone002
+    100016: TripedPata1Bone003
+    100018: TripedPata2
+    100020: TripedPata3
+    100022: TripedPataFin
+    100024: TripedPataFin001
+    100026: TripedPataFin002
+    100028: TripedPelvis
+    100030: TripedPinzaL1
+    100032: TripedPinzaL2
+    100034: TripedPinzaL3
+    100036: TripedPinzaL4
+    100038: TripedPinzaR1
+    100040: TripedPinzaR2
+    100042: TripedPinzaR3
+    100044: TripedPinzaR4
+    100046: TripedSpine1
+    100048: TripedSpine10
+    100050: TripedSpine11
+    100052: TripedSpine12
+    100054: TripedSpine13
+    100056: TripedSpine14
+    100058: TripedSpine2
+    100060: TripedSpine3
+    100062: TripedSpine4
+    100064: TripedSpine5
+    100066: TripedSpine6
+    100068: TripedSpine7
+    100070: TripedSpine8
+    100072: TripedSpine9
+    400000: Cylinder001
+    400002: //RootNode
+    400004: Triped
+    400006: TripedHead
+    400008: TripedHeadPoint
+    400010: TripedPata1
+    400012: TripedPata1Bone001
+    400014: TripedPata1Bone002
+    400016: TripedPata1Bone003
+    400018: TripedPata2
+    400020: TripedPata3
+    400022: TripedPataFin
+    400024: TripedPataFin001
+    400026: TripedPataFin002
+    400028: TripedPelvis
+    400030: TripedPinzaL1
+    400032: TripedPinzaL2
+    400034: TripedPinzaL3
+    400036: TripedPinzaL4
+    400038: TripedPinzaR1
+    400040: TripedPinzaR2
+    400042: TripedPinzaR3
+    400044: TripedPinzaR4
+    400046: TripedSpine1
+    400048: TripedSpine10
+    400050: TripedSpine11
+    400052: TripedSpine12
+    400054: TripedSpine13
+    400056: TripedSpine14
+    400058: TripedSpine2
+    400060: TripedSpine3
+    400062: TripedSpine4
+    400064: TripedSpine5
+    400066: TripedSpine6
+    400068: TripedSpine7
+    400070: TripedSpine8
+    400072: TripedSpine9
+    4300000: Cylinder001
+    7400000: idle
+    7400002: walk
+    7400004: attack
+    9500000: //RootNode
+    13700000: Cylinder001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #30'
+    second: {fileID: 2100000, guid: fd48a54f0686b7e40b9e69cc3424d24b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
