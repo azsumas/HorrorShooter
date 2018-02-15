@@ -47,6 +47,7 @@ public class TitleAnimation : MonoBehaviour
         if (currentTime >= duration)
         {
             transform.localScale = new Vector3(finalPos.x, finalPos.y, transform.localScale.z);
+            logo.color = new Vector4(255f, 255f, 255f, 1);
         }
     }
 
