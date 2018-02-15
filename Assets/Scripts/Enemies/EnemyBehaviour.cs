@@ -103,6 +103,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void PatrolUpdate()
     {
+        agent.speed = 1.5f;
         chaseRange = chaseRange - minChaseRange;
         if (chaseRange <= minChaseRange)
         {
@@ -142,6 +143,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void ChaseUpdate()
     {
+        agent.speed = 2.5f;
         agent.SetDestination(targetTransform.position);
         if (distanceFromTarget > chaseRange)
         {
