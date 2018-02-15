@@ -205,7 +205,9 @@ public class EnemyBehaviour : MonoBehaviour
     void SetIdle()
     {
         timeCounter = 0;
+        anim.SetBool("Walk", false);
         state = EnemyState.Idle;
+  
     }
     void SetPatrol()
     {
@@ -218,8 +220,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //Feedback de lo que empieza a perseguirnos :D
         audioPlayer.PlaySFX(13);
-        state = EnemyState.Chase;
         anim.SetTrigger("Chase");
+        anim.SetBool("Walk", false);
+        state = EnemyState.Chase;
+
     }
     void SetAttack()
     {
