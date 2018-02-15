@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23160171796650502}
   - component: {fileID: 95222268160956582}
   - component: {fileID: 114241501621863552}
+  - component: {fileID: 65345914741013950}
   m_Layer: 0
   m_Name: EnergyTank
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803696508324104}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -3.61, y: 0.4648984, z: 3.63}
+  m_LocalPosition: {x: 0.6161442, y: 0.47202235, z: -7.707386}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,6 +86,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803696508324104}
   m_Mesh: {fileID: 4300000, guid: e7c094ecafe9e484a8e2ba18704af3ac, type: 3}
+--- !u!65 &65345914741013950
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803696508324104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36108017, y: 0.36235905, z: 1.0355405}
+  m_Center: {x: 0, y: 0, z: 0.05287179}
 --- !u!95 &95222268160956582
 Animator:
   serializedVersion: 3
@@ -113,5 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedf9255fd78ece4a83d1d6356a37639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyPack: 50
+  energyPack: 1
   icon: {fileID: 114986175276908404, guid: 962849b15fe3ad44694d931e98d8d466, type: 2}
+  managerScene: {fileID: 0}
