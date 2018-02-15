@@ -6460,31 +6460,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 614185656}
-    - target: {fileID: 224869839771414772, guid: d820eb9298a8a3745817fdedc38df1a2,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 990
-      objectReference: {fileID: 0}
-    - target: {fileID: 224990031910979994, guid: d820eb9298a8a3745817fdedc38df1a2,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 990
-      objectReference: {fileID: 0}
     - target: {fileID: 114350541628594854, guid: d820eb9298a8a3745817fdedc38df1a2,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 614185656}
-    - target: {fileID: 224739270815021368, guid: d820eb9298a8a3745817fdedc38df1a2,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -495
-      objectReference: {fileID: 0}
-    - target: {fileID: 224680381754371830, guid: d820eb9298a8a3745817fdedc38df1a2,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 990
-      objectReference: {fileID: 0}
     - target: {fileID: 114408295386499752, guid: d820eb9298a8a3745817fdedc38df1a2,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
