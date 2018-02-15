@@ -340,7 +340,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void AimPlayer()
     {
-        cameraAim.fieldOfView -= 2;
+        cameraAim.fieldOfView -= 5;
         if(cameraAim.fieldOfView <= fieldOfViewAim) cameraAim.fieldOfView = fieldOfViewAim;
 
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 0.0f);
@@ -369,7 +369,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void NoAimPlayer()
     {
-        cameraAim.fieldOfView += 2;
+        cameraAim.fieldOfView += 5;
         if(cameraAim.fieldOfView >= 60) cameraAim.fieldOfView = 60;
 
         radar.color = new Vector4(255.0F, 255.0f, 255.0F, 1.0f);
