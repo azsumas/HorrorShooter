@@ -211,6 +211,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent.isStopped = false;
         agent.SetDestination(points[pathIndex].position);
+        anim.SetBool("Walk", true);
         state = EnemyState.Patrol;
     }
     void SetChase()
