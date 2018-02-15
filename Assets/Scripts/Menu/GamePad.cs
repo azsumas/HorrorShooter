@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GamePad : MonoBehaviour
 {
-    private bool gamePad = false;
-    public GameObject text;
+    private bool gamePad;
+    public GameObject PadIlustration;
+    public GameObject KeyIlustation;
 
     // Update is called once per frame
     void Update ()
@@ -35,21 +36,22 @@ public class GamePad : MonoBehaviour
     public void KeyBoardController()
     {
         if (gamePad == false) return;
-        text.SetActive(true);
+        PadIlustration.SetActive(false);
+        KeyIlustation.SetActive(true);
         gamePad = false;
     }
 
     public void PlayStationController()
     {
         if (gamePad == true) return;
-        Debug.Log("PS4 GAMEPAD MAN!");
         gamePad = true;
     }
 
     public void XboxController()
     {
         if (gamePad == true) return;
-        text.SetActive(false);
+        PadIlustration.SetActive(true);
+        KeyIlustation.SetActive(false);
         gamePad = true;
     }
 }

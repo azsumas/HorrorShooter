@@ -8,7 +8,6 @@ using UnityEngine.PostProcessing;
 
 public class SettingsManager : MonoBehaviour
 {
-    public Button applyButton;
     public AudioMixer audioMixer;
     public PostProcessingProfile postProcessingAsset;
     public Slider basicExposure;
