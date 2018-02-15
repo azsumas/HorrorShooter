@@ -64,6 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Image breathFB;
     public Image aimPoint;
     public Image radar;
+    public GameObject lowEne;
 
     [Header("Animations")]
     public Animator hitAnim;
@@ -83,6 +84,8 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Sounds")]
     private AudioPlayer audioPlayer;
     public AudioSource breathingSound;
+    public float pitchWarning = 1.0f;
+    bool playWarning = false;
 
     IEnumerator aimCoroutine;
 
@@ -191,6 +194,17 @@ public class PlayerBehaviour : MonoBehaviour
         // CONTROL ENERGY PLAYER
         if(energy <= 0) energy = 0;
 
+        if (energy <= 25)
+        {
+            lowEne.SetActive(true);
+            WarningSound();
+        }
+        else
+        {
+            lowEne.SetActive(false);
+            playWarning = false;
+        }
+
         if(energy == 0)
         {
             death = true;
@@ -208,7 +222,7 @@ public class PlayerBehaviour : MonoBehaviour
             if(energy <= 25)
             {
                 lanternLight.intensity = energy / 25;
-            }
+                            }
             else lanternLight.intensity = maxLightIntensity;
         }
         if(moveFast == true)
@@ -380,6 +394,13 @@ public class PlayerBehaviour : MonoBehaviour
         timeDuration = 0 + timeDuration;
 
         StartCoroutine(aimCoroutine);
+    }
+
+    public void WarningSound()
+    {
+        if (playWarning == true) return;
+        audioPlayer.PlaySFX(15, 1, pitchWarning);
+        playWarning = true;
     }
 
     public void SetGodMode()
