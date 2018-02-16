@@ -46,8 +46,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
 	public float energy;
 	public float maxEnergy;
 
-    [Header("Effects")]
-    public ParticleSystem explosion;
+   // [Header("Effects")]
+   // public ParticleSystem explosion;
 
     private void Awake()
     {
@@ -265,8 +265,8 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     }
     void SetDead()
     {
-        explosion.Play();
-        explosion.transform.DetachChildren();
+       /* explosion.Play();
+        explosion.transform.DetachChildren();*/
         agent.isStopped = true;
         state = EnemyState.Dead;
 
