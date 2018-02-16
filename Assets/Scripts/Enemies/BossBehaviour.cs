@@ -318,13 +318,13 @@ public class BossBehaviour : MonoBehaviour
     {
         agent.isStopped = true;
         this.gameObject.SetActive(false);
+       
+        state = EnemyState.Dead;
         if (theBoss == true)
         {
             Debug.Log("TRUE");
             finalDoor.OpenFinalDoor();
         }
-        state = EnemyState.Dead;
-        
         //Destroy(this.gameObject);
     }
     #endregion

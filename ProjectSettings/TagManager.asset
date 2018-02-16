@@ -12,6 +12,7 @@ TagManager:
   - BreakProp
   - Boss
   - Radar
+  - Critic
   layers:
   - Default
   - TransparentFX

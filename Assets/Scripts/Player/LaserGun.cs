@@ -132,6 +132,14 @@ public class LaserGun : MonoBehaviour
                     target.SetDamage(damage);
                 }
             }
+            else if (hit.collider.gameObject.CompareTag("Critic"))
+            {
+                CriticDamage target = hit.transform.GetComponent<CriticDamage>();
+                if (target != null)
+                {
+                    target.CriticDamages();
+                }
+            }
         }
         GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impactGo, 0.1f);
