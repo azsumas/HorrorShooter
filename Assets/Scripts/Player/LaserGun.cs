@@ -52,7 +52,7 @@ public class LaserGun : MonoBehaviour
                     ammo--;
                     gunBar.AmmoShot(1);
                     Shot(); // Función del disparo
-                    Debug.Log("SHOT");
+                    //Debug.Log("SHOT");
                     GameManager.instance.dataLogic.SetAmmo(ammo);
                 }
                 if(ammo <= 0.0f) ammo = 0.0f;
@@ -121,6 +121,7 @@ public class LaserGun : MonoBehaviour
                 BossBehaviour target = hit.transform.GetComponent<BossBehaviour>();
                 if (target != null)
                 {
+                    damage = 2;
                     target.SetDamage(damage);
                 }
             }
