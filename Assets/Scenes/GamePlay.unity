@@ -449,7 +449,12 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1010880297945046, guid: f72a61680add8364fb063da78be3e66d, type: 2}
+      propertyPath: m_Name
+      value: FinalDoor
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114097401058789456, guid: f72a61680add8364fb063da78be3e66d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f72a61680add8364fb063da78be3e66d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &104891323
@@ -9710,6 +9715,28 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1191864815}
+--- !u!1 &1233736227 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1010880297945046, guid: f72a61680add8364fb063da78be3e66d,
+    type: 2}
+  m_PrefabInternal: {fileID: 99884320}
+--- !u!114 &1233736229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233736227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9da18509da58b4680be264c4a8e6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1233736232}
+--- !u!95 &1233736232 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95173495809841018, guid: f72a61680add8364fb063da78be3e66d,
+    type: 2}
+  m_PrefabInternal: {fileID: 99884320}
 --- !u!1 &1240763833 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1363358946452942, guid: 64677d02a99a3ec43bcdcf387b013604,
@@ -9844,12 +9871,12 @@ Prefab:
     - target: {fileID: 224687865974583930, guid: bdef3d84957e4924d9fe9ae124a10c6a,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 92.257965
+      value: 415.75797
       objectReference: {fileID: 0}
     - target: {fileID: 224687865974583930, guid: bdef3d84957e4924d9fe9ae124a10c6a,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 47.71125
+      value: 229.21124
       objectReference: {fileID: 0}
     - target: {fileID: 1537046629110896, guid: bdef3d84957e4924d9fe9ae124a10c6a, type: 2}
       propertyPath: m_IsActive
@@ -10139,8 +10166,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322230669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 211.8, y: 115, z: 7.5}
-  m_LocalScale: {x: 0.21250002, y: 0.21250002, z: 0.21250002}
+  m_LocalPosition: {x: 535.3, y: 296.5, z: 7.5}
+  m_LocalScale: {x: 0.5494792, y: 0.5494792, z: 0.5494792}
   m_Children:
   - {fileID: 563355529}
   - {fileID: 1180912001}
@@ -21164,6 +21191,16 @@ Prefab:
     - target: {fileID: 4402090076290522, guid: c5b4e3934317f064ebf04e3b669bd305, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114550344547902394, guid: c5b4e3934317f064ebf04e3b669bd305,
+        type: 2}
+      propertyPath: finalDoor
+      value: 
+      objectReference: {fileID: 1233736229}
+    - target: {fileID: 114550344547902394, guid: c5b4e3934317f064ebf04e3b669bd305,
+        type: 2}
+      propertyPath: theBoss
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5b4e3934317f064ebf04e3b669bd305, type: 2}
