@@ -20,10 +20,12 @@ public class EndScreen : MonoBehaviour
     void DeadText()
     {
         dieText.SetActive(true);
+        Debug.Log("1");
     }
 
     void WinText()
     {
         winText.SetActive(true);
+        Debug.Log("2");
     }
 }
