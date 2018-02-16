@@ -204,8 +204,60 @@ public class BossBehaviour : MonoBehaviour
             return;
         }
     }
-    void Attack02Update() { }
-    void Attack03Update() { }
+    void Attack02Update()
+    {
+        agent.SetDestination(targetTransform.position);
+
+        Debug.Log("ATTACKRANGE");
+        chaseRange = chaseRange - minChaseRange;
+        if (chaseRange <= minChaseRange)
+        {
+            chaseRange = minChaseRange;
+        }
+        if (canAttack)
+        {
+            agent.isStopped = true;
+            targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
+            idleTime = coolDownAttack;
+            SetIdle();
+            Debug.Log("EnemyHitting");
+
+        }
+
+        if (distanceFromTarget > attackRange)
+        {
+            agent.isStopped = false;
+            SetChase();
+            return;
+        }
+    }
+    void Attack03Update()
+    {
+        agent.SetDestination(targetTransform.position);
+
+        Debug.Log("ATTACKRANGE");
+        chaseRange = chaseRange - minChaseRange;
+        if (chaseRange <= minChaseRange)
+        {
+            chaseRange = minChaseRange;
+        }
+        if (canAttack)
+        {
+            agent.isStopped = true;
+            targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
+            idleTime = coolDownAttack;
+            SetIdle();
+            Debug.Log("EnemyHitting");
+
+        }
+
+        if (distanceFromTarget > attackRange)
+        {
+            agent.isStopped = false;
+            SetChase();
+            return;
+        }
+    }
     void StunUpdate()
     {
         if (timeCounter >= stunTime)
@@ -266,12 +318,13 @@ public class BossBehaviour : MonoBehaviour
     {
         agent.isStopped = true;
         this.gameObject.SetActive(false);
-        state = EnemyState.Dead;
         if (theBoss == true)
         {
             Debug.Log("TRUE");
             finalDoor.OpenFinalDoor();
         }
+        state = EnemyState.Dead;
+        
         //Destroy(this.gameObject);
     }
     #endregion
@@ -279,24 +332,25 @@ public class BossBehaviour : MonoBehaviour
     public void SetDamage(int hit)
     {
         energy -= hit;
+        SetStun();
         //energyBar.UpdateEnergyUI();
         if (energy >= 66 )
         {
             Debug.Log("1");
             attack = 0;
-            SetStun();
+            //SetStun();
         }
         else if (energy <= 66 && energy >= 33)
         {
             Debug.Log("2");
             attack = 1;
-            SetStun();
+            //SetStun();
         }
-        else if (energy <= 33 )
+        else if (energy <= 33 && energy >= 0)
         {
             Debug.Log("3");
             attack = 2;
-            SetStun();
+            
         }
         else if (energy <= 0)
         {
