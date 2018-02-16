@@ -13,7 +13,7 @@ public class FinalDoor : MonoBehaviour
 
     public void OpenFinalDoor()
     {
-        anim.SetTrigger("OpenDoors");
+        anim.SetTrigger("OpenDoor");
     }
 
     void PauseAnimationEvent()
