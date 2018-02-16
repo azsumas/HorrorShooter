@@ -207,7 +207,7 @@ public class BossBehaviour : MonoBehaviour
     void Attack02Update()
     {
         agent.SetDestination(targetTransform.position);
-
+        hitDamage = 20;
         Debug.Log("ATTACKRANGE");
         chaseRange = chaseRange - minChaseRange;
         if (chaseRange <= minChaseRange)
@@ -234,7 +234,7 @@ public class BossBehaviour : MonoBehaviour
     void Attack03Update()
     {
         agent.SetDestination(targetTransform.position);
-
+        coolDownAttack = 0.5f;
         Debug.Log("ATTACKRANGE");
         chaseRange = chaseRange - minChaseRange;
         if (chaseRange <= minChaseRange)
