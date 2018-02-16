@@ -37,7 +37,6 @@ public class GunMagazine : MonoBehaviour
             this.gameObject.SetActive(false);
         }*/
         gun.MagazineReload(gunMagazine);
-
         radar.RemoveRadarObject(radObj);
 
         this.gameObject.SetActive(false);

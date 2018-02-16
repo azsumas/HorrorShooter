@@ -11,7 +11,7 @@ public class BossBehaviour : MonoBehaviour
     public enum EnemyState { Idle, Patrol, Chase, Attack, Attack02, Attack03, Stun, Dead }
     public EnemyState state;
     //public EnemiesBar energyBar;
-    //public Animator anim;
+    public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
     public FinalDoor finalDoor;
@@ -235,17 +235,24 @@ public class BossBehaviour : MonoBehaviour
     void SetChase()
     {
         //Feedback de lo que empieza a perseguirnos :D
-        //anim.SetTrigger("Chase");
+        anim.SetTrigger("Chase");
         state = EnemyState.Chase;
 
     }
     void SetAttack()
     {
-        //anim.SetTrigger("Attack");
+        anim.SetTrigger("Attack");
         state = EnemyState.Attack;
     }
-    void SetAttack02() { }
-    void SetAttack03() { }
+    void SetAttack02()
+    {
+        anim.SetTrigger("Attack02");
+        state = EnemyState.Attack02;
+    }
+    void SetAttack03()
+    {
+        state = EnemyState.Attack03;
+    }
     void SetStun()
     {
         agent.isStopped = true;
