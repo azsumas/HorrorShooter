@@ -592,7 +592,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860381985160148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.92, y: 0.007123947, z: -32.896294}
+  m_LocalPosition: {x: 3.60293, y: 6.651182, z: 5.656048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4340391792091618}
@@ -1134,6 +1134,7 @@ MonoBehaviour:
   energy: 50
   maxEnergy: 50
   managerScene: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!136 &136616030641856310
 CapsuleCollider:
   m_ObjectHideFlags: 1

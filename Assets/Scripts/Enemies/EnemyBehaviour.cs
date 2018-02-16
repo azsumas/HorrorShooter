@@ -48,6 +48,9 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject managerScene;
     AudioPlayer audioPlayer;
 
+    [Header("Effects")]
+    public ParticleSystem explosion;
+
     void Start()
     {
         viewAngle = spotLight.spotAngle;
@@ -243,6 +246,8 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void SetDead()
     {
+        explosion.Play();
+        explosion.transform.DetachChildren();
         audioPlayer.PlaySFX(14);
         agent.isStopped = true;
         this.gameObject.SetActive(false);

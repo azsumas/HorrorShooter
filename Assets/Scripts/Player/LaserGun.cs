@@ -24,7 +24,7 @@ public class LaserGun : MonoBehaviour
     public GameObject enemyImpactEffect;
     public ParticleSystem smoke;
     public ParticleSystem smoke01;
-
+    public GameObject impactParticle1;
     private float nextTimeToFire = 0f;
 
     private AudioPlayer audioPlayer;
@@ -140,6 +140,11 @@ public class LaserGun : MonoBehaviour
                 {
                     target.CriticDamages();
                 }
+            }
+            else if (hit.collider.gameObject.CompareTag("Particle1"))
+            {
+                    GameObject impactParticle1GO = Instantiate(impactParticle1, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactParticle1GO, 10f);
             }
         }
         GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
