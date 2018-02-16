@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: baa5319881bb80a42ac4c56e608885a9
+timeCreated: 1518743235
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Object001
+    100004: Panther
+    100006: PantherDedos
+    100008: PantherHead
+    100010: PantherHeadBone001
+    100012: PantherLLeg003
+    100014: PantherLLeg004
+    100016: PantherLLeg1
+    100018: PantherLLeg1 1
+    100020: PantherLLeg2
+    100022: PantherLLeg2 1
+    100024: PantherLLegCollarbone
+    100026: PantherLLegPalm
+    100028: PantherLLegPalm 1
+    100030: PantherLLegPalm001
+    100032: PantherLLegPlatform
+    100034: PantherLLegPlatform 1
+    100036: PantherLLegPlatform001
+    100038: PantherNeck1
+    100040: PantherNeck2
+    100042: PantherNeck3
+    100044: PantherNeck4
+    100046: PantherNeck5
+    100048: PantherPalmBone001
+    100050: PantherPalmBone002
+    100052: PantherPalmBone003
+    100054: PantherPelvis
+    100056: PantherPelvisBone001
+    100058: PantherRibcage
+    100060: PantherRLeg1
+    100062: PantherRLeg2
+    100064: PantherRLegPalm
+    100066: PantherRLegPlatform
+    100068: PantherRLegShoulderblade
+    100070: PantherSpine1
+    100072: PantherSpine2
+    100074: PantherSpine3
+    100076: PantherSpine4
+    100078: PantherSpine5
+    100080: PantherSpine6
+    400000: //RootNode
+    400002: Object001
+    400004: Panther
+    400006: PantherDedos
+    400008: PantherHead
+    400010: PantherHeadBone001
+    400012: PantherLLeg003
+    400014: PantherLLeg004
+    400016: PantherLLeg1
+    400018: PantherLLeg1 1
+    400020: PantherLLeg2
+    400022: PantherLLeg2 1
+    400024: PantherLLegCollarbone
+    400026: PantherLLegPalm
+    400028: PantherLLegPalm 1
+    400030: PantherLLegPalm001
+    400032: PantherLLegPlatform
+    400034: PantherLLegPlatform 1
+    400036: PantherLLegPlatform001
+    400038: PantherNeck1
+    400040: PantherNeck2
+    400042: PantherNeck3
+    400044: PantherNeck4
+    400046: PantherNeck5
+    400048: PantherPalmBone001
+    400050: PantherPalmBone002
+    400052: PantherPalmBone003
+    400054: PantherPelvis
+    400056: PantherPelvisBone001
+    400058: PantherRibcage
+    400060: PantherRLeg1
+    400062: PantherRLeg2
+    400064: PantherRLegPalm
+    400066: PantherRLegPlatform
+    400068: PantherRLegShoulderblade
+    400070: PantherSpine1
+    400072: PantherSpine2
+    400074: PantherSpine3
+    400076: PantherSpine4
+    400078: PantherSpine5
+    400080: PantherSpine6
+    4300000: Object001
+    7400000: idle
+    7400002: attack
+    7400004: Chase
+    7400006: Attack02
+    9500000: //RootNode
+    13700000: Object001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #26'
+    second: {fileID: 2100000, guid: 4ceb439f033e06c4b913d5f17d3f8592, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 1
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 1
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack
+      takeName: attack
+      firstFrame: 21
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Chase
+      takeName: Chase
+      firstFrame: 78
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack02
+      takeName: Attack02
+      firstFrame: 51
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
