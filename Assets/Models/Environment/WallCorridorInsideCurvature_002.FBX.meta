@@ -10,6 +10,8 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Wall_OutsideCurvature_001
+    4300002: WallCorridorInsideCurvature_002
+    7400000: Take 001
     9500000: //RootNode
   externalObjects:
   - first:
@@ -17,6 +19,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 'Material #27'
     second: {fileID: 2100000, guid: 98df80ccadcf4fb4a8bf8063a4098a8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #28'
+    second: {fileID: 2100000, guid: de827a06e1f3f2d4f898920472a18883, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
