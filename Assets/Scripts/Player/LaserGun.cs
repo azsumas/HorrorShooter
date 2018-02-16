@@ -116,6 +116,14 @@ public class LaserGun : MonoBehaviour
                     target.SetDamage(damage);
                 }
             }
+            else if (hit.collider.gameObject.CompareTag("Boss"))
+            {
+                BossBehaviour target = hit.transform.GetComponent<BossBehaviour>();
+                if (target != null)
+                {
+                    target.SetDamage(damage);
+                }
+            }
             else if (hit.collider.gameObject.CompareTag("BreakProp"))
             {
                 Break target = hit.transform.GetComponent<Break>();

@@ -11,7 +11,7 @@ public class BossBehaviour : MonoBehaviour
     public enum EnemyState { Idle, Patrol, Chase, Attack, Attack02, Attack03, Stun, Dead }
     public EnemyState state;
     //public EnemiesBar energyBar;
-    public Animator anim;
+    //public Animator anim;
     private NavMeshAgent agent;
     public Transform targetTransform;
     public FinalDoor finalDoor;
@@ -120,6 +120,7 @@ public class BossBehaviour : MonoBehaviour
             {
                 Debug.Log("Te he visto");
                 chaseRange = maxChaseRange;
+                SetChase();
             }
             SetChase();
         }
@@ -234,12 +235,13 @@ public class BossBehaviour : MonoBehaviour
     void SetChase()
     {
         //Feedback de lo que empieza a perseguirnos :D
+        //anim.SetTrigger("Chase");
         state = EnemyState.Chase;
-        anim.SetTrigger("Chase");
+
     }
     void SetAttack()
     {
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         state = EnemyState.Attack;
     }
     void SetAttack02() { }
@@ -249,7 +251,7 @@ public class BossBehaviour : MonoBehaviour
         agent.isStopped = true;
 
         //Feedback animations, sound...
-        anim.SetTrigger("Stun");
+        //anim.SetTrigger("Stun");
         state = EnemyState.Stun;
 
     }
@@ -269,20 +271,25 @@ public class BossBehaviour : MonoBehaviour
     #region Public Functions
     public void SetDamage(int hit)
     {
-        SetStun();
         energy -= hit;
         //energyBar.UpdateEnergyUI();
         if (energy >= 66 )
         {
+            Debug.Log("1");
             attack = 0;
+            SetStun();
         }
         else if (energy <= 66 && energy >= 33)
         {
+            Debug.Log("2");
             attack = 1;
+            SetStun();
         }
         else if (energy <= 33 )
         {
+            Debug.Log("3");
             attack = 2;
+            SetStun();
         }
         else if (energy <= 0)
         {
