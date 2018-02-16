@@ -118,7 +118,7 @@ public class BossBehaviour : MonoBehaviour
             chaseRange = chaseRange + maxChaseRange;
             if (chaseRange >= maxChaseRange)
             {
-                Debug.Log("Te he visto");
+                //Debug.Log("Te he visto");
                 chaseRange = maxChaseRange;
                 SetChase();
             }
@@ -336,19 +336,19 @@ public class BossBehaviour : MonoBehaviour
         //energyBar.UpdateEnergyUI();
         if (energy >= 66 )
         {
-            Debug.Log("1");
+            //Debug.Log("1");
             attack = 0;
             //SetStun();
         }
         else if (energy <= 66 && energy >= 33)
         {
-            Debug.Log("2");
+            //Debug.Log("2");
             attack = 1;
             //SetStun();
         }
         else if (energy <= 33 && energy >= 0)
         {
-            Debug.Log("3");
+            //Debug.Log("3");
             attack = 2;
             
         }
