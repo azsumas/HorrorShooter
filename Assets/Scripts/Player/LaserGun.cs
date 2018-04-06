@@ -26,7 +26,7 @@ public class LaserGun : MonoBehaviour
     public ParticleSystem smoke01;
     public GameObject impactParticle1;
     private float nextTimeToFire = 0f;
-
+    public GameObject lightFlash;
     private AudioPlayer audioPlayer;
 
     // Use this for initialization
@@ -39,7 +39,8 @@ public class LaserGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PauseManager.Instance.Pause)
+        lightFlash.SetActive(false);
+        if (!PauseManager.Instance.Pause)
         {
             if(ammo >= maxAmmo) ammo = maxAmmo;
 
@@ -83,6 +84,7 @@ public class LaserGun : MonoBehaviour
         flash.Play();
         smoke.Play();
         smoke01.Play();
+        lightFlash.SetActive(true);
         audioPlayer.PlaySFX(5);
 
         RaycastHit hit;
