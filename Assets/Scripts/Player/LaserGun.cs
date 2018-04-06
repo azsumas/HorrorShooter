@@ -29,6 +29,11 @@ public class LaserGun : MonoBehaviour
     public GameObject lightFlash;
     private AudioPlayer audioPlayer;
 
+    [Header("Animation")]
+    public Animator animGun;
+    public PlayerBehaviour playerScript;
+
+
     // Use this for initialization
     void Start ()
     {
@@ -59,6 +64,16 @@ public class LaserGun : MonoBehaviour
                 if(ammo <= 0.0f) ammo = 0.0f;
             }
             magazineCount.text = ammo + ("/") + magazine;
+
+            if (playerScript.speed == 0)
+            {
+                animGun.SetBool("isWalking", false);
+            }
+            else
+            {
+                animGun.SetBool("isWalking", true);
+            }
+            animGun.SetBool("isShooting", false);
         }
     }
 
@@ -86,7 +101,7 @@ public class LaserGun : MonoBehaviour
         smoke01.Play();
         lightFlash.SetActive(true);
         audioPlayer.PlaySFX(5);
-
+        animGun.SetBool("isShooting", true);
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
