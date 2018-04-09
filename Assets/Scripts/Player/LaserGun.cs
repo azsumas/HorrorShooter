@@ -63,7 +63,7 @@ public class LaserGun : MonoBehaviour
                 }
                 if(ammo <= 0.0f) ammo = 0.0f;
             }
-            animGun.SetBool("isShooting", false);
+            else animGun.SetBool("isShooting", false);
             magazineCount.text = ammo + ("/") + magazine;
 
             if (playerScript.moveDirection.x == 0 || playerScript.moveDirection.z == 0)
@@ -74,7 +74,12 @@ public class LaserGun : MonoBehaviour
             {
                 animGun.SetBool("isWalking", true);
             }
-           
+
+            if (playerScript.aiming == true)
+            {
+                animGun.SetBool("isAiming", true);
+            }
+            else animGun.SetBool("isAiming", false);
         }
     }
 
