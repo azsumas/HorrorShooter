@@ -146,7 +146,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void ChaseUpdate()
     {
-        agent.speed = 2.5f;
+        agent.speed = 4f;
         agent.SetDestination(targetTransform.position);
         if (distanceFromTarget > chaseRange)
         {
