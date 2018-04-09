@@ -66,11 +66,11 @@ public class LaserGun : MonoBehaviour
             animGun.SetBool("isShooting", false);
             magazineCount.text = ammo + ("/") + magazine;
 
-            if (playerScript.moveDirection == Vector3.zero)
+            if (playerScript.moveDirection.x == 0 || playerScript.moveDirection.z == 0)
             {
                 animGun.SetBool("isWalking", false);
             }
-            else if(playerScript.moveDirection != Vector3.zero)
+            else if(playerScript.moveDirection.x != 0 || playerScript.moveDirection.z != 0)
             {
                 animGun.SetBool("isWalking", true);
             }
