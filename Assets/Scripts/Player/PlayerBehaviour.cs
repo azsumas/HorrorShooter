@@ -245,10 +245,10 @@ public class PlayerBehaviour : MonoBehaviour
             if(characterCollider.height <= 1.8f) { characterCollider.height += Time.deltaTime * 10; }
         }
 
-        /*if (isGrounded && (moveDirection.x != 0 || moveDirection.z != 0))
+        if (isGrounded && (moveDirection.x != 0 || moveDirection.z != 0))
         {
             PlayFootsteps();
-        }*/
+        }
     }
 
     public void SetHorizontalAxis(float x)
@@ -319,7 +319,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (death == false && (timeCounter >= stepTime))
         {
-            //timeCounter = 0;
+            timeCounter = 0;
             audioPlayer.PlaySFX(18, Random.Range(0.8f, 1.0f), Random.Range(0.9f, 1.1f), true, false, "SFX" );
         }
         timeCounter += Time.deltaTime;
