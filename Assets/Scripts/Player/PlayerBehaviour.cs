@@ -315,15 +315,15 @@ public class PlayerBehaviour : MonoBehaviour
         speed -= slowStep;
     }
 
-    /*void PlayFootsteps()
+    void PlayFootsteps()
     {
         if (death == false && (timeCounter >= stepTime))
         {
             //timeCounter = 0;
-            audioPlayer.Play(16, Random.Range(0.8f, 1.0f), Random.Range(0.9f, 1.1f), true, false, "sfxClips" );
+            audioPlayer.PlaySFX(18, Random.Range(0.8f, 1.0f), Random.Range(0.9f, 1.1f), true, false, "SFX" );
         }
         timeCounter += Time.deltaTime;
-    }*/
+    }
 
     public void Lantern()
     {

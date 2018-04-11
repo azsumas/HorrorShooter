@@ -200,6 +200,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2baaddbd4df7bb34c95a2770d8f07ee7, type: 3}
   - {fileID: 8300000, guid: f9e2b13bde225b049a9151920b50e1af, type: 3}
   - {fileID: 8300000, guid: 66d7ddf8d86fe434985aee766a4392d2, type: 3}
+  - {fileID: 8300000, guid: 482b89aa350e3dd4b8372f24464802bf, type: 3}
+  - {fileID: 8300000, guid: 87921f6e4128afd41b17838a33c4ae1f, type: 3}
+  - {fileID: 8300000, guid: d6e7d9726186a26498548191140879eb, type: 3}
   ambientClips:
   - {fileID: 0}
   musicClips:
@@ -295,16 +298,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346394288061218}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -13.816803}
-  m_LocalScale: {x: 0.87890625, y: 0.87890625, z: 0.87890625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 224582588867858254}
   m_Father: {fileID: 4917195722401706}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}

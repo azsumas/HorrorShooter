@@ -21,7 +21,11 @@ public class AudioPlayer : MonoBehaviour
     }
     public void PlaySFX(int clip, float volume, float pitch)
     {
-        Play(sfxClips[clip], volume, pitch, false, false, "SFX");
+        PlaySFX(clip, volume, pitch, false, false, "SFX");
+    }
+    public void PlaySFX(int clip, float volume, float pitch, bool loop, bool audio2D, string groupName)
+    {
+        Play(sfxClips[clip], volume, pitch, loop, audio2D, groupName);
     }
     //2D
     public void Play2DSFX(int clip)
@@ -74,7 +78,7 @@ public class AudioPlayer : MonoBehaviour
     }
     #endregion
 
-    public void Play(AudioClip audio, float volume, float pitch, bool loop, bool audio2D, string groupName)
+    private void Play(AudioClip audio, float volume, float pitch, bool loop, bool audio2D, string groupName)
     {
         AudioSource source = this.gameObject.AddAudioSource();
         source.Play(audio, volume, pitch, loop, audio2D, groupName);
