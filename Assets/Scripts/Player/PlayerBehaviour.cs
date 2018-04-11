@@ -87,6 +87,9 @@ public class PlayerBehaviour : MonoBehaviour
     public float pitchWarning = 1.0f;
     bool playWarning = false;
 
+    public float stepTime = 0.4f;
+    public float timeCounter = 0.0f;
+
     IEnumerator aimCoroutine;
 
     // Use this for initialization
@@ -241,6 +244,11 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if(characterCollider.height <= 1.8f) { characterCollider.height += Time.deltaTime * 10; }
         }
+
+        /*if (isGrounded && (moveDirection.x != 0 || moveDirection.z != 0))
+        {
+            PlayFootsteps();
+        }*/
     }
 
     public void SetHorizontalAxis(float x)
@@ -257,6 +265,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if(controller.isGrounded)
         {
+            audioPlayer.PlaySFX(16);
             jump = true;
             moveDirection.y = jumpSpeed;
         }
@@ -264,9 +273,13 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (hit.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            if(controller.isGrounded)
+            if (!isGrounded)
+            {
+                audioPlayer.PlaySFX(17);
+            }
+            if (controller.isGrounded)
             {
                 isGrounded = true;
                 jump = false;
@@ -301,6 +314,16 @@ public class PlayerBehaviour : MonoBehaviour
         stealthy = true;
         speed -= slowStep;
     }
+
+    /*void PlayFootsteps()
+    {
+        if (death == false && (timeCounter >= stepTime))
+        {
+            //timeCounter = 0;
+            audioPlayer.Play(16, Random.Range(0.8f, 1.0f), Random.Range(0.9f, 1.1f), true, false, "sfxClips" );
+        }
+        timeCounter += Time.deltaTime;
+    }*/
 
     public void Lantern()
     {

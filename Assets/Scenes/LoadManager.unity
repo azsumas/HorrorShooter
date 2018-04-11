@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000004, guid: f7262452ebe230c4088a6218e11fc192,
     type: 2}
   m_UseShadowmask: 1
@@ -120,6 +121,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114145249290018016, guid: bdef3d84957e4924d9fe9ae124a10c6a,
+        type: 2}
+      propertyPath: sfxClips.Array.size
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4917195722401706, guid: bdef3d84957e4924d9fe9ae124a10c6a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 111.742035
@@ -166,6 +172,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114145249290018016, guid: bdef3d84957e4924d9fe9ae124a10c6a,
+        type: 2}
+      propertyPath: mixerGroup
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114145249290018016, guid: bdef3d84957e4924d9fe9ae124a10c6a,
+        type: 2}
+      propertyPath: sfxClips.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 482b89aa350e3dd4b8372f24464802bf, type: 3}
+    - target: {fileID: 114145249290018016, guid: bdef3d84957e4924d9fe9ae124a10c6a,
+        type: 2}
+      propertyPath: sfxClips.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: 87921f6e4128afd41b17838a33c4ae1f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdef3d84957e4924d9fe9ae124a10c6a, type: 2}
   m_IsPrefabParent: 0
