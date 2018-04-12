@@ -14,6 +14,7 @@ TagManager:
   - Radar
   - Critic
   - Particle1
+  - Particle2
   layers:
   - Default
   - TransparentFX

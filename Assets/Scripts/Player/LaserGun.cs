@@ -25,6 +25,7 @@ public class LaserGun : MonoBehaviour
     public ParticleSystem smoke;
     public ParticleSystem smoke01;
     public GameObject impactParticle1;
+    public GameObject impactParticle2;
     private float nextTimeToFire = 0f;
     public GameObject lightFlash;
     private AudioPlayer audioPlayer;
@@ -168,6 +169,11 @@ public class LaserGun : MonoBehaviour
             {
                     GameObject impactParticle1GO = Instantiate(impactParticle1, hit.point, Quaternion.LookRotation(hit.normal));
                     Destroy(impactParticle1GO, 10f);
+            }
+            else if (hit.collider.gameObject.CompareTag("Particle2"))
+            {
+                GameObject impactParticle2GO = Instantiate(impactParticle2, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactParticle2GO, 10f);
             }
         }
         GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
