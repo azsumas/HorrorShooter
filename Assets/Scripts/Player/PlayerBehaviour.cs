@@ -112,7 +112,7 @@ public class PlayerBehaviour : MonoBehaviour
         script = managerScene.GetComponent<LevelManager>();
         gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
-        audioPlayer.PlayMusic(1, 0.1f, true);
+        audioPlayer.PlayMusic(1, 0.01f, true);
     }
 
     // Update is called once per frame

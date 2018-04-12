@@ -124,7 +124,7 @@ Prefab:
     - target: {fileID: 114145249290018016, guid: bdef3d84957e4924d9fe9ae124a10c6a,
         type: 2}
       propertyPath: sfxClips.Array.size
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4917195722401706, guid: bdef3d84957e4924d9fe9ae124a10c6a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -187,6 +187,11 @@ Prefab:
       propertyPath: sfxClips.Array.data[17]
       value: 
       objectReference: {fileID: 8300000, guid: 87921f6e4128afd41b17838a33c4ae1f, type: 3}
+    - target: {fileID: 114145249290018016, guid: bdef3d84957e4924d9fe9ae124a10c6a,
+        type: 2}
+      propertyPath: sfxClips.Array.data[18]
+      value: 
+      objectReference: {fileID: 8300000, guid: fe1ff337ff9f64145a01178bb1726c8b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdef3d84957e4924d9fe9ae124a10c6a, type: 2}
   m_IsPrefabParent: 0
