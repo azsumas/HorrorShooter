@@ -60,7 +60,8 @@ public class LevelManager : MonoBehaviour
     public void LoadNext() { StartLoad(nextScene); }
     public void LoadBack() { StartLoad(backScene); }
     public void LoadMenu() { StartLoad(titleScene); }
-    public void LoadGamePlay() { StartLoad(3); }
+    public void LoadKinematic() { StartLoad(3); }
+    public void LoadGamePlay() { StartLoad(4); }
     public void LoadSceneIndex(int index) { StartLoad(index); }
     public void ExitGame()
     {

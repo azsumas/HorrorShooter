@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        levelManager.LoadGamePlay();
+        levelManager.LoadKinematic();
         dataLogic.NewGameState();
     }
 
