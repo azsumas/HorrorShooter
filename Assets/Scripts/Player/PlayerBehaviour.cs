@@ -86,7 +86,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float pitchWarning = 1.0f;
     bool playWarning = false;
 
-    public float stepTime = 0.4f;
+    public float stepTime = 0.6f;
     public float timeCounter = 0.0f;
 
     IEnumerator aimCoroutine;
@@ -111,7 +111,7 @@ public class PlayerBehaviour : MonoBehaviour
         script = managerScene.GetComponent<LevelManager>();
         gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
-        audioPlayer.PlayMusic(1, 0.01f, true);
+        audioPlayer.PlayMusic(1, 0.004f, true);
     }
 
     // Update is called once per frame
@@ -291,6 +291,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (moveFast == true) return;
         moveFast = true;
         speed += run;
+        stepTime = 0.4f;
     }
 
     public void RunEnergy()
@@ -304,12 +305,14 @@ public class PlayerBehaviour : MonoBehaviour
         moveFast = false;
         stamina = false;
         speed = walk;
+        stepTime = 0.6f;
     }
 
     public void SlowStep()
     {
         stealthy = true;
         speed -= slowStep;
+        stepTime = 0.8f;
     }
 
     void PlayFootsteps()

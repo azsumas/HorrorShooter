@@ -18,7 +18,7 @@ public class SoundsMain : MonoBehaviour
 	// Update is called once per frame
 	void Play ()
     {
-        musicMain.PlayMusic(0, 0.05f, true);
+        musicMain.PlayMusic(0, 0.02f, true);
     }
 
     public void Stop()

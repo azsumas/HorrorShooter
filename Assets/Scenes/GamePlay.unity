@@ -14778,9 +14778,8 @@ MonoBehaviour:
   finalPosY: 0.155
   currentTime: 0
   timeDuration: 0.3
-  breathingSound: {fileID: 831051605}
   pitchWarning: 0.9
-  stepTime: 0.4
+  stepTime: 0.6
   timeCounter: 0
 --- !u!82 &831051605
 AudioSource:
