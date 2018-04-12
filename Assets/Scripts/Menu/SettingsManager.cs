@@ -11,41 +11,90 @@ public class SettingsManager : MonoBehaviour
     public AudioMixer audioMixer;
     public PostProcessingProfile postProcessingAsset;
     public Slider basicExposure;
-    public GameObject TextOn;
-    public GameObject TextOff;
-    public Image HDResButton;
-    public Image MidResButton;
-    public Image FullResButton;
+    public GameObject textOn;
+    public GameObject textOff;
+    public Image hdResButton;
+    public Image midResButton;
+    public Image fullResButton;
+    public Image fast;
+    public Image good;
+    public Image fantastic;
+    public Image ultra;
+    public Image spa;
+    public Image eng;
 
     public void Update()
     {
         if (Screen.fullScreen)
         {
-            TextOn.SetActive(true);
-            TextOff.SetActive(false);
+            textOn.SetActive(true);
+            textOff.SetActive(false);
         }
         else if (!Screen.fullScreen)
         {
-            TextOn.SetActive(false);
-            TextOff.SetActive(true);
+            textOn.SetActive(false);
+            textOff.SetActive(true);
         }
-        if(Screen.width == 1920)
+
+        // RESOLUTION
+        if(Screen.width == 1280)
         {
-            FullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            HDResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            fullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            midResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            hdResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
         }
         if(Screen.width == 1600)
         {
-            FullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            MidResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
-            HDResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            fullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            midResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            hdResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
-        if(Screen.width == 1280)
+        if(Screen.width == 1920)
         {
-            FullResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
-            MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            HDResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            fullResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            midResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            hdResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+
+        // QUALITY
+        if(QualitySettings.GetQualityLevel() == 0)
+        {
+            fast.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            good.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            fantastic.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            ultra.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        if (QualitySettings.GetQualityLevel() == 1)
+        {
+            fast.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            good.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            fantastic.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            ultra.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        if (QualitySettings.GetQualityLevel() == 2)
+        {
+            fast.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            good.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            fantastic.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            ultra.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        if (QualitySettings.GetQualityLevel() == 3)
+        {
+            fast.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            good.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            fantastic.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            ultra.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+        }
+
+        if (Language.language == Language.Lang.esES)
+        {
+            spa.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            eng.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        if (Language.language == Language.Lang.enUS)
+        {
+            eng.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            spa.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
     }
 
