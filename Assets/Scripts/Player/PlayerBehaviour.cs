@@ -83,7 +83,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Sounds")]
     private AudioPlayer audioPlayer;
-    public AudioSource breathingSound;
     public float pitchWarning = 1.0f;
     bool playWarning = false;
 
@@ -290,7 +289,6 @@ public class PlayerBehaviour : MonoBehaviour
     public void Run()
     {
         if (moveFast == true) return;
-        breathingSound.Stop();
         moveFast = true;
         speed += run;
     }
@@ -302,7 +300,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Walk()
     {
-        breathingSound.Play();
         stealthy = false;
         moveFast = false;
         stamina = false;
@@ -320,7 +317,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (death == false && (timeCounter >= stepTime))
         {
             timeCounter = 0;
-            audioPlayer.PlaySFX(18, Random.Range(0.8f, 1.0f), Random.Range(0.9f, 1.1f), true, false, "SFX" );
+            audioPlayer.PlaySFX(18, Random.Range(0.8f, 1.0f), Random.Range(0.9f, 1.1f), false, false, "SFX" );
         }
         timeCounter += Time.deltaTime;
     }
