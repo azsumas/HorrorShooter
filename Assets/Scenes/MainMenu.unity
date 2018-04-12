@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216595985}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   overrideColor: 0
   overridingColor: {r: 0.9999, g: 0.9999, b: 0.9999, a: 0.9999}
   useShadow: 1
-  shadowMapRenderTexture: {fileID: 1322023191}
+  shadowMapRenderTexture: {fileID: 0}
   useCookie: 1
   cookieMapRenderTexture: {fileID: 0}
   enableOutOfPhaseColor: 0
@@ -7957,6 +7957,21 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: -70.59015
       objectReference: {fileID: 0}
+    - target: {fileID: 114613113868560364, guid: d820eb9298a8a3745817fdedc38df1a2,
+        type: 2}
+      propertyPath: FullResButton
+      value: 
+      objectReference: {fileID: 1182594320}
+    - target: {fileID: 114613113868560364, guid: d820eb9298a8a3745817fdedc38df1a2,
+        type: 2}
+      propertyPath: MidResButton
+      value: 
+      objectReference: {fileID: 1182594321}
+    - target: {fileID: 114613113868560364, guid: d820eb9298a8a3745817fdedc38df1a2,
+        type: 2}
+      propertyPath: HDResButton
+      value: 
+      objectReference: {fileID: 1182594322}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d820eb9298a8a3745817fdedc38df1a2, type: 2}
   m_IsPrefabParent: 0
@@ -7977,6 +7992,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: changeLanguage
+--- !u!114 &1182594320 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114374015444550076, guid: d820eb9298a8a3745817fdedc38df1a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1182594317}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1182594321 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114038813836129588, guid: d820eb9298a8a3745817fdedc38df1a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1182594317}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1182594322 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114848924464154382, guid: d820eb9298a8a3745817fdedc38df1a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1182594317}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1191117707
 GameObject:
   m_ObjectHideFlags: 0
@@ -8593,37 +8626,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286964554}
   m_Mesh: {fileID: 4300000, guid: b2ef11b4b9d660b4681170680d8b2d0b, type: 3}
---- !u!84 &1322023191
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 512
-  m_Height: 256
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 11
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1391298821
 GameObject:
   m_ObjectHideFlags: 0

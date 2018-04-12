@@ -13,6 +13,9 @@ public class SettingsManager : MonoBehaviour
     public Slider basicExposure;
     public GameObject TextOn;
     public GameObject TextOff;
+    public Image HDResButton;
+    public Image MidResButton;
+    public Image FullResButton;
 
     public void Update()
     {
@@ -25,6 +28,24 @@ public class SettingsManager : MonoBehaviour
         {
             TextOn.SetActive(false);
             TextOff.SetActive(true);
+        }
+        if(Screen.width == 1920)
+        {
+            FullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            HDResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+        }
+        if(Screen.width == 1600)
+        {
+            FullResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            MidResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            HDResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        if(Screen.width == 1280)
+        {
+            FullResButton.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+            MidResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            HDResButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
     }
 
