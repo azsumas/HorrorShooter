@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 206c48ced6e196741a500d4f92acc6d1
+timeCreated: 1523575908
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bear
+    100002: //RootNode
+    100004: CC_2Legs_L
+    100006: CC_2Legs_R
+    100008: CC_back_knee_L
+    100010: CC_back_knee_R
+    100012: CC_chest
+    100014: CC_COG
+    100016: CC_ear_L
+    100018: CC_ear_R
+    100020: CC_foot_back_L
+    100022: CC_foot_back_R
+    100024: CC_foot_front_L
+    100026: CC_foot_front_R
+    100028: CC_front_knee_L
+    100030: CC_front_knee_R
+    100032: CC_head
+    100034: CC_Master
+    100036: CC_mouth
+    100038: CC_neck_01
+    100040: CC_neck_02
+    100042: CC_spine_01
+    100044: CC_spine_02
+    100046: CC_spine_03
+    100048: CC_tail
+    100050: IK_BackLeg_L
+    100052: IK_BackLeg_R
+    100054: IK_FrontLeg_L
+    100056: IK_FrontLeg_R
+    100058: J_arm_L
+    100060: J_arm_R
+    100062: J_chest
+    100064: J_chestLegs
+    100066: J_COG
+    100068: J_ear_L_01
+    100070: J_ear_L_02
+    100072: J_ear_R_01
+    100074: J_ear_R_02
+    100076: J_elbow_L
+    100078: J_elbow_R
+    100080: J_foot2_back_L
+    100082: J_foot2_back_R
+    100084: J_foot_back_L
+    100086: J_foot_back_R
+    100088: J_foot_L_01
+    100090: J_foot_L_02
+    100092: J_foot_R_01
+    100094: J_foot_R_02
+    100096: J_head
+    100098: J_knee_back_L
+    100100: J_knee_back_R
+    100102: J_leg_back_L
+    100104: J_leg_back_R
+    100106: J_mouth
+    100108: J_neck_01
+    100110: J_neck_02
+    100112: J_spine_01
+    100114: J_spine_02
+    100116: J_spine_03
+    100118: J_tail
+    100120: JE_ear_L_03
+    100122: JE_ear_R_03
+    100124: JE_head
+    100126: JE_mouth
+    100128: JE_tail
+    100130: JE_toe_back_L
+    100132: JE_toe_back_R
+    100134: JE_toe_L
+    100136: JE_toe_R
+    100138: Left
+    100140: nurbsCircle14
+    100142: nurbsCircle15
+    100144: nurbsCircle16
+    100146: nurbsCircle17
+    100148: Object002
+    100150: Object003
+    100152: Object005
+    100154: Object006
+    100156: Object008
+    100158: Object009
+    100160: polyToCurve1
+    100162: polyToCurve1 1
+    100164: polyToCurve2
+    100166: polyToCurve2 1
+    100168: polyToCurve3
+    100170: polyToCurve3 1
+    100172: polyToCurve4
+    100174: polyToCurve4 1
+    100176: polyToCurve5
+    100178: polyToCurve5 1
+    100180: polyToCurve6
+    100182: polyToCurve6 1
+    100184: Right
+    100186: transform1
+    400000: Bear
+    400002: //RootNode
+    400004: CC_2Legs_L
+    400006: CC_2Legs_R
+    400008: CC_back_knee_L
+    400010: CC_back_knee_R
+    400012: CC_chest
+    400014: CC_COG
+    400016: CC_ear_L
+    400018: CC_ear_R
+    400020: CC_foot_back_L
+    400022: CC_foot_back_R
+    400024: CC_foot_front_L
+    400026: CC_foot_front_R
+    400028: CC_front_knee_L
+    400030: CC_front_knee_R
+    400032: CC_head
+    400034: CC_Master
+    400036: CC_mouth
+    400038: CC_neck_01
+    400040: CC_neck_02
+    400042: CC_spine_01
+    400044: CC_spine_02
+    400046: CC_spine_03
+    400048: CC_tail
+    400050: IK_BackLeg_L
+    400052: IK_BackLeg_R
+    400054: IK_FrontLeg_L
+    400056: IK_FrontLeg_R
+    400058: J_arm_L
+    400060: J_arm_R
+    400062: J_chest
+    400064: J_chestLegs
+    400066: J_COG
+    400068: J_ear_L_01
+    400070: J_ear_L_02
+    400072: J_ear_R_01
+    400074: J_ear_R_02
+    400076: J_elbow_L
+    400078: J_elbow_R
+    400080: J_foot2_back_L
+    400082: J_foot2_back_R
+    400084: J_foot_back_L
+    400086: J_foot_back_R
+    400088: J_foot_L_01
+    400090: J_foot_L_02
+    400092: J_foot_R_01
+    400094: J_foot_R_02
+    400096: J_head
+    400098: J_knee_back_L
+    400100: J_knee_back_R
+    400102: J_leg_back_L
+    400104: J_leg_back_R
+    400106: J_mouth
+    400108: J_neck_01
+    400110: J_neck_02
+    400112: J_spine_01
+    400114: J_spine_02
+    400116: J_spine_03
+    400118: J_tail
+    400120: JE_ear_L_03
+    400122: JE_ear_R_03
+    400124: JE_head
+    400126: JE_mouth
+    400128: JE_tail
+    400130: JE_toe_back_L
+    400132: JE_toe_back_R
+    400134: JE_toe_L
+    400136: JE_toe_R
+    400138: Left
+    400140: nurbsCircle14
+    400142: nurbsCircle15
+    400144: nurbsCircle16
+    400146: nurbsCircle17
+    400148: Object002
+    400150: Object003
+    400152: Object005
+    400154: Object006
+    400156: Object008
+    400158: Object009
+    400160: polyToCurve1
+    400162: polyToCurve1 1
+    400164: polyToCurve2
+    400166: polyToCurve2 1
+    400168: polyToCurve3
+    400170: polyToCurve3 1
+    400172: polyToCurve4
+    400174: polyToCurve4 1
+    400176: polyToCurve5
+    400178: polyToCurve5 1
+    400180: polyToCurve6
+    400182: polyToCurve6 1
+    400184: Right
+    400186: transform1
+    2100000: lambert2
+    4300000: Bear
+    4300002: Right
+    4300004: Object002
+    4300006: Object003
+    4300008: Object008
+    4300010: Left
+    4300012: Object005
+    4300014: Object006
+    4300016: Object009
+    7400000: Idle
+    7400002: Run
+    7400004: Walk
+    7400006: Chase
+    7400008: Attack2
+    7400010: Attack1
+    9500000: //RootNode
+    13700000: Bear
+    13700002: Left
+    13700004: Object002
+    13700006: Object003
+    13700008: Object005
+    13700010: Object006
+    13700012: Object008
+    13700014: Object009
+    13700016: Right
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
