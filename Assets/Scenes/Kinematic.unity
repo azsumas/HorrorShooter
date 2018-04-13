@@ -406,8 +406,8 @@ MonoBehaviour:
   timeToChangeScreen: 53
   loadNext: 0
   currentTime: 0
-  kinSpa: {fileID: 15200000, guid: dbd7122b8d883a64fa2baf8f84f9c1df, type: 3}
-  kinEng: {fileID: 15200000, guid: 33305bf3b62ad3d4889e1cda5fb658f4, type: 3}
+  kinSpa: {fileID: 15200000, guid: 796d8272386cb094083f0476cabf25e5, type: 3}
+  kinEng: {fileID: 15200000, guid: b40556d967dbcb545abb94bcba505d12, type: 3}
 --- !u!114 &1837470387
 MonoBehaviour:
   m_ObjectHideFlags: 0
