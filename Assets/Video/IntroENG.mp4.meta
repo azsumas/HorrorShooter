@@ -1,0 +1,45 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: b40556d967dbcb545abb94bcba505d12
+timeCreated: 1523574620
+=======
+guid: 33305bf3b62ad3d4889e1cda5fb658f4
+timeCreated: 1523574037
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
+licenseType: Free
+VideoClipImporter:
+  externalObjects: {}
+  serializedVersion: 2
+<<<<<<< HEAD
+  useLegacyImporter: 0
+=======
+  useLegacyImporter: 1
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
+  quality: 0.5
+  isColorLinear: 0
+  frameRange: 0
+  startFrame: -1
+  endFrame: -1
+  colorSpace: 0
+  deinterlace: 0
+  encodeAlpha: 0
+  flipVertical: 0
+  flipHorizontal: 0
+  importAudio: 1
+<<<<<<< HEAD
+  targetSettings: {}
+=======
+  targetSettings:
+    0:
+      enableTranscoding: 0
+      codec: 0
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 1920
+      customHeight: 1080
+      bitrateMode: 2
+      spatialQuality: 2
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
