@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 796d8272386cb094083f0476cabf25e5
 timeCreated: 1523574618
+=======
+guid: dbd7122b8d883a64fa2baf8f84f9c1df
+timeCreated: 1523574038
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
 =======
 guid: dbd7122b8d883a64fa2baf8f84f9c1df
 timeCreated: 1523574038
@@ -11,7 +16,11 @@ VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   useLegacyImporter: 0
+=======
+  useLegacyImporter: 1
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
 =======
   useLegacyImporter: 1
 >>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
@@ -27,8 +36,11 @@ VideoClipImporter:
   flipHorizontal: 0
   importAudio: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   targetSettings: {}
 =======
+=======
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
   targetSettings:
     0:
       enableTranscoding: 0
@@ -39,6 +51,9 @@ VideoClipImporter:
       customHeight: 1080
       bitrateMode: 2
       spatialQuality: 2
+<<<<<<< HEAD
+>>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
+=======
 >>>>>>> 654177b21eca67aa85eb2d08aa7dd02a9ae447b6
   userData: 
   assetBundleName: 
