@@ -15,6 +15,7 @@ TagManager:
   - Critic
   - Particle1
   - Particle2
+  - AmmoEnergy
   layers:
   - Default
   - TransparentFX
