@@ -23,12 +23,12 @@ GameObject:
   - component: {fileID: 23692372040877570}
   - component: {fileID: 95968131244964404}
   - component: {fileID: 65122457966173470}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: cajonera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4455419455014200
 Transform:
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1823228307306550}
-  m_LocalRotation: {x: 0.0123406835, y: -0.7069991, z: -0.70699906, w: -0.012340753}
-  m_LocalPosition: {x: -7.8690004, y: -1.5150001, z: -1.5560007}
-  m_LocalScale: {x: 0.08587905, y: 0.08179791, z: 0.065656394}
+  m_LocalRotation: {x: 0.0012096057, y: -0.7071059, z: -0.7071057, w: -0.0012096406}
+  m_LocalPosition: {x: -41.169, y: 2.007124, z: -5.4783115}
+  m_LocalScale: {x: 0.085879125, y: 0.08179796, z: 0.06565642}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -2}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -180.19598}
 --- !u!23 &23692372040877570
 MeshRenderer:
   m_ObjectHideFlags: 1
