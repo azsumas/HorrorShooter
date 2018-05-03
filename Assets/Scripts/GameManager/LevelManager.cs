@@ -20,7 +20,10 @@ public class LevelManager : MonoBehaviour
     bool isLoading = false;
     [Header("UI")]
     public Image blackScreen;
+    public Image loadImg;
     float fadeTime = 2.0f;
+    float rotationImg = 0;
+    bool rotation = false;
     
     private void Start()
     {
@@ -47,13 +50,17 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKey(KeyCode.AltGr))
         {
             if(Input.GetKeyDown(KeyCode.N)) LoadNext();
             if(Input.GetKeyDown(KeyCode.B)) StartLoad(backScene);
             if(Input.GetKeyDown(KeyCode.M)) StartLoad(titleScene);
             if(Input.GetKeyDown(KeyCode.R)) StartLoad(currentScene);
+        }
+        if(rotation == true)
+        {
+            rotationImg -=2;
+            loadImg.transform.rotation = Quaternion.Euler(0, 0, rotationImg);
         }
     }
 
@@ -71,7 +78,6 @@ public class LevelManager : MonoBehaviour
     void StartLoad(int index)
     {
         TextData.ResetUIText();
-
 
         Cursor.visible = false;
 
@@ -139,11 +145,16 @@ public class LevelManager : MonoBehaviour
 
     void FadeIn()
     {
+        rotation = false;
         blackScreen.CrossFadeAlpha(0, fadeTime, true);
+        loadImg.CrossFadeAlpha(0, fadeTime/4, true);
+        loadImg.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
     void FadeOut()
     {
+        rotation = true;
         blackScreen.CrossFadeAlpha(1, fadeTime, true);
+        loadImg.CrossFadeAlpha(1, fadeTime*4, true);
         StartCoroutine(WaitForFade());
     }
 
