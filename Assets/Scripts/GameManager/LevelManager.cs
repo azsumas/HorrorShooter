@@ -116,7 +116,7 @@ public class LevelManager : MonoBehaviour
     {
         while(true)
         {
-            if(loadAsync.isDone )//&& (unloadAsync == null || unloadAsync.isDone))
+            if(loadAsync.isDone)//&& (unloadAsync == null || unloadAsync.isDone))
             {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(loadingSceneIndex));
                 UpdateSceneState();
@@ -147,14 +147,14 @@ public class LevelManager : MonoBehaviour
     {
         rotation = false;
         blackScreen.CrossFadeAlpha(0, fadeTime, true);
-        loadImg.CrossFadeAlpha(0, fadeTime/4, true);
+        loadImg.CrossFadeAlpha(0, fadeTime/2, true);
         loadImg.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
     void FadeOut()
     {
         rotation = true;
         blackScreen.CrossFadeAlpha(1, fadeTime, true);
-        loadImg.CrossFadeAlpha(1, fadeTime*4, true);
+        loadImg.CrossFadeAlpha(0.75f, fadeTime*2, true);
         StartCoroutine(WaitForFade());
     }
 

@@ -42,6 +42,10 @@ public class Tutorial : MonoBehaviour
         if (timeCounter >= 5.5f) ammoText.SetActive(true);
         if (timeCounter >= 6.0f) packEneText.SetActive(true);
         if (timeCounter >= 7.0f) energyBar.SetActive(true);
-        if(timeCounter >= 8.2f) controlPlayer.enabled = true;
+        if(timeCounter >= 8.2f)
+        {
+            controlPlayer.enabled = true;
+            this.gameObject.SetActive(false);
+        }
     }
 }
