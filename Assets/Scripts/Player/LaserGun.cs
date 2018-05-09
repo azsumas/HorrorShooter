@@ -16,6 +16,7 @@ public class LaserGun : MonoBehaviour
     public int magazine;
     public float fireRate = 10f;
 
+    public Text ammoCount;
     public Text magazineCount;
 
     [Header("Effects")]
@@ -65,7 +66,18 @@ public class LaserGun : MonoBehaviour
                 if(ammo <= 0.0f) ammo = 0.0f;
             }
             else animGun.SetBool("isShooting", false);
-            magazineCount.text = ammo + ("/") + magazine;
+
+            ammoCount.text = ammo + ("/");
+            magazineCount.text = (" ") + magazine;
+
+            if (magazine <= 1)
+            {
+                magazineCount.color = Color.red;
+            }
+            else magazineCount.color = new Vector4(224, 245, 236, 1);
+
+            if (ammo <= 5) ammoCount.color = Color.red;
+            else ammoCount.color = new Vector4(224, 245, 236, 1);
 
             if (playerScript.moveDirection.x == 0 || playerScript.moveDirection.z == 0)
             {

@@ -232,7 +232,10 @@ public class PlayerBehaviour : MonoBehaviour
             runEnergy = Time.deltaTime;
             RunEnergy();
         }
+
         packEnergyCount.text = energyPackCount + ("");
+        if (energyPackCount <= 1) packEnergyCount.color = Color.red;
+        else packEnergyCount.color = new Vector4(224, 245, 236, 1);
 
         //STEALTHY ANIMATION
         if(stealthy == true)
