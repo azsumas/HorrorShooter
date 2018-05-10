@@ -65,6 +65,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Image aimPoint;
     public Image radar;
     public GameObject lowEne;
+    public Text rechargeText;
 
     [Header("Animations")]
     public Animator hitAnim;
@@ -224,7 +225,7 @@ public class PlayerBehaviour : MonoBehaviour
             if(energy <= 25)
             {
                 lanternLight.intensity = energy / 25;
-                            }
+            }
             else lanternLight.intensity = maxLightIntensity;
         }
         if(moveFast == true)
@@ -236,6 +237,12 @@ public class PlayerBehaviour : MonoBehaviour
         packEnergyCount.text = energyPackCount + ("");
         if (energyPackCount <= 1) packEnergyCount.color = Color.red;
         else packEnergyCount.color = new Vector4(224, 245, 236, 1);
+
+        if (energyPackCount >= 1 && energy <= 25) rechargeText.enabled = true;
+        else rechargeText.enabled = false;
+
+        if (energy <= 25) lifeBar.LowEnergy();
+        else lifeBar.HighEnergy();
 
         //STEALTHY ANIMATION
         if(stealthy == true)

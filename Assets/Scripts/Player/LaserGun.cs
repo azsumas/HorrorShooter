@@ -18,6 +18,7 @@ public class LaserGun : MonoBehaviour
 
     public Text ammoCount;
     public Text magazineCount;
+    public Text reloadAmmo;
 
     [Header("Effects")]
     public ParticleSystem flash;
@@ -78,6 +79,9 @@ public class LaserGun : MonoBehaviour
 
             if (ammo <= 5) ammoCount.color = Color.red;
             else ammoCount.color = new Vector4(224, 245, 236, 1);
+
+            if (ammo <= 5 && magazine >= 1) reloadAmmo.enabled = true;
+            else reloadAmmo.enabled = false;
 
             if (playerScript.moveDirection.x == 0 || playerScript.moveDirection.z == 0)
             {

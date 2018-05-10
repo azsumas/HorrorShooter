@@ -24,4 +24,14 @@ public class EnergyBar : MonoBehaviour
     {
         energyBarImage.fillAmount = (1 / player.maxEnergy) * player.energy;
     }
+
+    public void LowEnergy()
+    {
+        energyBarImage.color = Color.red;
+    }
+
+    public void HighEnergy()
+    {
+        energyBarImage.color = new Vector4(224, 245, 236, 1);
+    }
 }
