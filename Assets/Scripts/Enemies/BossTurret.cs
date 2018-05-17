@@ -12,7 +12,7 @@ public class BossTurret : MonoBehaviour {
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    public float fireRate = 1f;
+    public float fireRate = 5f;
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
@@ -26,7 +26,7 @@ public class BossTurret : MonoBehaviour {
 	
     void UpdateTarget()
     {
-        player = GameObject.FindGameObjectWithTag("player");
+        player = GameObject.FindGameObjectWithTag("Player");
         float shortestDistance = Mathf.Infinity;
 
         float distanceToEnemy = Vector3.Distance(transform.position, player.transform.position);
@@ -46,14 +46,26 @@ public class BossTurret : MonoBehaviour {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime* turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        partToRotate.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
 
-        if(fireCountdown <= 0f)
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
+            if(hit.collider)
+            {
+                Debug.Log("Dispara");
+                if(fireCountdown <= 0f)
+                {
+                    if(hit.collider.gameObject.layer == 9)
+                    {
+                        Debug.Log("Detecta");
+                        Shoot();
+                        fireCountdown = 1f / fireRate;
+                    }
+                }
 
+            }
+        }
         fireCountdown -= Time.deltaTime;
 	}
     
