@@ -39,7 +39,7 @@ public class GunMagazine : MonoBehaviour
         gun.MagazineReload(gunMagazine);
         radar.RemoveRadarObject(radObj);
 
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
         audioPlayer.PlaySFX(7);
     }
 }
