@@ -12,6 +12,7 @@ public class GunMagazine : MonoBehaviour
     AudioPlayer audioPlayer;
     Radar radar;
     RadarObject radObj;
+    Collider m_collider;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class GunMagazine : MonoBehaviour
 
         managerScene = GameObject.FindWithTag("Manager");
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+        m_collider = GetComponent<Collider>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -39,7 +41,7 @@ public class GunMagazine : MonoBehaviour
         gun.MagazineReload(gunMagazine);
         radar.RemoveRadarObject(radObj);
 
-        //this.gameObject.SetActive(false);
+        m_collider.enabled = !m_collider.enabled;
         audioPlayer.PlaySFX(7);
     }
 }

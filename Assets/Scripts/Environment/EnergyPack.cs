@@ -11,6 +11,7 @@ public class EnergyPack : MonoBehaviour
     AudioPlayer audioPlayer;
     Radar radar;
     RadarObject radObj;
+    Collider m_collider;
 
     private void Start()
     {
@@ -24,6 +25,8 @@ public class EnergyPack : MonoBehaviour
 
         managerScene = GameObject.FindWithTag("Manager");
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+        m_collider = GetComponent<Collider>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,8 +42,8 @@ public class EnergyPack : MonoBehaviour
         other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
 
         radar.RemoveRadarObject(radObj);
+        m_collider.enabled = !m_collider.enabled;
 
-        this.gameObject.SetActive(false);
         audioPlayer.PlaySFX(6);
     }
 }
