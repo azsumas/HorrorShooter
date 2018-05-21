@@ -71,7 +71,7 @@ public class LaserGun : MonoBehaviour
             ammoCount.text = ammo + ("/");
             magazineCount.text = (" ") + magazine;
 
-            if (magazine <= 1)
+            if (magazine <= 0)
             {
                 magazineCount.color = Color.red;
             }
