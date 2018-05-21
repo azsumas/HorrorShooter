@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class EnergyPack : MonoBehaviour
 {
     public int energyPack;
-    public Image icon;
+    //public Image icon;
     public GameObject managerScene;
     AudioPlayer audioPlayer;
-    Radar radar;
-    RadarObject radObj;
+    //Radar radar;
+    //RadarObject radObj;
     Collider m_collider;
 
     private void Start()
     {
-        radar = GameObject.FindGameObjectWithTag("Radar").GetComponent<Radar>();
+        /*radar = GameObject.FindGameObjectWithTag("Radar").GetComponent<Radar>();
 
         icon = Instantiate(icon, radar.transform);
         icon.enabled = false;
         radObj = new RadarObject(this.gameObject, icon);
 
-        radar.RegisterRadarObject(radObj);
+        radar.RegisterRadarObject(radObj);*/
 
         managerScene = GameObject.FindWithTag("Manager");
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
@@ -41,8 +41,8 @@ public class EnergyPack : MonoBehaviour
         }*/
         other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
 
-        radar.RemoveRadarObject(radObj);
-        m_collider.enabled = !m_collider.enabled;
+        /*radar.RemoveRadarObject(radObj);
+        m_collider.enabled = !m_collider.enabled;*/
 
         audioPlayer.PlaySFX(6);
     }
