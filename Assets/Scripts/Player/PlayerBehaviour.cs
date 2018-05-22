@@ -235,7 +235,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         packEnergyCount.text = energyPackCount + ("");
-        if (energyPackCount <= 0) packEnergyCount.color = Color.red;
+        if (energyPackCount <= 0) packEnergyCount.color = new Vector4(220, 0, 0, 1);
         else packEnergyCount.color = new Vector4(224, 245, 236, 1);
 
         if (energyPackCount >= 1 && energy <= 25) rechargeText.enabled = true;

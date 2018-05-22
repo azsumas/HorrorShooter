@@ -14,5 +14,6 @@ public class TutorialJump : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         jumpText.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

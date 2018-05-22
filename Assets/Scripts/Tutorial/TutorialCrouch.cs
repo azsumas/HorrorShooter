@@ -14,5 +14,6 @@ public class TutorialCrouch : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         crouchText.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

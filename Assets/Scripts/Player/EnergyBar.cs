@@ -27,7 +27,7 @@ public class EnergyBar : MonoBehaviour
 
     public void LowEnergy()
     {
-        energyBarImage.color = Color.red;
+        energyBarImage.color = new Vector4(220, 0, 0, 1);
     }
 
     public void HighEnergy()

@@ -73,11 +73,11 @@ public class LaserGun : MonoBehaviour
 
             if (magazine <= 0)
             {
-                magazineCount.color = Color.red;
+                magazineCount.color = new Vector4(220, 0, 0, 1);
             }
             else magazineCount.color = new Vector4(224, 245, 236, 1);
 
-            if (ammo <= 5) ammoCount.color = Color.red;
+            if (ammo <= 5) ammoCount.color = new Vector4(220, 0, 0, 1);
             else ammoCount.color = new Vector4(224, 245, 236, 1);
 
             if (ammo <= 5 && magazine >= 1) reloadAmmo.enabled = true;

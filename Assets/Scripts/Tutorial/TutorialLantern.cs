@@ -14,5 +14,6 @@ public class TutorialLantern : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         lanternText.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }
