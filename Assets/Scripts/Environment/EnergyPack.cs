@@ -37,12 +37,12 @@ public class EnergyPack : MonoBehaviour
             
             Radar.RemoveRadarObject(this.gameObject);*/
 
-            this.gameObject.SetActive(false);
+            
         }
         other.GetComponent<PlayerBehaviour>().PackEnergy(energyPack);
 
-        /*radar.RemoveRadarObject(radObj);
-        m_collider.enabled = !m_collider.enabled;*/
+        //radar.RemoveRadarObject(radObj);
+        m_collider.enabled = !m_collider.enabled;
 
         audioPlayer.PlaySFX(6);
     }
