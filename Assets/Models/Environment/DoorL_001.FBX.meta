@@ -17,6 +17,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 'Material #25'
     second: {fileID: 2100000, guid: 77266a8bb2f56174b870ad6da921e0d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #28'
+    second: {fileID: 2100000, guid: de827a06e1f3f2d4f898920472a18883, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,11 +59,13 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
