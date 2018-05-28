@@ -86,6 +86,7 @@ public class PlayerBehaviour : MonoBehaviour
     private AudioPlayer audioPlayer;
     public float pitchWarning = 1.0f;
     bool playWarning = false;
+    bool playSound = false;
 
     public float stepTime = 0.6f;
     public float timeCounter = 0.0f;
@@ -112,7 +113,7 @@ public class PlayerBehaviour : MonoBehaviour
         script = managerScene.GetComponent<LevelManager>();
         gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
-        audioPlayer.PlayMusic(1, 0.004f, true);
+        audioPlayer.PlayMusic(1, 0.1f, true);
     }
 
     // Update is called once per frame
@@ -238,8 +239,16 @@ public class PlayerBehaviour : MonoBehaviour
         if (energyPackCount <= 0) packEnergyCount.color = new Vector4(220, 0, 0, 1);
         else packEnergyCount.color = new Vector4(224, 245, 236, 1);
 
-        if (energyPackCount >= 1 && energy <= 25) rechargeText.enabled = true;
-        else rechargeText.enabled = false;
+        if (energyPackCount >= 1 && energy <= 25)
+        {
+            rechargeText.enabled = true;
+            PlaySound();
+        }
+        else
+        {
+            rechargeText.enabled = false;
+            playSound = false;
+        }
 
         if (energy <= 25) lifeBar.LowEnergy();
         else lifeBar.HighEnergy();
@@ -432,8 +441,15 @@ public class PlayerBehaviour : MonoBehaviour
     public void WarningSound()
     {
         if (playWarning == true) return;
-        audioPlayer.PlaySFX(15, 1, pitchWarning);
+        audioPlayer.PlaySFX(15, 5, pitchWarning);
         playWarning = true;
+    }
+
+    public void PlaySound()
+    {
+        if (playSound == true) return;
+        audioPlayer.PlaySFX(2, 1.0f, 1.0f, false, true, "SFX");
+        playSound = true;
     }
 
     public void SetGodMode()
