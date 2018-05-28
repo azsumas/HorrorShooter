@@ -5,10 +5,19 @@ using UnityEngine;
 public class TutorialCrouch : MonoBehaviour
 {
     public GameObject crouchText;
+    public GameObject managerScene;
+    public AudioPlayer audioPlayer;
 
-    void OnTriggerStay(Collider other)
+    public void Start()
+    {
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         crouchText.SetActive(true);
+        audioPlayer.PlaySFX(2);
     }
 
     private void OnTriggerExit(Collider other)

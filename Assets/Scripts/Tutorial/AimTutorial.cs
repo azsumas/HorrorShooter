@@ -5,10 +5,19 @@ using UnityEngine;
 public class AimTutorial : MonoBehaviour
 {
     public GameObject aimText;
+    public GameObject managerScene;
+    public AudioPlayer audioPlayer;
 
-    void OnTriggerStay(Collider other)
+    public void Start()
+    {
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         aimText.SetActive(true);
+        audioPlayer.PlaySFX(2);
     }
 
     private void OnTriggerExit(Collider other)

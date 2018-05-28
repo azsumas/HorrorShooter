@@ -5,10 +5,19 @@ using UnityEngine;
 public class TutorialJump : MonoBehaviour
 {
     public GameObject jumpText;
+    public GameObject managerScene;
+    public AudioPlayer audioPlayer;
 
-    void OnTriggerStay(Collider other)
+    public void Start()
+    {
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         jumpText.SetActive(true);
+        audioPlayer.PlaySFX(2);
     }
 
     private void OnTriggerExit(Collider other)

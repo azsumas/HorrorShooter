@@ -31,6 +31,7 @@ public class LaserGun : MonoBehaviour
     private float nextTimeToFire = 0f;
     public GameObject lightFlash;
     private AudioPlayer audioPlayer;
+    bool playSound = false;
 
     [Header("Animation")]
     public Animator animGun;
@@ -80,10 +81,18 @@ public class LaserGun : MonoBehaviour
             if (ammo <= 5) ammoCount.color = new Vector4(220, 0, 0, 1);
             else ammoCount.color = new Vector4(224, 245, 236, 1);
 
-            if (ammo <= 5 && magazine >= 1) reloadAmmo.enabled = true;
-            else reloadAmmo.enabled = false;
+            if (ammo <= 5 && magazine >= 1)
+            {
+                reloadAmmo.enabled = true;
+                PlaySound();
+            }
+            else
+            {
+                reloadAmmo.enabled = false;
+                playSound = false;
+            }
 
-            if (playerScript.moveDirection.x == 0 || playerScript.moveDirection.z == 0)
+                if (playerScript.moveDirection.x == 0 || playerScript.moveDirection.z == 0)
             {
                 animGun.SetBool("isWalking", false);
             }
@@ -115,6 +124,13 @@ public class LaserGun : MonoBehaviour
         }
         gunBar.UpdateGunUI();
         GameManager.instance.dataLogic.SetAmmo(ammo);
+    }
+
+    public void PlaySound()
+    {
+        if (playSound == true) return;
+        audioPlayer.PlaySFX(2, 1.0f, 1.0f, false, true, "SFX");
+        playSound = true;
     }
 
     void Shot()
