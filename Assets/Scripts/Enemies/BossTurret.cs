@@ -20,10 +20,12 @@ public class BossTurret : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    public FinalDoor finalDoor;
 
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 	}
 	
@@ -105,6 +107,7 @@ public class BossTurret : MonoBehaviour {
 
     private void Death()
     {
+        finalDoor.OpenFinalDoor();
         Destroy(gameObject);
     }
 }
