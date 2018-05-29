@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +12,14 @@ public class BossTurret : MonoBehaviour {
     public GameObject player;
     public Transform partToRotate;
     public float turnSpeed = 10f;
+    public float energy;
 
     public float fireRate = 5f;
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
+
 
 
 	// Use this for initialization
@@ -85,5 +88,23 @@ public class BossTurret : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+    public void SetDamage(int hit)
+    {
+        energy -= hit;
+        //energyBar.UpdateEnergyUI();
+
+        if (energy <= 0)
+        {
+            //QUE HAGO CUANDO MUERE? PARTICULAS??? Desaparece???
+            Death();
+            return;
+        }
+
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }

@@ -59,6 +59,7 @@ public class PlayerBehaviour : MonoBehaviour
     float maxLightIntensity;
     float runEnergy;
     public int energyPackCount;
+    Collider col;
 
     [Header("Canvas")]
     public Image breathFB;

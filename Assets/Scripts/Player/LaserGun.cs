@@ -174,10 +174,9 @@ public class LaserGun : MonoBehaviour
             }
             else if (hit.collider.gameObject.CompareTag("Boss"))
             {
-                BossBehaviour target = hit.transform.GetComponent<BossBehaviour>();
+                BossTurret target = hit.transform.GetComponent<BossTurret>();
                 if (target != null)
                 {
-                    damage = 2;
                     target.SetDamage(damage);
                 }
             }

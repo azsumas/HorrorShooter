@@ -16,6 +16,7 @@ TagManager:
   - Particle1
   - Particle2
   - AmmoEnergy
+  - Bullet
   layers:
   - Default
   - TransparentFX
