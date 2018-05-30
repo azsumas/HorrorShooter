@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ButtonsSelected : MonoBehaviour
 {
     public Image buttonOptions;
+    public Image buttonCredits;
     public Image buttonExit;
 
     public Image buttonLanguage;
@@ -43,6 +44,15 @@ public class ButtonsSelected : MonoBehaviour
     public void OptionsDeselected()
     {
         buttonOptions.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+    }
+
+    public void CreditsSelected()
+    {
+        buttonCredits.GetComponent<Image>().color = new Color32(49, 137, 100, 255);
+    }
+    public void CreditsDeselcted()
+    {
+        buttonCredits.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
     }
 
     public void ExitSelected()
