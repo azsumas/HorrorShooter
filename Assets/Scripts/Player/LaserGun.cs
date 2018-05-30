@@ -129,7 +129,7 @@ public class LaserGun : MonoBehaviour
     public void PlaySound()
     {
         if (playSound == true) return;
-        audioPlayer.PlaySFX(2, 1.0f, 1.0f, false, true, "SFX");
+        audioPlayer.PlaySFX(24);
         playSound = true;
     }
 

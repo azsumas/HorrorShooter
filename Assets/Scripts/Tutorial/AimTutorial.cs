@@ -17,7 +17,7 @@ public class AimTutorial : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         aimText.SetActive(true);
-        audioPlayer.PlaySFX(2);
+        audioPlayer.PlaySFX(22);
     }
 
     private void OnTriggerExit(Collider other)

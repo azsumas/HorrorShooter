@@ -44,6 +44,6 @@ public class EnergyPack : MonoBehaviour
         //radar.RemoveRadarObject(radObj);
         m_collider.enabled = !m_collider.enabled;
 
-        audioPlayer.PlaySFX(6);
+        audioPlayer.PlaySFX(7);
     }
 }

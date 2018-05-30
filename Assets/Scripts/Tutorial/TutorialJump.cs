@@ -17,7 +17,7 @@ public class TutorialJump : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         jumpText.SetActive(true);
-        audioPlayer.PlaySFX(2);
+        audioPlayer.PlaySFX(20);
     }
 
     private void OnTriggerExit(Collider other)

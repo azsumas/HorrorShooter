@@ -17,7 +17,7 @@ public class TutorialCrouch : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         crouchText.SetActive(true);
-        audioPlayer.PlaySFX(2);
+        audioPlayer.PlaySFX(21);
     }
 
     private void OnTriggerExit(Collider other)

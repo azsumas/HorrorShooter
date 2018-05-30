@@ -85,7 +85,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("Sounds")]
     private AudioPlayer audioPlayer;
-    public float pitchWarning = 1.0f;
     bool playWarning = false;
     bool playSound = false;
 
@@ -245,7 +244,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (energyPackCount >= 1 && energy <= 25)
         {
             rechargeText.enabled = true;
-            PlaySound();
+            if (energy <= 20) PlaySound();
         }
         else
         {
@@ -444,14 +443,14 @@ public class PlayerBehaviour : MonoBehaviour
     public void WarningSound()
     {
         if (playWarning == true) return;
-        audioPlayer.PlaySFX(15, 5, pitchWarning);
+        audioPlayer.PlaySFX(15);
         playWarning = true;
     }
 
     public void PlaySound()
     {
         if (playSound == true) return;
-        audioPlayer.PlaySFX(2, 1.0f, 1.0f, false, true, "SFX");
+        audioPlayer.PlaySFX(23);
         playSound = true;
     }
 

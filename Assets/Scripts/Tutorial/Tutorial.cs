@@ -20,6 +20,10 @@ public class Tutorial : MonoBehaviour
 
     public float timeCounter;
 
+    public GameObject managerScene;
+    public AudioPlayer audioPlayer;
+    bool playSound = false;
+
     // Use this for initialization
     void Start ()
     {
@@ -31,6 +35,9 @@ public class Tutorial : MonoBehaviour
 
         radar = GameObject.FindWithTag("Radar");
         radarMask = radar.GetComponentInChildren<Image>();
+
+        managerScene = GameObject.FindWithTag("Manager");
+        audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
     }
 	
 	// Update is called once per frame
@@ -39,6 +46,7 @@ public class Tutorial : MonoBehaviour
         timeCounter += Time.deltaTime;
         if (timeCounter >= 3.0f) radarMask.color = new Vector4(75, 75, 75, 220);
         if (timeCounter >= 4.0f) ammoImage.color = new Vector4(255, 255, 255, 255);
+        if (timeCounter >= 4.5f) PlaySound();
         if (timeCounter >= 5.5f) ammoText.SetActive(true);
         if (timeCounter >= 6.0f) packEneText.SetActive(true);
         if (timeCounter >= 7.0f) energyBar.SetActive(true);
@@ -47,5 +55,12 @@ public class Tutorial : MonoBehaviour
             controlPlayer.enabled = true;
             this.gameObject.SetActive(false);
         }
+    }
+
+    public void PlaySound()
+    {
+        if (playSound == true) return;
+        audioPlayer.PlaySFX(19);
+        playSound = true;
     }
 }
