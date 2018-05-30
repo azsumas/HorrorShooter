@@ -6,6 +6,7 @@ public class SoundsMain : MonoBehaviour
 {
     public GameObject managerScene;
     public AudioPlayer musicMain;
+    public float volumeMusic = 0.5f;
 
 	// Use this for initialization
 	void Start ()
@@ -18,7 +19,7 @@ public class SoundsMain : MonoBehaviour
 	// Update is called once per frame
 	void Play ()
     {
-        musicMain.PlayMusic(0, 0.02f, true);
+        musicMain.PlayMusic(0, volumeMusic, true);
     }
 
     public void Stop()
