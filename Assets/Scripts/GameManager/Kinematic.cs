@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent (typeof(AudioSource))]
+//[RequireComponent (typeof(AudioSource))]
 
 public class Kinematic : MonoBehaviour
 {
     [Header("ChangeScene")]
     public float timeToChangeScreen;
-    public bool loadNext = false;
+    private bool loadNext = false;
     public float currentTime;
-    [Header("Resources")]
-    public MovieTexture kinSpa;
-    public MovieTexture kinEng;
-    private AudioSource audioMov;
+    //[Header("Resources")]
+    //public MovieTexture kinSpa;
+    //public MovieTexture kinEng;
+    //private AudioSource audioMov;
 
     private void Start()
     {
-        if (Language.language == Language.Lang.esES)
+        /*if (Language.language == Language.Lang.esES)
         {
             GetComponent<RawImage>().texture = kinSpa as MovieTexture;
             audioMov = GetComponent<AudioSource>();
@@ -33,7 +33,7 @@ public class Kinematic : MonoBehaviour
             audioMov.clip = kinEng.audioClip;
             kinEng.Play();
             audioMov.Play();
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class Kinematic : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            if (Language.language == Language.Lang.esES)
+            /*if (Language.language == Language.Lang.esES)
             {
                 kinSpa.Stop();
                 audioMov.Stop();
@@ -50,7 +50,7 @@ public class Kinematic : MonoBehaviour
             {
                 kinEng.Stop();
                 audioMov.Stop();
-            }
+            }*/
             ChangeScene();
         }
 
