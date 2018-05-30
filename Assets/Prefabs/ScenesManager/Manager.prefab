@@ -226,6 +226,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0b4dd8e41d4cd5e4492beaaa994d80ee, type: 3}
   - {fileID: 8300000, guid: f1a3617746b5db043b0439f5b7a28c18, type: 3}
   - {fileID: 8300000, guid: 62a228ec3039242498a90e446cbe19fd, type: 3}
+  - {fileID: 8300000, guid: eee90b15b9859ef4f9947734762d1ae1, type: 3}
   ambientClips:
   - {fileID: 0}
   musicClips:

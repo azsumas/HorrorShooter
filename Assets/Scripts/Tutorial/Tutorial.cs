@@ -23,6 +23,7 @@ public class Tutorial : MonoBehaviour
     public GameObject managerScene;
     public AudioPlayer audioPlayer;
     bool playSound = false;
+    bool playSound2 = false;
 
     // Use this for initialization
     void Start ()
@@ -44,6 +45,7 @@ public class Tutorial : MonoBehaviour
 	void Update ()
     {
         timeCounter += Time.deltaTime;
+        if (timeCounter >= 0.5f) StartSound();
         if (timeCounter >= 3.0f) radarMask.color = new Vector4(75, 75, 75, 220);
         if (timeCounter >= 4.0f) ammoImage.color = new Vector4(255, 255, 255, 255);
         if (timeCounter >= 4.5f) PlaySound();
@@ -62,5 +64,12 @@ public class Tutorial : MonoBehaviour
         if (playSound == true) return;
         audioPlayer.PlaySFX(19);
         playSound = true;
+    }
+
+    public void StartSound()
+    {
+        if (playSound2 == true) return;
+        audioPlayer.PlaySFX(25, 1, 1.05f,false,false,"SFX");
+        playSound2 = true;
     }
 }
