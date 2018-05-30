@@ -92,6 +92,8 @@ public class PlayerBehaviour : MonoBehaviour
     public float stepTime = 0.6f;
     public float timeCounter = 0.0f;
 
+    public float volumeMusic = 0.5f;
+
     IEnumerator aimCoroutine;
 
     // Use this for initialization
@@ -114,7 +116,7 @@ public class PlayerBehaviour : MonoBehaviour
         script = managerScene.GetComponent<LevelManager>();
         gun.transform.localPosition = gun.transform.localPosition;
         audioPlayer = managerScene.GetComponentInChildren<AudioPlayer>();
-        audioPlayer.PlayMusic(1, 0.1f, true);
+        audioPlayer.PlayMusic(1, volumeMusic, true);
     }
 
     // Update is called once per frame
