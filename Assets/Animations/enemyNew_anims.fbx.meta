@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: cb39025439ccf0048bf2f36d26845e3b
+timeCreated: 1527648455
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: baseCurve10
+    100002: baseCurve12
+    100004: baseCurve2
+    100006: baseCurve4
+    100008: baseCurve6
+    100010: baseCurve8
+    100012: dynJoint_HairStuff1
+    100014: dynJoint_HairStuff2
+    100016: dynJoint_HairStuff3
+    100018: dynJoint_HairStuff4
+    100020: dynJoint_HairStuff5
+    100022: dynJoint_HairStuff6
+    100024: //RootNode
+    100026: follicle1
+    100028: follicle2
+    100030: follicle3
+    100032: follicle4
+    100034: follicle5
+    100036: follicle6
+    100038: hairCurve10
+    100040: hairCurve12
+    100042: hairCurve2
+    100044: hairCurve4
+    100046: hairCurve6
+    100048: hairCurve8
+    100050: hairHandle1
+    100052: hairHandle2
+    100054: hairHandle3
+    100056: hairHandle4
+    100058: hairHandle5
+    100060: hairHandle6
+    100062: hairSystem1
+    100064: hairSystem1OutputCurves
+    100066: hairSystem2
+    100068: hairSystem2OutputCurves
+    100070: hairSystem3
+    100072: hairSystem3OutputCurves
+    100074: hairSystem4
+    100076: hairSystem4OutputCurves
+    100078: hairSystem5
+    100080: hairSystem5OutputCurves
+    100082: hairSystem6
+    100084: hairSystem6OutputCurves
+    100086: Head
+    100088: Hips
+    100090: joint1
+    100092: joint10
+    100094: joint11
+    100096: joint12
+    100098: joint13
+    100100: joint14
+    100102: joint15
+    100104: joint16
+    100106: joint17
+    100108: joint18
+    100110: joint19
+    100112: joint2
+    100114: joint2 1
+    100116: joint2 2
+    100118: joint2 3
+    100120: joint2 4
+    100122: joint20
+    100124: joint21
+    100126: joint22
+    100128: joint23
+    100130: joint24
+    100132: joint25
+    100134: joint26
+    100136: joint27
+    100138: joint3
+    100140: joint3 1
+    100142: joint3 2
+    100144: joint3 3
+    100146: joint3 4
+    100148: joint4
+    100150: joint4 1
+    100152: joint4 2
+    100154: joint4 3
+    100156: joint4 4
+    100158: joint5
+    100160: joint5 1
+    100162: joint5 2
+    100164: joint5 3
+    100166: joint5 4
+    100168: joint6
+    100170: joint6 1
+    100172: joint6 2
+    100174: joint6 3
+    100176: joint6 4
+    100178: joint7
+    100180: joint7 1
+    100182: joint7 2
+    100184: joint7 3
+    100186: joint7 4
+    100188: joint8
+    100190: joint8 1
+    100192: joint8 2
+    100194: joint8 3
+    100196: joint8 4
+    100198: joint9
+    100200: LeftArm
+    100202: LeftFoot
+    100204: LeftForeArm
+    100206: LeftHand
+    100208: LeftLeg
+    100210: LeftShoulder
+    100212: LeftToeBase
+    100214: LeftUpLeg
+    100216: Neck
+    100218: nucleus1
+    100220: Object005
+    100222: QuickRigCharacter_Ctrl_ChestEndEffector
+    100224: QuickRigCharacter_Ctrl_ChestOriginEffector
+    100226: QuickRigCharacter_Ctrl_Head
+    100228: QuickRigCharacter_Ctrl_HeadEffector
+    100230: QuickRigCharacter_Ctrl_Hips
+    100232: QuickRigCharacter_Ctrl_HipsEffector
+    100234: QuickRigCharacter_Ctrl_LeftArm
+    100236: QuickRigCharacter_Ctrl_LeftElbowEffector
+    100238: QuickRigCharacter_Ctrl_LeftForeArm
+    100240: QuickRigCharacter_Ctrl_LeftHand
+    100242: QuickRigCharacter_Ctrl_LeftShoulder
+    100244: QuickRigCharacter_Ctrl_LeftShoulderEffector
+    100246: QuickRigCharacter_Ctrl_LeftWristEffector
+    100248: QuickRigCharacter_Ctrl_Neck
+    100250: QuickRigCharacter_Ctrl_Reference
+    100252: QuickRigCharacter_Ctrl_RightArm
+    100254: QuickRigCharacter_Ctrl_RightElbowEffector
+    100256: QuickRigCharacter_Ctrl_RightForeArm
+    100258: QuickRigCharacter_Ctrl_RightHand
+    100260: QuickRigCharacter_Ctrl_RightShoulder
+    100262: QuickRigCharacter_Ctrl_RightShoulderEffector
+    100264: QuickRigCharacter_Ctrl_RightWristEffector
+    100266: QuickRigCharacter_Ctrl_Spine
+    100268: QuickRigCharacter_Ctrl_Spine1
+    100270: QuickRigCharacter_Ctrl_Spine2
+    100272: QuickRigCharacter_Guides
+    100274: QuickRigCharacter_Head
+    100276: QuickRigCharacter_Hips
+    100278: QuickRigCharacter_LeftArm
+    100280: QuickRigCharacter_LeftForeArm
+    100282: QuickRigCharacter_LeftHand
+    100284: QuickRigCharacter_LeftShoulder
+    100286: QuickRigCharacter_Neck
+    100288: QuickRigCharacter_Reference
+    100290: QuickRigCharacter_RightArm
+    100292: QuickRigCharacter_RightForeArm
+    100294: QuickRigCharacter_RightHand
+    100296: QuickRigCharacter_RightShoulder
+    100298: QuickRigCharacter_Spine
+    100300: QuickRigCharacter_Spine1
+    100302: QuickRigCharacter_Spine2
+    100304: Reference
+    100306: RightArm
+    100308: RightFoot
+    100310: RightForeArm
+    100312: RightHand
+    100314: RightLeg
+    100316: RightShoulder
+    100318: RightToeBase
+    100320: RightUpLeg
+    100322: Spine
+    100324: Spine1
+    100326: Spine2
+    100328: "\xA1\xA1\xD7\xFD\xD7\xFB"
+    100330: "\xD7\xFE\xD7\xFC"
+    400000: baseCurve10
+    400002: baseCurve12
+    400004: baseCurve2
+    400006: baseCurve4
+    400008: baseCurve6
+    400010: baseCurve8
+    400012: dynJoint_HairStuff1
+    400014: dynJoint_HairStuff2
+    400016: dynJoint_HairStuff3
+    400018: dynJoint_HairStuff4
+    400020: dynJoint_HairStuff5
+    400022: dynJoint_HairStuff6
+    400024: //RootNode
+    400026: follicle1
+    400028: follicle2
+    400030: follicle3
+    400032: follicle4
+    400034: follicle5
+    400036: follicle6
+    400038: hairCurve10
+    400040: hairCurve12
+    400042: hairCurve2
+    400044: hairCurve4
+    400046: hairCurve6
+    400048: hairCurve8
+    400050: hairHandle1
+    400052: hairHandle2
+    400054: hairHandle3
+    400056: hairHandle4
+    400058: hairHandle5
+    400060: hairHandle6
+    400062: hairSystem1
+    400064: hairSystem1OutputCurves
+    400066: hairSystem2
+    400068: hairSystem2OutputCurves
+    400070: hairSystem3
+    400072: hairSystem3OutputCurves
+    400074: hairSystem4
+    400076: hairSystem4OutputCurves
+    400078: hairSystem5
+    400080: hairSystem5OutputCurves
+    400082: hairSystem6
+    400084: hairSystem6OutputCurves
+    400086: Head
+    400088: Hips
+    400090: joint1
+    400092: joint10
+    400094: joint11
+    400096: joint12
+    400098: joint13
+    400100: joint14
+    400102: joint15
+    400104: joint16
+    400106: joint17
+    400108: joint18
+    400110: joint19
+    400112: joint2
+    400114: joint2 1
+    400116: joint2 2
+    400118: joint2 3
+    400120: joint2 4
+    400122: joint20
+    400124: joint21
+    400126: joint22
+    400128: joint23
+    400130: joint24
+    400132: joint25
+    400134: joint26
+    400136: joint27
+    400138: joint3
+    400140: joint3 1
+    400142: joint3 2
+    400144: joint3 3
+    400146: joint3 4
+    400148: joint4
+    400150: joint4 1
+    400152: joint4 2
+    400154: joint4 3
+    400156: joint4 4
+    400158: joint5
+    400160: joint5 1
+    400162: joint5 2
+    400164: joint5 3
+    400166: joint5 4
+    400168: joint6
+    400170: joint6 1
+    400172: joint6 2
+    400174: joint6 3
+    400176: joint6 4
+    400178: joint7
+    400180: joint7 1
+    400182: joint7 2
+    400184: joint7 3
+    400186: joint7 4
+    400188: joint8
+    400190: joint8 1
+    400192: joint8 2
+    400194: joint8 3
+    400196: joint8 4
+    400198: joint9
+    400200: LeftArm
+    400202: LeftFoot
+    400204: LeftForeArm
+    400206: LeftHand
+    400208: LeftLeg
+    400210: LeftShoulder
+    400212: LeftToeBase
+    400214: LeftUpLeg
+    400216: Neck
+    400218: nucleus1
+    400220: Object005
+    400222: QuickRigCharacter_Ctrl_ChestEndEffector
+    400224: QuickRigCharacter_Ctrl_ChestOriginEffector
+    400226: QuickRigCharacter_Ctrl_Head
+    400228: QuickRigCharacter_Ctrl_HeadEffector
+    400230: QuickRigCharacter_Ctrl_Hips
+    400232: QuickRigCharacter_Ctrl_HipsEffector
+    400234: QuickRigCharacter_Ctrl_LeftArm
+    400236: QuickRigCharacter_Ctrl_LeftElbowEffector
+    400238: QuickRigCharacter_Ctrl_LeftForeArm
+    400240: QuickRigCharacter_Ctrl_LeftHand
+    400242: QuickRigCharacter_Ctrl_LeftShoulder
+    400244: QuickRigCharacter_Ctrl_LeftShoulderEffector
+    400246: QuickRigCharacter_Ctrl_LeftWristEffector
+    400248: QuickRigCharacter_Ctrl_Neck
+    400250: QuickRigCharacter_Ctrl_Reference
+    400252: QuickRigCharacter_Ctrl_RightArm
+    400254: QuickRigCharacter_Ctrl_RightElbowEffector
+    400256: QuickRigCharacter_Ctrl_RightForeArm
+    400258: QuickRigCharacter_Ctrl_RightHand
+    400260: QuickRigCharacter_Ctrl_RightShoulder
+    400262: QuickRigCharacter_Ctrl_RightShoulderEffector
+    400264: QuickRigCharacter_Ctrl_RightWristEffector
+    400266: QuickRigCharacter_Ctrl_Spine
+    400268: QuickRigCharacter_Ctrl_Spine1
+    400270: QuickRigCharacter_Ctrl_Spine2
+    400272: QuickRigCharacter_Guides
+    400274: QuickRigCharacter_Head
+    400276: QuickRigCharacter_Hips
+    400278: QuickRigCharacter_LeftArm
+    400280: QuickRigCharacter_LeftForeArm
+    400282: QuickRigCharacter_LeftHand
+    400284: QuickRigCharacter_LeftShoulder
+    400286: QuickRigCharacter_Neck
+    400288: QuickRigCharacter_Reference
+    400290: QuickRigCharacter_RightArm
+    400292: QuickRigCharacter_RightForeArm
+    400294: QuickRigCharacter_RightHand
+    400296: QuickRigCharacter_RightShoulder
+    400298: QuickRigCharacter_Spine
+    400300: QuickRigCharacter_Spine1
+    400302: QuickRigCharacter_Spine2
+    400304: Reference
+    400306: RightArm
+    400308: RightFoot
+    400310: RightForeArm
+    400312: RightHand
+    400314: RightLeg
+    400316: RightShoulder
+    400318: RightToeBase
+    400320: RightUpLeg
+    400322: Spine
+    400324: Spine1
+    400326: Spine2
+    400328: "\xA1\xA1\xD7\xFD\xD7\xFB"
+    400330: "\xD7\xFE\xD7\xFC"
+    2100000: 'Material #26'
+    4300000: Object005
+    7400000: Idle
+    7400002: Walk
+    7400004: Attack
+    7400006: Hit
+    9500000: //RootNode
+    13700000: Object005
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 160
+      lastFrame: 280
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 290
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Attack
+      firstFrame: 410
+      lastFrame: 450
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit
+      takeName: Hit
+      firstFrame: 510
+      lastFrame: 540
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
