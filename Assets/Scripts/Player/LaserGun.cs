@@ -158,7 +158,7 @@ public class LaserGun : MonoBehaviour
                     
                     target.SetDamage(damage);
                     GameObject enemyImpactGo = Instantiate(enemyImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(enemyImpactGo, 2f);
+                    Destroy(enemyImpactGo, 0.5f);
                 }
             }
             else if (hit.collider.gameObject.CompareTag("EnemyRange"))
