@@ -2916,7 +2916,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860381985160148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.823357, y: 6.6447706, z: -1.2610283}
+  m_LocalPosition: {x: -54.215927, y: 2.1750555, z: 30.050877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4784808510420640}
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   minChaseRange: 5
   attackRange: 2
   spotLight: {fileID: 108707129096051404}
-  viewDistance: 15
+  viewDistance: 20
   viewMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -5082,8 +5082,8 @@ MonoBehaviour:
   canAttack: 0
   theBoss: 0
   hitDamage: 10
-  energy: 50
-  maxEnergy: 50
+  energy: 80
+  maxEnergy: 80
   managerScene: {fileID: 0}
   explosion: {fileID: 198467229596459214}
 --- !u!135 &135864068212538644
