@@ -29,6 +29,8 @@ public class LaserGun : MonoBehaviour
     public GameObject impactParticle1;
     public GameObject impactParticle2;
     public GameObject impactParticleExt;
+    public GameObject impactParticleBoss;
+
     private float nextTimeToFire = 0f;
     public GameObject lightFlash;
     private AudioPlayer audioPlayer;
@@ -146,9 +148,11 @@ public class LaserGun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+
             if (hit.collider.gameObject.CompareTag("Enemy"))
             {
                 EnemyBehaviour target = hit.transform.GetComponent<EnemyBehaviour>();
+
                 if (target != null)
                 {
                     target.SetDamage(damage);
@@ -159,6 +163,7 @@ public class LaserGun : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("EnemyRange"))
             {
                 RangeEnemyBehaviour target = hit.transform.GetComponent<RangeEnemyBehaviour>();
+
                 if (target != null)
                 {
                     target.SetDamage(damage);
@@ -168,6 +173,7 @@ public class LaserGun : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("EnemyDog"))
             {
                 FasterEnemyBehaviour target = hit.transform.GetComponent<FasterEnemyBehaviour>();
+
                 if (target != null)
                 {
                     target.SetDamage(damage);
@@ -175,15 +181,20 @@ public class LaserGun : MonoBehaviour
             }
             else if (hit.collider.gameObject.CompareTag("Boss"))
             {
+                GameObject impactParticleBossGO = Instantiate(impactParticleBoss, hit.point, Quaternion.LookRotation(hit.normal));
                 BossTurret target = hit.transform.GetComponent<BossTurret>();
+
                 if (target != null)
                 {
                     target.SetDamage(damage);
                 }
+
+                Destroy(impactParticleBossGO, 10f);
             }
             else if (hit.collider.gameObject.CompareTag("BreakProp"))
             {
                 Break target = hit.transform.GetComponent<Break>();
+
                 if(target != null)
                 {
                     target.SetDamage(damage);
@@ -193,15 +204,18 @@ public class LaserGun : MonoBehaviour
             {
                 GameObject impactParticleExtGO = Instantiate(impactParticleExt, hit.point, Quaternion.LookRotation(hit.normal));
                 extintor target = hit.transform.GetComponent<extintor>();
+
                 if (target != null)
                 {
                     target.SetDamage(damage);
                 }
+
                 Destroy(impactParticleExtGO, 10f);
             }
             else if (hit.collider.gameObject.CompareTag("Critic"))
             {
                 CriticDamage target = hit.transform.GetComponent<CriticDamage>();
+
                 if (target != null)
                 {
                     target.CriticDamages();

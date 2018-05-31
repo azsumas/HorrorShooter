@@ -22,6 +22,7 @@ public class BossTurret : MonoBehaviour {
 
     public FinalDoor finalDoor;
 
+    public GameObject deathExp;
 
 
     // Use this for initialization
@@ -99,6 +100,7 @@ public class BossTurret : MonoBehaviour {
         if (energy <= 0)
         {
             //QUE HAGO CUANDO MUERE? PARTICULAS??? Desaparece???
+            deathExp.SetActive(true);
             Death();
             return;
         }
