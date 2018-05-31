@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: prova
+  m_Name: CreditsAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,16 +21,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -159.68723
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: -168.2807
+        inSlope: 6.8631372
+        outSlope: 6.8631372
+        tangentMode: 0
       - serializedVersion: 2
-        time: 0.5
-        value: -92.4
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        time: 60
+        value: 166.50717
+        inSlope: 6.8197656
+        outSlope: 6.8197656
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 60
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -80,16 +80,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -159.68723
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: -168.2807
+        inSlope: 6.8631372
+        outSlope: 6.8631372
+        tangentMode: 0
       - serializedVersion: 2
-        time: 0.5
-        value: -92.4
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        time: 60
+        value: 166.50717
+        inSlope: 6.8197656
+        outSlope: 6.8197656
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
