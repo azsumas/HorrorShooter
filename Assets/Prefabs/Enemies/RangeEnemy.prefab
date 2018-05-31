@@ -1181,7 +1181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734373184567762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.846039, y: 18.246681, z: 37.08486}
+  m_LocalPosition: {x: 8.75, y: 18.246681, z: 8.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4216071604114540}
@@ -1355,14 +1355,12 @@ MonoBehaviour:
   points:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   closestDistance: 0
   wayPointRef: 0
   lantern: {fileID: 0}
-  maxChaseRange: 10
-  minChaseRange: 6
-  chaseRange: 6
+  maxChaseRange: 15
+  minChaseRange: 10
+  chaseRange: 10
   attackRange: 7
   idleTime: 1
   stunTime: 1
@@ -1370,8 +1368,9 @@ MonoBehaviour:
   lr: {fileID: 120433655228744554}
   canAttack: 0
   hitDamage: 5
-  energy: 10
-  maxEnergy: 50
+  energy: 150
+  maxEnergy: 150
+  range: 100
 --- !u!120 &120433655228744554
 LineRenderer:
   m_ObjectHideFlags: 1
