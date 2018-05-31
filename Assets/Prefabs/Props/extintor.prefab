@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23440220191671320}
   - component: {fileID: 95274866538063314}
   - component: {fileID: 65611450192879604}
+  - component: {fileID: 114320209451797810}
   m_Layer: 0
   m_Name: extintor
-  m_TagString: Untagged
+  m_TagString: extintor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -36,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877644418464204}
-  m_LocalRotation: {x: 0.00000003090862, y: -0.7071068, z: -0.7071068, w: -0.00000003090862}
-  m_LocalPosition: {x: -2.316, y: -1.498, z: 0.27799997}
+  m_LocalRotation: {x: 0.520249, y: 0.47889557, z: 0.47889557, w: -0.520249}
+  m_LocalPosition: {x: 5.3, y: -0.022000015, z: 41.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -445.26}
 --- !u!23 &23440220191671320
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -113,3 +114,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114320209451797810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1877644418464204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb2a613968f4724696459642a86c290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 1
+  smokeExt: {fileID: 1984805450286080, guid: 78747fac72707c84695482d1dbf06dde, type: 2}
+  col: {fileID: 65611450192879604}

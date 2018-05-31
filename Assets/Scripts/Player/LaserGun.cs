@@ -28,6 +28,7 @@ public class LaserGun : MonoBehaviour
     public ParticleSystem smoke01;
     public GameObject impactParticle1;
     public GameObject impactParticle2;
+    public GameObject impactParticleExt;
     private float nextTimeToFire = 0f;
     public GameObject lightFlash;
     private AudioPlayer audioPlayer;
@@ -187,6 +188,16 @@ public class LaserGun : MonoBehaviour
                 {
                     target.SetDamage(damage);
                 }
+            }
+            else if (hit.collider.gameObject.CompareTag("extintor"))
+            {
+                GameObject impactParticleExtGO = Instantiate(impactParticleExt, hit.point, Quaternion.LookRotation(hit.normal));
+                extintor target = hit.transform.GetComponent<extintor>();
+                if (target != null)
+                {
+                    target.SetDamage(damage);
+                }
+                Destroy(impactParticleExtGO, 10f);
             }
             else if (hit.collider.gameObject.CompareTag("Critic"))
             {

@@ -45,6 +45,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     public int hitDamage;
 	public float energy;
 	public float maxEnergy;
+    public float range = 100f;
 
    // [Header("Effects")]
    // public ParticleSystem explosion;
@@ -329,6 +330,7 @@ public class RangeEnemyBehaviour : MonoBehaviour {
     {
 		lr.enabled = true;
 		lr.SetPosition (0, transform.position);
+        lr.SetPosition (1, transform.position + targetTransform.position * range);
         targetTransform.GetComponent<PlayerBehaviour>().ReceivedDamage(hitDamage);
         Debug.Log("Shoot");
     }
